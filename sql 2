@@ -1,0 +1,572 @@
+SQL> desc customer
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUSTOMER_ID                               NOT NULL VARCHAR2(10)
+ F_NAME                                             VARCHAR2(20)
+ M_NAME                                             VARCHAR2(20)
+ L_NAME                                             VARCHAR2(20)
+ NEW_ADDRESS                                        VARCHAR2(20)
+ MOBILE_NO                                          NUMBER(10)
+ OCCUPATION                                         VARCHAR2(20)
+ DOB                                                DATE
+ EMAIL_ID                                           VARCHAR2(40)
+
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+10015      JOHN                 MICHAEL              SMITH
+KOLKATA              7854157815 DOCTOR               24-SEP-00
+
+
+10016      JAMES                                     BOND
+MUMBAI               7856565434 POLICE OFFICER       28-SEP-00
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+
+10017      PRIYA                                     DHARSHINI
+MUMBAI               7856565439 TEACHER              29-SEP-01
+
+
+10018      SATHISH                                   VARMA
+CHENNAI              7856565479 MANAGER              29-NOV-01
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+
+
+10019      LAKSHMAN                                  GUPTA
+JAIPUR               7856567479 ENGINEER             29-NOV-02
+
+
+10020      SMIRITI                                   GUPTA
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+DELHI                7856767479 PILOT                29-MAR-02
+
+
+10021      SANJAY                                    KUMAR
+AGRA                 7856867479 TEACHER              29-MAR-05
+
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+10022      SACHIN                                    KUMAR
+MADURAI              7858867479 FIREMAN              29-APR-05
+
+
+10023      SREE                                      HASINI
+SALEM                9854768999 PHOTOGRAPHER         29-AUG-05
+sree5hasini@gmail.com
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+
+10024      SREE                 VENKAT               HASINI
+SALEM                7898867979 MANAGER              28-AUG-05
+
+
+C1010      HAFSA                                     MUHAMMED
+THANJAVUR            7898869689 DOCTOR               28-JUN-05
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+
+
+C1011      UMMAMA                                    MUHAMMED
+LUCKNOW              7898869889 STUDENT              28-JUL-06
+
+
+C1012      AFRA                                      MUHAMMED
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+KOCHI                7898879889 POLTICIAN            30-SEP-06
+
+
+C1013      KHALIFA              BIN                  MUHAMMED
+KOCHI                7899979889 COLLECTOR            30-OCT-06
+
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+C1014      KHANNA               BIN                  MUHAMMED
+AHMEDABAD            7899979889 DOCTOR               30-DEC-06
+
+
+
+15 rows selected.
+
+SQL> set linesize 150
+SQL> select * from customer;\
+  2  select * from customer;\
+  3  select * from customer;
+select * from customer;\
+                      *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+10015      JOHN                 MICHAEL              SMITH                KOLKATA              7854157815 DOCTOR               24-SEP-00
+
+
+10016      JAMES                                     BOND                 MUMBAI               7856565434 POLICE OFFICER       28-SEP-00
+
+
+10017      PRIYA                                     DHARSHINI            MUMBAI               7856565439 TEACHER              29-SEP-01
+
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+10018      SATHISH                                   VARMA                CHENNAI              7856565479 MANAGER              29-NOV-01
+
+
+10019      LAKSHMAN                                  GUPTA                JAIPUR               7856567479 ENGINEER             29-NOV-02
+
+
+10020      SMIRITI                                   GUPTA                DELHI                7856767479 PILOT                29-MAR-02
+
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+10021      SANJAY                                    KUMAR                AGRA                 7856867479 TEACHER              29-MAR-05
+
+
+10022      SACHIN                                    KUMAR                MADURAI              7858867479 FIREMAN              29-APR-05
+
+
+10023      SREE                                      HASINI               SALEM                9854768999 PHOTOGRAPHER         29-AUG-05
+sree5hasini@gmail.com
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+10024      SREE                 VENKAT               HASINI               SALEM                7898867979 MANAGER              28-AUG-05
+
+
+C1010      HAFSA                                     MUHAMMED             THANJAVUR            7898869689 DOCTOR               28-JUN-05
+
+
+C1011      UMMAMA                                    MUHAMMED             LUCKNOW              7898869889 STUDENT              28-JUL-06
+
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+C1012      AFRA                                      MUHAMMED             KOCHI                7898879889 POLTICIAN            30-SEP-06
+
+
+C1013      KHALIFA              BIN                  MUHAMMED             KOCHI                7899979889 COLLECTOR            30-OCT-06
+
+
+C1014      KHANNA               BIN                  MUHAMMED             AHMEDABAD            7899979889 DOCTOR               30-DEC-06
+
+
+
+15 rows selected.
+
+SQL> set linesize 300
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+10015      JOHN                 MICHAEL              SMITH                KOLKATA              7854157815 DOCTOR               24-SEP-00
+10016      JAMES                                     BOND                 MUMBAI               7856565434 POLICE OFFICER       28-SEP-00
+10017      PRIYA                                     DHARSHINI            MUMBAI               7856565439 TEACHER              29-SEP-01
+10018      SATHISH                                   VARMA                CHENNAI              7856565479 MANAGER              29-NOV-01
+10019      LAKSHMAN                                  GUPTA                JAIPUR               7856567479 ENGINEER             29-NOV-02
+10020      SMIRITI                                   GUPTA                DELHI                7856767479 PILOT                29-MAR-02
+10021      SANJAY                                    KUMAR                AGRA                 7856867479 TEACHER              29-MAR-05
+10022      SACHIN                                    KUMAR                MADURAI              7858867479 FIREMAN              29-APR-05
+10023      SREE                                      HASINI               SALEM                9854768999 PHOTOGRAPHER         29-AUG-05 sree5hasini@gmail.com
+10024      SREE                 VENKAT               HASINI               SALEM                7898867979 MANAGER              28-AUG-05
+C1010      HAFSA                                     MUHAMMED             THANJAVUR            7898869689 DOCTOR               28-JUN-05
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+C1011      UMMAMA                                    MUHAMMED             LUCKNOW              7898869889 STUDENT              28-JUL-06
+C1012      AFRA                                      MUHAMMED             KOCHI                7898879889 POLTICIAN            30-SEP-06
+C1013      KHALIFA              BIN                  MUHAMMED             KOCHI                7899979889 COLLECTOR            30-OCT-06
+C1014      KHANNA               BIN                  MUHAMMED             AHMEDABAD            7899979889 DOCTOR               30-DEC-06
+
+15 rows selected.
+
+SQL> update customer set f_name='MOON' where f_name='JOHN';
+
+1 row updated.
+
+SQL> update customer set f_name='MOHAN' where f_name='SATHISH';
+
+1 row updated.
+
+SQL> update customer set f_name='MADISON' where f_name='SANJAY';
+
+1 row updated.
+
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+10015      MOON                 MICHAEL              SMITH                KOLKATA              7854157815 DOCTOR               24-SEP-00
+10016      JAMES                                     BOND                 MUMBAI               7856565434 POLICE OFFICER       28-SEP-00
+10017      PRIYA                                     DHARSHINI            MUMBAI               7856565439 TEACHER              29-SEP-01
+10018      MOHAN                                     VARMA                CHENNAI              7856565479 MANAGER              29-NOV-01
+10019      LAKSHMAN                                  GUPTA                JAIPUR               7856567479 ENGINEER             29-NOV-02
+10020      SMIRITI                                   GUPTA                DELHI                7856767479 PILOT                29-MAR-02
+10021      MADISON                                   KUMAR                AGRA                 7856867479 TEACHER              29-MAR-05
+10022      SACHIN                                    KUMAR                MADURAI              7858867479 FIREMAN              29-APR-05
+10023      SREE                                      HASINI               SALEM                9854768999 PHOTOGRAPHER         29-AUG-05 sree5hasini@gmail.com
+10024      SREE                 VENKAT               HASINI               SALEM                7898867979 MANAGER              28-AUG-05
+C1010      HAFSA                                     MUHAMMED             THANJAVUR            7898869689 DOCTOR               28-JUN-05
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+C1011      UMMAMA                                    MUHAMMED             LUCKNOW              7898869889 STUDENT              28-JUL-06
+C1012      AFRA                                      MUHAMMED             KOCHI                7898879889 POLTICIAN            30-SEP-06
+C1013      KHALIFA              BIN                  MUHAMMED             KOCHI                7899979889 COLLECTOR            30-OCT-06
+C1014      KHANNA               BIN                  MUHAMMED             AHMEDABAD            7899979889 DOCTOR               30-DEC-06
+
+15 rows selected.
+
+SQL> select * from customer where f_name like 'M%n';
+
+no rows selected
+
+SQL> select * from customer where f_name like 'M%N';
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+10015      MOON                 MICHAEL              SMITH                KOLKATA              7854157815 DOCTOR               24-SEP-00
+10018      MOHAN                                     VARMA                CHENNAI              7856565479 MANAGER              29-NOV-01
+10021      MADISON                                   KUMAR                AGRA                 7856867479 TEACHER              29-MAR-05
+
+SQL> update branch set branch_code=1000 where branch_code='565654';
+
+3 rows updated.
+
+SQL> update branch set branch_code=1002 where branch_code='5645';
+
+0 rows updated.
+     update branch set branch_code=1002 where branch_code='5645';
+SQL> update branch set branch_code=1000 where branch_code='565654';
+0 rows updated.
+
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION         DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+10015      MOON                 MICHAEL              SMITH                KOLKATA              7854157815 DOCTOR             24-SEP-00
+10016      JAMES                                     BOND                 MUMBAI               7856565434 POLICE OFFICER       28-SEP-00
+10017      PRIYA                                     DHARSHINI            MUMBAI               7856565439 TEACHER            29-SEP-01
+10018      MOHAN                                     VARMA                CHENNAI              7856565479 MANAGER            29-NOV-01
+10019      LAKSHMAN                                  GUPTA                JAIPUR               7856567479 ENGINEER           29-NOV-02
+10020      SMIRITI                                   GUPTA                DELHI                7856767479 PILOT              29-MAR-02
+10021      MADISON                                   KUMAR                AGRA                 7856867479 TEACHER            29-MAR-05
+10022      SACHIN                                    KUMAR                MADURAI              7858867479 FIREMAN            29-APR-05
+10023      SREE                                      HASINI               SALEM                9854768999 PHOTOGRAPHER               29-AUG-05 sree5hasini@gmail.com
+10024      SREE                 VENKAT               HASINI               SALEM                7898867979 MANAGER            28-AUG-05
+C1010      HAFSA                                     MUHAMMED             THANJAVUR            7898869689 DOCTOR             28-JUN-05
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION         DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+C1011      UMMAMA                                    MUHAMMED             LUCKNOW              7898869889 STUDENT            28-JUL-06
+C1012      AFRA                                      MUHAMMED             KOCHI                7898879889 POLTICIAN          30-SEP-06
+C1013      KHALIFA              BIN                  MUHAMMED             KOCHI                7899979889 COLLECTOR          30-OCT-06
+C1014      KHANNA               BIN                  MUHAMMED             AHMEDABAD            7899979889 DOCTOR             30-DEC-06
+
+15 rows selected.
+
+SQL> select * from customer where customer id>10000;
+select * from customer where customer id>10000
+                                      *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> select * from customer where customer id >10000;
+select * from customer where customer id >10000
+                                      *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> alter table customer modify(customer_id number(10));
+alter table customer modify(customer_id number(10))
+                            *
+ERROR at line 1:
+ORA-01439: column to be modified must be empty to change datatype
+
+
+SQL> delete from customer where customer_id;
+delete from customer where customer_id
+                                     *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> select * from branch
+  2  select * from branch;
+select * from branch
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select * from branch;
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO
+---------- -------------------- ----------- ------------------------------ ----------
+     65669 coimbatore                  5646 11/8,VS NAGAR,CHENNAI          9647856479
+     65469 KOVAI                       5646 14/8,SAINT STREET,CHENNAI      9647855479
+     65485 SALEM                       1000 16/7,SAIN STREET,CHENNAI       9647854579
+    654549 SALEM                       1000 SAIN STREET,CHENNAI             964778459
+   6556449 KOVAI                       1000 VS STREET,CHENNAI               964548459
+   6556449 CHENNAI                   565584 JS STREET,CHENNAI               964545459
+   6558549 CHENNAI                   565584 MINI STREET,CHENNAI             964599459
+    655949 CHENNAI                   565584 MIN STREET,CHENNAI              964859459
+    655849 PONDICHERRY               565584 FRACO STREET,CHENNAI           9648599559
+    655849 CHENGALPATTU              565584 CHOCOLATE STREET,CHENNAI       9648525559
+    655849 CHROMPET                  569584 SATYA STREET,CHENNAI           9648585559
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO
+---------- -------------------- ----------- ------------------------------ ----------
+    659949 HASTINAPURAM              562284 MAALAI STREET,CHENNAI          9698585559
+    989949 MEDAVAKKAM                565284 KANGINI STREET,CHENNAI         9699885559
+    987849 MADIPAKKAM                565584 KANNAN STREET,CHENNAI           969885559
+     97849 VELACHERRY               5655254 KANNAN STREET,CHENNAI           969985559
+
+15 rows selected.
+
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    554656 SAVINGS              24-SEP-07           ACTIVE                  1400000
+    559856 CURRENT              23-SEP-07           ACTIVE                   200000
+    559898 FIXED DEPOSIT        28-SEP-07           ACTIVE                   500000
+    579898 SAVINGS              28-AUG-07           ACTIVE                   580000
+    578998 SAVINGS              28-JAN-08           ACTIVE                   560000
+    565998 SAVINGS              28-AUG-08           ACTIVE                   600000
+    567798 SAVINGS              28-NOV-08           ACTIVE                   700000
+    568898 SAVINGS              28-DEC-09           ACTIVE                   800000
+    569998 SAVINGS              28-MAY-09           ACTIVE                   900000
+    599998 SAVINGS              28-OCT-09           ACTIVE                  1000000
+    579998 SAVINGS              28-NOV-09           ACTIVE                  1300000
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    579998 SAVINGS              28-JAN-10           ACTIVE                  1400000
+   5769998 SAVINGS              28-FEB-10           ACTIVE                  1500000
+   5569998 SAVINGS              28-MAR-10           ACTIVE                  1600000
+   5869998 SAVINGS              28-APR-10           ACTIVE                  1700000
+  58769998 SAVINGS              28-MAY-10           ACTIVE                  1800000
+
+16 rows selected.
+
+SQL> update account set balance=balance+2000 where acc_type='SAVINGS';
+
+14 rows updated.
+
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    554656 SAVINGS              24-SEP-07           ACTIVE                  1402000
+    559856 CURRENT              23-SEP-07           ACTIVE                   200000
+    559898 FIXED DEPOSIT        28-SEP-07           ACTIVE                   500000
+    579898 SAVINGS              28-AUG-07           ACTIVE                   582000
+    578998 SAVINGS              28-JAN-08           ACTIVE                   562000
+    565998 SAVINGS              28-AUG-08           ACTIVE                   602000
+    567798 SAVINGS              28-NOV-08           ACTIVE                   702000
+    568898 SAVINGS              28-DEC-09           ACTIVE                   802000
+    569998 SAVINGS              28-MAY-09           ACTIVE                   902000
+    599998 SAVINGS              28-OCT-09           ACTIVE                  1002000
+    579998 SAVINGS              28-NOV-09           ACTIVE                  1302000
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    579998 SAVINGS              28-JAN-10           ACTIVE                  1402000
+   5769998 SAVINGS              28-FEB-10           ACTIVE                  1502000
+   5569998 SAVINGS              28-MAR-10           ACTIVE                  1602000
+   5869998 SAVINGS              28-APR-10           ACTIVE                  1702000
+  58769998 SAVINGS              28-MAY-10           ACTIVE                  1802000
+
+16 rows selected.
+
+SQL> update account set balance=balance-1000 where acc_type='CURRENT';
+
+1 row updated.
+
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    554656 SAVINGS              24-SEP-07           ACTIVE                  1402000
+    559856 CURRENT              23-SEP-07           ACTIVE                   199000
+    559898 FIXED DEPOSIT        28-SEP-07           ACTIVE                   500000
+    579898 SAVINGS              28-AUG-07           ACTIVE                   582000
+    578998 SAVINGS              28-JAN-08           ACTIVE                   562000
+    565998 SAVINGS              28-AUG-08           ACTIVE                   602000
+    567798 SAVINGS              28-NOV-08           ACTIVE                   702000
+    568898 SAVINGS              28-DEC-09           ACTIVE                   802000
+    569998 SAVINGS              28-MAY-09           ACTIVE                   902000
+    599998 SAVINGS              28-OCT-09           ACTIVE                  1002000
+    579998 SAVINGS              28-NOV-09           ACTIVE                  1302000
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    579998 SAVINGS              28-JAN-10           ACTIVE                  1402000
+   5769998 SAVINGS              28-FEB-10           ACTIVE                  1502000
+   5569998 SAVINGS              28-MAR-10           ACTIVE                  1602000
+   5869998 SAVINGS              28-APR-10           ACTIVE                  1702000
+  58769998 SAVINGS              28-MAY-10           ACTIVE                  1802000
+
+16 rows selected.
+
+SQL> select * from LOAN;
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+6987546979 PERSONAL                 100000             2 3          24-SEP-02 25-SEP-05 ACTIVE
+6987986979 EDUCATION                300000             3 4          26-JAN-01 26-JAN-04 ACTIVE
+6999986979 HOUSE                    500000             5 5          26-JAN-02 26-JAN-07 ACTIVE
+9999986979 PERSONAL                 500000             2 5          23-FEB-02 23-FEB-07 ACTIVE
+9899986979 PERSONAL                 500000             2 5          23-FEB-02 23-FEB-07 ACTIVE
+9989986979 PERSONAL                 500000             2 5          23-FEB-02 23-FEB-07 CLOSED
+9998986979 PERSONAL                 500000             2 5          23-FEB-02 23-FEB-07 CANCELLED
+9999886979 PERSONAL                 600000             3 5          24-FEB-02 24-FEB-07 ACTIVE
+9999886979 PERSONAL                 600000             3 6          24-FEB-03 24-FEB-07 ACTIVE
+9999996979 HOUSE                    500000             3 7          24-FEB-03 24-FEB-07 ACTIVE
+8999996979 EDUCATION                600000             3 7          24-MAR-03 24-MAR-07 ACTIVE
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+8999999979 PERSONAL                 900000             5 10         24-APR-03           ACTIVE
+8999999989 PERSONAL                  50000             5 4          24-APR-03           ACTIVE
+8999999998 PERSONAL                 400000             5 5          24-APR-03 24-APR-08 ACTIVE
+8999999999 PERSONAL                 600000             5 5          24-APR-05 24-APR-10 ACTIVE
+
+15 rows selected.
+
+SQL> update loan set loan_amt=loan_amt+5000 where loan_type='PERSONAL';
+
+11 rows updated.
+
+SQL> update loan set loan_amt=loan_amt-4000 where loan_type='HOUSE';
+
+2 rows updated.
+
+SQL> update loan_payment set paid_amt=paid_amt+3000;
+
+15 rows updated.
+
+SQL> select * from LOAN_payment;
+
+LOAN_PAYMENT_ID SCHEDULED PRINCIPLE_AMT INTEREST_AMT   PAID_AMT PAID_DATE
+--------------- --------- ------------- ------------ ---------- ---------
+     5466848759 24-JAN-04         50000          500      28000 29-JAN-03
+     5499848759 24-JAN-05        500000         5000     253000 29-JAN-01
+     9499848759 14-JAN-05         10000          200      53000 29-JAN-01
+     9599848759 15-JAN-05        200000         2000      53000 25-JAN-01
+     9599898759 16-JAN-05         50000         1500      28000 25-JAN-02
+     9599898789 16-JAN-05         50000         1500      28000 25-JAN-02
+     9585898789 19-JAN-05         50000         1500      28000 25-JAN-01
+     9585889789 19-JAN-05         25000          500       5000 25-JAN-01
+     9585889889 19-JAN-05         24000          240      23000 25-JAN-01
+     9885889889 19-JAN-05         23000          230      23000 28-JAN-01
+     9885888889 19-JAN-05         21000          210      23000 28-JAN-01
+
+LOAN_PAYMENT_ID SCHEDULED PRINCIPLE_AMT INTEREST_AMT   PAID_AMT PAID_DATE
+--------------- --------- ------------- ------------ ---------- ---------
+     9887888889 19-JAN-04         21000          210      23000 28-JAN-01
+     9887888889 19-JAN-04         20000          200      23000 28-JAN-01
+     9887888889 19-JAN-04         19000          190      23000 28-JAN-01
+     9886888889 19-JAN-04         18000          180      23000 28-JAN-01
+
+15 rows selected.
+
+SQL> update loan set interest_rate=interest_rate*0.12 where loan_type='PERSONAL';
+
+11 rows updated.
+
+SQL> select * from LOAN;
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+6987546979 PERSONAL                 105000           .24 3          24-SEP-02 25-SEP-05 ACTIVE
+6987986979 EDUCATION                300000             3 4          26-JAN-01 26-JAN-04 ACTIVE
+6999986979 HOUSE                    496000             5 5          26-JAN-02 26-JAN-07 ACTIVE
+9999986979 PERSONAL                 505000           .24 5          23-FEB-02 23-FEB-07 ACTIVE
+9899986979 PERSONAL                 505000           .24 5          23-FEB-02 23-FEB-07 ACTIVE
+9989986979 PERSONAL                 505000           .24 5          23-FEB-02 23-FEB-07 CLOSED
+9998986979 PERSONAL                 505000           .24 5          23-FEB-02 23-FEB-07 CANCELLED
+9999886979 PERSONAL                 605000           .36 5          24-FEB-02 24-FEB-07 ACTIVE
+9999886979 PERSONAL                 605000           .36 6          24-FEB-03 24-FEB-07 ACTIVE
+9999996979 HOUSE                    496000             3 7          24-FEB-03 24-FEB-07 ACTIVE
+8999996979 EDUCATION                600000             3 7          24-MAR-03 24-MAR-07 ACTIVE
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+8999999979 PERSONAL                 905000            .6 10         24-APR-03           ACTIVE
+8999999989 PERSONAL                  55000            .6 4          24-APR-03           ACTIVE
+8999999998 PERSONAL                 405000            .6 5          24-APR-03 24-APR-08 ACTIVE
+8999999999 PERSONAL                 605000            .6 5          24-APR-05 24-APR-10 ACTIVE
+
+15 rows selected
