@@ -1,0 +1,21 @@
+List of exercises for DML-Update and Delete command
+1.	Update  phone number and e-mail  for the customer number 10023.
+2.	Update Address for customer table as new address
+3.	Update last name for the customer number >10000
+4.	Update branchaddress for the branchcode of  Chennai101
+5.	Update balance to addition of 2000 for the account type ‘Savings’
+6.	Update balance to subtraction of 1000 for the account type ‘Checking’
+7.	Update loan amount to add 5000 for the loan type of ‘Personal’
+8.	Update loan amount to subtract 4000 for the loan type of “Home’
+9.	Update loan paid amount changed to addition of 3000.
+10.	Update loan interest rate to 12% for the personal loan
+11.	Update term to 48months for the loan_no in (L0010 to L0015)
+12.	Update payment amount to addition of 2000 for the first five loan payment ID
+13.	Update transaction amount with increment of 3000 for the transaction_Id=T10001 and transaction type of ‘Withdraw’
+14.	Update transaction amount with increment of 5000 for the transaction_Id=T10005 and transaction type of ‘Deposit’
+15.	Update transaction date to 10 days from existing transaction date
+16.	Update scheduled payment date to 20 days from existing scheduled payment date for the loan payment ID between two ranges
+17.	 Delete selective records from loan table with loan amount>10000
+18.	Delete selective records from transaction table for transaction amount between 5000 to 7000.
+19.	Delete selective records from Customer tabled whose address is other than Chennai
+20.	Delete selective records from account table for account status is either inactive or closed.
