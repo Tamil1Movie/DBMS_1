@@ -1,0 +1,932 @@
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    554656 SAVINGS              24-SEP-07           ACTIVE                  1400000
+    559856 CURRENT              23-SEP-07           ACTIVE                   200000
+    559898 FIXED DEPOSIT        28-SEP-07           ACTIVE                   500000
+    579898 SAVINGS              28-AUG-07           ACTIVE                   580000
+    578998 SAVINGS              28-JAN-08           ACTIVE                   560000
+    565998 SAVINGS              28-AUG-08           ACTIVE                   600000
+    567798 SAVINGS              28-NOV-08           ACTIVE                   700000
+    568898 SAVINGS              28-DEC-09           ACTIVE                   800000
+    569998 SAVINGS              28-MAY-09           ACTIVE                   900000
+    599998 SAVINGS              28-OCT-09           ACTIVE                  1000000
+    579998 SAVINGS              28-NOV-09           ACTIVE                  1300000
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    579998 SAVINGS              28-JAN-10           ACTIVE                  1400000
+   5769998 SAVINGS              28-FEB-10           ACTIVE                  1500000
+   5569998 SAVINGS              28-MAR-10           ACTIVE                  1600000
+   5869998 SAVINGS              28-APR-10           ACTIVE                  1700000
+  58769998 SAVINGS              28-MAY-10           ACTIVE                  1800000
+
+16 rows selected.
+
+SQL> select * from loan;
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+6987546979 PERSONAL                 100000             2 3          24-SEP-02 25-SEP-05 ACTIVE
+6987986979 EDUCATION                300000             3 4          26-JAN-01 26-JAN-04 ACTIVE
+6999986979 HOUSE                    500000             5 5          26-JAN-02 26-JAN-07 ACTIVE
+9999986979 PERSONAL                 500000             2 5          23-FEB-02 23-FEB-07 ACTIVE
+9899986979 PERSONAL                 500000             2 5          23-FEB-02 23-FEB-07 ACTIVE
+9989986979 PERSONAL                 500000             2 5          23-FEB-02 23-FEB-07 CLOSED
+9998986979 PERSONAL                 500000             2 5          23-FEB-02 23-FEB-07 CANCELLED
+9999886979 PERSONAL                 600000             3 5          24-FEB-02 24-FEB-07 ACTIVE
+9999886979 PERSONAL                 600000             3 6          24-FEB-03 24-FEB-07 ACTIVE
+9999996979 HOUSE                    500000             3 7          24-FEB-03 24-FEB-07 ACTIVE
+8999996979 EDUCATION                600000             3 7          24-MAR-03 24-MAR-07 ACTIVE
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+8999999979 PERSONAL                 900000             5 10         24-APR-03           ACTIVE
+8999999989 PERSONAL                  50000             5 4          24-APR-03           ACTIVE
+8999999998 PERSONAL                 400000             5 5          24-APR-03 24-APR-08 ACTIVE
+8999999999 PERSONAL                 600000             5 5          24-APR-05 24-APR-10 ACTIVE
+
+15 rows selected.
+
+SQL> select * from loan_payment;
+
+LOAN_PAYMENT_ID SCHEDULED PRINCIPLE_AMT INTEREST_AMT   PAID_AMT PAID_DATE
+--------------- --------- ------------- ------------ ---------- ---------
+     5466848759 24-JAN-04         50000          500      25000 29-JAN-03
+     5499848759 24-JAN-05        500000         5000     250000 29-JAN-01
+     9499848759 14-JAN-05         10000          200      50000 29-JAN-01
+     9599848759 15-JAN-05        200000         2000      50000 25-JAN-01
+     9599898759 16-JAN-05         50000         1500      25000 25-JAN-02
+     9599898789 16-JAN-05         50000         1500      25000 25-JAN-02
+     9585898789 19-JAN-05         50000         1500      25000 25-JAN-01
+     9585889789 19-JAN-05         25000          500       2000 25-JAN-01
+     9585889889 19-JAN-05         24000          240      20000 25-JAN-01
+     9885889889 19-JAN-05         23000          230      20000 28-JAN-01
+     9885888889 19-JAN-05         21000          210      20000 28-JAN-01
+
+LOAN_PAYMENT_ID SCHEDULED PRINCIPLE_AMT INTEREST_AMT   PAID_AMT PAID_DATE
+--------------- --------- ------------- ------------ ---------- ---------
+     9887888889 19-JAN-04         21000          210      20000 28-JAN-01
+     9887888889 19-JAN-04         20000          200      20000 28-JAN-01
+     9887888889 19-JAN-04         19000          190      20000 28-JAN-01
+     9886888889 19-JAN-04         18000          180      20000 28-JAN-01
+
+15 rows selected.
+
+SQL> select * from transaction;
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI
+-------------- -------------------- ---------- ---------
+    5665456465 DEPOSIT                   60000 24-JAN-05
+    5669456465 WITHDRAWAL                70000 24-JAN-06
+    5669856465 WITHDRAWAL                50000 24-JAN-07
+    5999856465 DEPOSIT                   80000 24-FEB-07
+    5569856465 DEPOSIT                   70000 24-FEB-08
+    5869856465 DEPOSIT                   70000 24-FEB-08
+    5869858465 DEPOSIT                   80000 24-FEB-08
+    5869578465 DEPOSIT                   25000 24-FEB-09
+    5999578465 DEPOSIT                   26000 24-FEB-09
+    5998578465 DEPOSIT                   27000 24-FEB-08
+    5998598465 DEPOSIT                   28000 24-MAY-08
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI
+-------------- -------------------- ---------- ---------
+    5969598465 DEPOSIT                   28000 24-NOV-08
+    5969678465 DEPOSIT                   29000 24-NOV-08
+    5899678465 DEPOSIT                   30000 25-NOV-08
+    5899678499 DEPOSIT                   31000 25-DEC-08
+
+15 rows selected.
+
+SQL> select * from branch;
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO
+---------- -------------------- ----------- ------------------------------ ----------
+     65669 coimbatore                  5646 11/8,VS NAGAR,CHENNAI          9647856479
+     65469 KOVAI                       5646 14/8,SAINT STREET,CHENNAI      9647855479
+     65485 SALEM                       1000 16/7,SAIN STREET,CHENNAI       9647854579
+    654549 SALEM                       1000 SAIN STREET,CHENNAI             964778459
+   6556449 KOVAI                       1000 VS STREET,CHENNAI               964548459
+   6556449 CHENNAI                   565584 JS STREET,CHENNAI               964545459
+   6558549 CHENNAI                   565584 MINI STREET,CHENNAI             964599459
+    655949 CHENNAI                   565584 MIN STREET,CHENNAI              964859459
+    655849 PONDICHERRY               565584 FRACO STREET,CHENNAI           9648599559
+    655849 CHENGALPATTU              565584 CHOCOLATE STREET,CHENNAI       9648525559
+    655849 CHROMPET                  569584 SATYA STREET,CHENNAI           9648585559
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO
+---------- -------------------- ----------- ------------------------------ ----------
+    659949 HASTINAPURAM              562284 MAALAI STREET,CHENNAI          9698585559
+    989949 MEDAVAKKAM                565284 KANGINI STREET,CHENNAI         9699885559
+    987849 MADIPAKKAM                565584 KANNAN STREET,CHENNAI           969885559
+     97849 VELACHERRY               5655254 KANNAN STREET,CHENNAI           969985559
+
+15 rows selected.
+
+SQL> update account setr balance+2000 where acc_type='SAVINGS';
+update account setr balance+2000 where acc_type='SAVINGS'
+                    *
+ERROR at line 1:
+ORA-00971: missing SET keyword
+
+
+SQL> update account set balance=balance+2000 where acc_type='SAVINGS';
+
+14 rows updated.
+
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    554656 SAVINGS              24-SEP-07           ACTIVE                  1402000
+    559856 CURRENT              23-SEP-07           ACTIVE                   200000
+    559898 FIXED DEPOSIT        28-SEP-07           ACTIVE                   500000
+    579898 SAVINGS              28-AUG-07           ACTIVE                   582000
+    578998 SAVINGS              28-JAN-08           ACTIVE                   562000
+    565998 SAVINGS              28-AUG-08           ACTIVE                   602000
+    567798 SAVINGS              28-NOV-08           ACTIVE                   702000
+    568898 SAVINGS              28-DEC-09           ACTIVE                   802000
+    569998 SAVINGS              28-MAY-09           ACTIVE                   902000
+    599998 SAVINGS              28-OCT-09           ACTIVE                  1002000
+    579998 SAVINGS              28-NOV-09           ACTIVE                  1302000
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    579998 SAVINGS              28-JAN-10           ACTIVE                  1402000
+   5769998 SAVINGS              28-FEB-10           ACTIVE                  1502000
+   5569998 SAVINGS              28-MAR-10           ACTIVE                  1602000
+   5869998 SAVINGS              28-APR-10           ACTIVE                  1702000
+  58769998 SAVINGS              28-MAY-10           ACTIVE                  1802000
+
+16 rows selected.
+
+SQL> set autocommit on;
+SQL> update
+  2  update customer set customer_id=10023 where customer_id='10023';
+update customer set customer_id=10023 where customer_id='10023'
+*
+ERROR at line 2:
+ORA-00903: invalid table name
+
+
+SQL> update customer set customer_id=10023 where customer_id='10023';
+
+1 row updated.
+
+Commit complete.
+SQL> update customer set l_name='V' where customer_id>10000;
+update customer set l_name='V' where customer_id>10000
+                                     *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update customer set l_name='V' where customer_id >10000;
+update customer set l_name='V' where customer_id >10000
+                                     *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update customer set l_name='V' where customer_id=10023;
+update customer set l_name='V' where customer_id=10023
+                                     *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update customer set l_name='V' where Customer_id=10023;
+update customer set l_name='V' where Customer_id=10023
+                                     *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update customer set l_name='V' where customer_id >10000;
+update customer set l_name='V' where customer_id >10000
+                                     *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update customer set l_name='V' where customer_id=10023;
+update customer set l_name='V' where customer_id=10023
+                                     *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update account set balance=balance-1000 whre acc_type='Current'
+  2  update account set balance=balance-1000 whre acc_type='Current';
+update account set balance=balance-1000 whre acc_type='Current'
+                                        *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> update account set balance=balance-1000 whre acc_type='Current';
+update account set balance=balance-1000 whre acc_type='Current'
+                                        *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> update account set balance=balance-1000 whre acc_type='CURRENT';
+update account set balance=balance-1000 whre acc_type='CURRENT'
+                                        *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> update account set balance=balance-1000 where acc_type='CURRENT';
+
+1 row updated.
+
+Commit complete.
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    554656 SAVINGS              24-SEP-07           ACTIVE                  1402000
+    559856 CURRENT              23-SEP-07           ACTIVE                   199000
+    559898 FIXED DEPOSIT        28-SEP-07           ACTIVE                   500000
+    579898 SAVINGS              28-AUG-07           ACTIVE                   582000
+    578998 SAVINGS              28-JAN-08           ACTIVE                   562000
+    565998 SAVINGS              28-AUG-08           ACTIVE                   602000
+    567798 SAVINGS              28-NOV-08           ACTIVE                   702000
+    568898 SAVINGS              28-DEC-09           ACTIVE                   802000
+    569998 SAVINGS              28-MAY-09           ACTIVE                   902000
+    599998 SAVINGS              28-OCT-09           ACTIVE                  1002000
+    579998 SAVINGS              28-NOV-09           ACTIVE                  1302000
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    579998 SAVINGS              28-JAN-10           ACTIVE                  1402000
+   5769998 SAVINGS              28-FEB-10           ACTIVE                  1502000
+   5569998 SAVINGS              28-MAR-10           ACTIVE                  1602000
+   5869998 SAVINGS              28-APR-10           ACTIVE                  1702000
+  58769998 SAVINGS              28-MAY-10           ACTIVE                  1802000
+
+16 rows selected.
+
+SQL> update loan_payment set loan_amt=loan_amt+5000 where acc_type='PERSONAL';
+update loan_payment set loan_amt=loan_amt+5000 where acc_type='PERSONAL'
+                                                     *
+ERROR at line 1:
+ORA-00904: "ACC_TYPE": invalid identifier
+
+
+SQL> update loan_payment set loan_amt=loan_amt+5000 where accOUNT_type='PERSONAL';
+update loan_payment set loan_amt=loan_amt+5000 where accOUNT_type='PERSONAL'
+                                                     *
+ERROR at line 1:
+ORA-00904: "ACCOUNT_TYPE": invalid identifier
+
+
+SQL> update loan_payment set loan_amt=loan_amt+5000 where acc_type='personal';
+update loan_payment set loan_amt=loan_amt+5000 where acc_type='personal'
+                                                     *
+ERROR at line 1:
+ORA-00904: "ACC_TYPE": invalid identifier
+
+
+SQL> update loan_payment set loan_amt=loan_amt+5000 where loan_type='personal';
+update loan_payment set loan_amt=loan_amt+5000 where loan_type='personal'
+                                                     *
+ERROR at line 1:
+ORA-00904: "LOAN_TYPE": invalid identifier
+
+
+SQL> update loan set loan_amt=loan_amt+5000 where loan_type='personal';
+
+0 rows updated.
+
+Commit complete.
+SQL> select * from laon;
+select * from laon
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select * from loan;
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+6987546979 PERSONAL                 100000             2 3          24-SEP-02 25-SEP-05 ACTIVE
+6987986979 EDUCATION                300000             3 4          26-JAN-01 26-JAN-04 ACTIVE
+6999986979 HOUSE                    500000             5 5          26-JAN-02 26-JAN-07 ACTIVE
+9999986979 PERSONAL                 500000             2 5          23-FEB-02 23-FEB-07 ACTIVE
+9899986979 PERSONAL                 500000             2 5          23-FEB-02 23-FEB-07 ACTIVE
+9989986979 PERSONAL                 500000             2 5          23-FEB-02 23-FEB-07 CLOSED
+9998986979 PERSONAL                 500000             2 5          23-FEB-02 23-FEB-07 CANCELLED
+9999886979 PERSONAL                 600000             3 5          24-FEB-02 24-FEB-07 ACTIVE
+9999886979 PERSONAL                 600000             3 6          24-FEB-03 24-FEB-07 ACTIVE
+9999996979 HOUSE                    500000             3 7          24-FEB-03 24-FEB-07 ACTIVE
+8999996979 EDUCATION                600000             3 7          24-MAR-03 24-MAR-07 ACTIVE
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+8999999979 PERSONAL                 900000             5 10         24-APR-03           ACTIVE
+8999999989 PERSONAL                  50000             5 4          24-APR-03           ACTIVE
+8999999998 PERSONAL                 400000             5 5          24-APR-03 24-APR-08 ACTIVE
+8999999999 PERSONAL                 600000             5 5          24-APR-05 24-APR-10 ACTIVE
+
+15 rows selected.
+
+SQL> update loan set loan_amt=loan_amt+5000 where loan_type='PERSONAL';
+
+11 rows updated.
+
+Commit complete.
+SQL> select * from loan;
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+6987546979 PERSONAL                 105000             2 3          24-SEP-02 25-SEP-05 ACTIVE
+6987986979 EDUCATION                300000             3 4          26-JAN-01 26-JAN-04 ACTIVE
+6999986979 HOUSE                    500000             5 5          26-JAN-02 26-JAN-07 ACTIVE
+9999986979 PERSONAL                 505000             2 5          23-FEB-02 23-FEB-07 ACTIVE
+9899986979 PERSONAL                 505000             2 5          23-FEB-02 23-FEB-07 ACTIVE
+9989986979 PERSONAL                 505000             2 5          23-FEB-02 23-FEB-07 CLOSED
+9998986979 PERSONAL                 505000             2 5          23-FEB-02 23-FEB-07 CANCELLED
+9999886979 PERSONAL                 605000             3 5          24-FEB-02 24-FEB-07 ACTIVE
+9999886979 PERSONAL                 605000             3 6          24-FEB-03 24-FEB-07 ACTIVE
+9999996979 HOUSE                    500000             3 7          24-FEB-03 24-FEB-07 ACTIVE
+8999996979 EDUCATION                600000             3 7          24-MAR-03 24-MAR-07 ACTIVE
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+8999999979 PERSONAL                 905000             5 10         24-APR-03           ACTIVE
+8999999989 PERSONAL                  55000             5 4          24-APR-03           ACTIVE
+8999999998 PERSONAL                 405000             5 5          24-APR-03 24-APR-08 ACTIVE
+8999999999 PERSONAL                 605000             5 5          24-APR-05 24-APR-10 ACTIVE
+
+15 rows selected.
+
+SQL> update loan set loan_amt=loan_amt+5000 where loan_type='HOUSE';
+
+2 rows updated.
+
+Commit complete.
+SQL> select * from loan;
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+6987546979 PERSONAL                 105000             2 3          24-SEP-02 25-SEP-05 ACTIVE
+6987986979 EDUCATION                300000             3 4          26-JAN-01 26-JAN-04 ACTIVE
+6999986979 HOUSE                    505000             5 5          26-JAN-02 26-JAN-07 ACTIVE
+9999986979 PERSONAL                 505000             2 5          23-FEB-02 23-FEB-07 ACTIVE
+9899986979 PERSONAL                 505000             2 5          23-FEB-02 23-FEB-07 ACTIVE
+9989986979 PERSONAL                 505000             2 5          23-FEB-02 23-FEB-07 CLOSED
+9998986979 PERSONAL                 505000             2 5          23-FEB-02 23-FEB-07 CANCELLED
+9999886979 PERSONAL                 605000             3 5          24-FEB-02 24-FEB-07 ACTIVE
+9999886979 PERSONAL                 605000             3 6          24-FEB-03 24-FEB-07 ACTIVE
+9999996979 HOUSE                    505000             3 7          24-FEB-03 24-FEB-07 ACTIVE
+8999996979 EDUCATION                600000             3 7          24-MAR-03 24-MAR-07 ACTIVE
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+8999999979 PERSONAL                 905000             5 10         24-APR-03           ACTIVE
+8999999989 PERSONAL                  55000             5 4          24-APR-03           ACTIVE
+8999999998 PERSONAL                 405000             5 5          24-APR-03 24-APR-08 ACTIVE
+8999999999 PERSONAL                 605000             5 5          24-APR-05 24-APR-10 ACTIVE
+
+15 rows selected.
+
+SQL> update loan set loan_amt=loan_amt-4000 where loan_type='PERSONAL';
+
+11 rows updated.
+
+Commit complete.
+SQL> update loan set loan_amt=loan_amt+5000 where loan_type='PERSONAL';
+
+11 rows updated.
+
+Commit complete.
+SQL> update loan set loan_amt=loan_amt-4000 where loan_type='HOUSE';
+
+2 rows updated.
+
+Commit complete.
+SQL> update loan_payment set paid_amt=paid_amt+3000;
+
+15 rows updated.
+
+Commit complete.
+SQL> update loan set interest_rate=interest_rate*0.12 where loan_type='PERSONAL';
+
+11 rows updated.
+
+Commit complete.
+SQL> select * from loan;
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+6987546979 PERSONAL                 106000           .24 3          24-SEP-02 25-SEP-05 ACTIVE
+6987986979 EDUCATION                300000             3 4          26-JAN-01 26-JAN-04 ACTIVE
+6999986979 HOUSE                    501000             5 5          26-JAN-02 26-JAN-07 ACTIVE
+9999986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 ACTIVE
+9899986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 ACTIVE
+9989986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 CLOSED
+9998986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 CANCELLED
+9999886979 PERSONAL                 606000           .36 5          24-FEB-02 24-FEB-07 ACTIVE
+9999886979 PERSONAL                 606000           .36 6          24-FEB-03 24-FEB-07 ACTIVE
+9999996979 HOUSE                    501000             3 7          24-FEB-03 24-FEB-07 ACTIVE
+8999996979 EDUCATION                600000             3 7          24-MAR-03 24-MAR-07 ACTIVE
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+8999999979 PERSONAL                 906000            .6 10         24-APR-03           ACTIVE
+8999999989 PERSONAL                  56000            .6 4          24-APR-03           ACTIVE
+8999999998 PERSONAL                 406000            .6 5          24-APR-03 24-APR-08 ACTIVE
+8999999999 PERSONAL                 606000            .6 5          24-APR-05 24-APR-10 ACTIVE
+
+15 rows selected.
+
+SQL> select * from laon_payment;
+select * from laon_payment
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select * from loan_payment;
+
+LOAN_PAYMENT_ID SCHEDULED PRINCIPLE_AMT INTEREST_AMT   PAID_AMT PAID_DATE
+--------------- --------- ------------- ------------ ---------- ---------
+     5466848759 24-JAN-04         50000          500      28000 29-JAN-03
+     5499848759 24-JAN-05        500000         5000     253000 29-JAN-01
+     9499848759 14-JAN-05         10000          200      53000 29-JAN-01
+     9599848759 15-JAN-05        200000         2000      53000 25-JAN-01
+     9599898759 16-JAN-05         50000         1500      28000 25-JAN-02
+     9599898789 16-JAN-05         50000         1500      28000 25-JAN-02
+     9585898789 19-JAN-05         50000         1500      28000 25-JAN-01
+     9585889789 19-JAN-05         25000          500       5000 25-JAN-01
+     9585889889 19-JAN-05         24000          240      23000 25-JAN-01
+     9885889889 19-JAN-05         23000          230      23000 28-JAN-01
+     9885888889 19-JAN-05         21000          210      23000 28-JAN-01
+
+LOAN_PAYMENT_ID SCHEDULED PRINCIPLE_AMT INTEREST_AMT   PAID_AMT PAID_DATE
+--------------- --------- ------------- ------------ ---------- ---------
+     9887888889 19-JAN-04         21000          210      23000 28-JAN-01
+     9887888889 19-JAN-04         20000          200      23000 28-JAN-01
+     9887888889 19-JAN-04         19000          190      23000 28-JAN-01
+     9886888889 19-JAN-04         18000          180      23000 28-JAN-01
+
+15 rows selected.
+
+SQL> update loan_payment set principle_amt=principle_amt+2000 from  5466848759 to 9599898759;
+update loan_payment set principle_amt=principle_amt+2000 from  5466848759 to 9599898759
+                                                         *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> update loan_payment set principle_amt=principle_amt+2000 from 5466848759 to 9599898759;
+update loan_payment set principle_amt=principle_amt+2000 from 5466848759 to 9599898759
+                                                         *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> update loan_payment set principle_amt=principle_amt+2000 where laon_payment_id=(5466848759,9599898759);
+update loan_payment set principle_amt=principle_amt+2000 where laon_payment_id=(5466848759,9599898759)
+                                                                              *
+ERROR at line 1:
+ORA-01797: this operator must be followed by ANY or ALL
+
+
+SQL> update loan_payment set principle_amt=principle_amt+2000 where loan_payment_id=(5466848759,9599898759);
+update loan_payment set principle_amt=principle_amt+2000 where loan_payment_id=(5466848759,9599898759)
+                                                                              *
+ERROR at line 1:
+ORA-01797: this operator must be followed by ANY or ALL
+
+
+SQL> update loan_payment set principle_amt=principle_amt+2000 where loan_payment_id (5466848759,9599898759);
+update loan_payment set principle_amt=principle_amt+2000 where loan_payment_id (5466848759,9599898759)
+                                                                                                     *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> update loan_payment set principle_amt=principle_amt+2000 where loan_payment_id in (5466848759,9599898759);
+
+2 rows updated.
+
+Commit complete.
+SQL> update loan_payment set principle_amt=principle_amt+2000 where loan_payment_id in (5499848759, 9499848759,9599848759);
+
+3 rows updated.
+
+Commit complete.
+SQL> update transaction set transaction_id='T10001' where transaction_id=5669456465;
+update transaction set transaction_id='T10001' where transaction_id=5669456465
+                                      *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update transaction set transaction_id=T10001 where transaction_id=5669456465;
+update transaction set transaction_id=T10001 where transaction_id=5669456465
+                                      *
+ERROR at line 1:
+ORA-00904: "T10001": invalid identifier
+
+
+SQL> update transaction set transaction_id='T10001' where transaction_id=5669456465;
+update transaction set transaction_id='T10001' where transaction_id=5669456465
+                                      *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update transaction set amount=amount+3000 where transaction_type='WITHDRAW';
+
+0 rows updated.
+
+Commit complete.
+SQL> update transaction set amount=amount+3000 where transaction_type='WITHDRAWal';
+
+0 rows updated.
+
+Commit complete.
+SQL> update transaction set amount=amount+3000 where transaction_type='WITHDRAWAL';
+
+2 rows updated.
+
+Commit complete.
+SQL> select * from TRANSACTION;
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI
+-------------- -------------------- ---------- ---------
+    5665456465 DEPOSIT                   60000 24-JAN-05
+    5669456465 WITHDRAWAL                73000 24-JAN-06
+    5669856465 WITHDRAWAL                53000 24-JAN-07
+    5999856465 DEPOSIT                   80000 24-FEB-07
+    5569856465 DEPOSIT                   70000 24-FEB-08
+    5869856465 DEPOSIT                   70000 24-FEB-08
+    5869858465 DEPOSIT                   80000 24-FEB-08
+    5869578465 DEPOSIT                   25000 24-FEB-09
+    5999578465 DEPOSIT                   26000 24-FEB-09
+    5998578465 DEPOSIT                   27000 24-FEB-08
+    5998598465 DEPOSIT                   28000 24-MAY-08
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI
+-------------- -------------------- ---------- ---------
+    5969598465 DEPOSIT                   28000 24-NOV-08
+    5969678465 DEPOSIT                   29000 24-NOV-08
+    5899678465 DEPOSIT                   30000 25-NOV-08
+    5899678499 DEPOSIT                   31000 25-DEC-08
+
+15 rows selected.
+
+SQL> update transaction set amount=amount+3000 where TRANSACTION_ID=5665456465 and transaction_type='DEPOSIT';
+
+1 row updated.
+
+Commit complete.
+SQL> select count(mobile_no),min(mobile_no),max(mobile_no) from customer;
+
+COUNT(MOBILE_NO) MIN(MOBILE_NO) MAX(MOBILE_NO)
+---------------- -------------- --------------
+              15     7854157815     9854768999
+
+SQL> select sum,Avg,min,max from account;
+select sum,Avg,min,max from account
+                   *
+ERROR at line 1:
+ORA-00904: "MAX": invalid identifier
+
+
+SQL> select sum(balance),Avg(balance),min(balance),max(balance\) from account;
+select sum(balance),Avg(balance),min(balance),max(balance\) from account
+                                                         *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> select sum(balance),Avg(balance),min(balance),max(balance) from account;
+
+SUM(BALANCE) AVG(BALANCE) MIN(BALANCE) MAX(BALANCE)
+------------ ------------ ------------ ------------
+    16567000    1035437.5       199000      1802000
+
+SQL> select Avg(balance) from branch Group by branch having Avg(balance)>5000;
+select Avg(balance) from branch Group by branch having Avg(balance)>5000
+
+   *
+ERROR at line 1:
+ORA-00904: "BALANCE": invalid identifier
+
+
+SQL> select Avg(balance) from branch Group by branch having Avg(balance)>5000;
+select Avg(balance) from branch Group by branch having Avg(balance)>5000
+
+   *
+ERROR at line 1:
+ORA-00904: "BALANCE": invalid identifier
+
+
+SQL> select sum(acc_type),min(acc_type),max(acc_type) fr
+om account where acc_type!='SAVINGS';
+select sum(acc_type),min(acc_type),max(acc_type) from account where acc_type!='SAVINGS'
+           *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> select sum(balance),min(balance),max(balance) from
+account where acc_type!='SAVINGS';
+
+SUM(BALANCE) MIN(BALANCE) MAX(BALANCE)
+------------ ------------ ------------
+      699000       199000       500000
+
+SQL> select sum(balance),min(balance),max(balance),Avg(balance)from account where acc_type!='SAVINGS';
+
+SUM(BALANCE) MIN(BALANCE) MAX(BALANCE) AVG(BALANCE)
+------------ ------------ ------------ ------------
+      699000       199000       500000       349500
+
+SQL> update acc_status set acc_status='INACTIVE' where acc_tatus in()
+  2
+SQL> update acc_status set acc_status='INACTIVE' where acc_tatus in();
+update acc_status set acc_status='INACTIVE' where acc_tatus in()
+
+       *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    554656 SAVINGS              24-SEP-07           ACTIVE                  1402000
+    559856 CURRENT              23-SEP-07           ACTIVE                   199000
+    559898 FIXED DEPOSIT        28-SEP-07           ACTIVE                   500000
+    579898 SAVINGS              28-AUG-07           ACTIVE                   582000
+    578998 SAVINGS              28-JAN-08           ACTIVE                   562000
+    565998 SAVINGS              28-AUG-08           ACTIVE                   602000
+    567798 SAVINGS              28-NOV-08           ACTIVE                   702000
+    568898 SAVINGS              28-DEC-09           ACTIVE                   802000
+    569998 SAVINGS              28-MAY-09           ACTIVE                   902000
+    599998 SAVINGS              28-OCT-09           ACTIVE                  1002000
+    579998 SAVINGS              28-NOV-09           ACTIVE                  1302000
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    579998 SAVINGS              28-JAN-10           ACTIVE                  1402000
+   5769998 SAVINGS              28-FEB-10           ACTIVE                  1502000
+   5569998 SAVINGS              28-MAR-10           ACTIVE                  1602000
+   5869998 SAVINGS              28-APR-10           ACTIVE                  1702000
+  58769998 SAVINGS              28-MAY-10           ACTIVE                  1802000
+
+16 rows selected.
+
+SQL> update acc_status set acc_status='INACTIVE' where acc_tatus in(579898,568898,SP2-0042: unknown command "s" - rest of line ignored.
+SQL> update account set acc_status='INACTIVE' where acc_status in(599998,579898,568898);
+update account set acc_status='INACTIVE' where acc_status in(599998,579898,568898)
+                                               *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update account set acc_status='INACTIVE' where acc_no in(599998,579898,568898);
+
+3 rows updated.
+
+Commit complete.
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    554656 SAVINGS              24-SEP-07           ACTIVE                  1402000
+    559856 CURRENT              23-SEP-07           ACTIVE                   199000
+    559898 FIXED DEPOSIT        28-SEP-07           ACTIVE                   500000
+    579898 SAVINGS              28-AUG-07           INACTIVE                 582000
+    578998 SAVINGS              28-JAN-08           ACTIVE                   562000
+    565998 SAVINGS              28-AUG-08           ACTIVE                   602000
+    567798 SAVINGS              28-NOV-08           ACTIVE                   702000
+    568898 SAVINGS              28-DEC-09           INACTIVE                 802000
+    569998 SAVINGS              28-MAY-09           ACTIVE                   902000
+    599998 SAVINGS              28-OCT-09           INACTIVE                1002000
+    579998 SAVINGS              28-NOV-09           ACTIVE                  1302000
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE
+---------- -------------------- --------- --------- -------------------- ----------
+    579998 SAVINGS              28-JAN-10           ACTIVE                  1402000
+   5769998 SAVINGS              28-FEB-10           ACTIVE                  1502000
+   5569998 SAVINGS              28-MAR-10           ACTIVE                  1602000
+   5869998 SAVINGS              28-APR-10           ACTIVE                  1702000
+  58769998 SAVINGS              28-MAY-10           ACTIVE                  1802000
+
+16 rows selected.
+
+SQL> select sum(balance),min(balance),max(balance),Avg(balance)from account where acc_status='INACTIVE';
+
+SUM(BALANCE) MIN(BALANCE) MAX(BALANCE) AVG(BALANCE)
+------------ ------------ ------------ ------------
+     2386000       582000      1002000   795333.333
+
+SQL> select count(transaction_type) from transaction whe
+re transaction
+  2
+SQL> select count(transaction_type) from transaction where transaction_type='DEPOSIT';
+
+COUNT(TRANSACTION_TYPE)
+-----------------------
+                     13
+
+SQL> select count (distinct transaction_type),count(transaction_type) from transaction where transaction_type='DEPOSIT';
+
+COUNT(DISTINCTTRANSACTION_TYPE) COUNT(TRANSACTION_TYPE)
+------------------------------- -----------------------
+                              1                      13
+
+SQL> select sum(amount),Avg(amount),min(amount),max(amou
+nt) from transaction where amount>5000;
+
+SUM(AMOUNT) AVG(AMOUNT) MIN(AMOUNT) MAX(AMOUNT)
+----------- ----------- ----------- -----------
+     713000  47533.3333       25000       80000
+
+SQL> select sum(loan_amt),avg(loan_amt),min(loan_amt),max(loan_amt) from loan where laon_amt<50000 and term<2;
+select sum(loan_amt),avg(loan_amt),min(loan_amt),max(loan_amt) from loan where laon_amt<50000 and term<2
+
+                       *
+ERROR at line 1:
+ORA-00904: "LAON_AMT": invalid identifier
+
+
+SQL> select sum(loan_amt),avg(loan_amt),min(loan_amt),max(loan_amt) from loan where loan_amt<50000 and term<2;
+
+SUM(LOAN_AMT) AVG(LOAN_AMT) MIN(LOAN_AMT) MAX(LOAN_AMT)
+------------- ------------- ------------- -------------
+
+
+SQL> select * from loan;
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+6987546979 PERSONAL                 106000           .24 3          24-SEP-02 25-SEP-05 ACTIVE
+6987986979 EDUCATION                300000             3 4          26-JAN-01 26-JAN-04 ACTIVE
+6999986979 HOUSE                    501000             5 5          26-JAN-02 26-JAN-07 ACTIVE
+9999986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 ACTIVE
+9899986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 ACTIVE
+9989986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 CLOSED
+9998986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 CANCELLED
+9999886979 PERSONAL                 606000           .36 5          24-FEB-02 24-FEB-07 ACTIVE
+9999886979 PERSONAL                 606000           .36 6          24-FEB-03 24-FEB-07 ACTIVE
+9999996979 HOUSE                    501000             3 7          24-FEB-03 24-FEB-07 ACTIVE
+8999996979 EDUCATION                600000             3 7          24-MAR-03 24-MAR-07 ACTIVE
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+8999999979 PERSONAL                 906000            .6 10         24-APR-03           ACTIVE
+8999999989 PERSONAL                  56000            .6 4          24-APR-03           ACTIVE
+8999999998 PERSONAL                 406000            .6 5          24-APR-03 24-APR-08 ACTIVE
+8999999999 PERSONAL                 606000            .6 5          24-APR-05 24-APR-10 ACTIVE
+
+15 rows selected.
+
+SQL> update laon set loan_amt=10600 where loan_amt=106000;
+update laon set loan_amt=10600 where loan_amt=106000
+       *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> update loan set loan_amt=10600 where loan_amt=106000;
+
+1 row updated.
+
+Commit complete.
+SQL> select * from loan;
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+6987546979 PERSONAL                  10600           .24 3          24-SEP-02 25-SEP-05 ACTIVE
+6987986979 EDUCATION                300000             3 4          26-JAN-01 26-JAN-04 ACTIVE
+6999986979 HOUSE                    501000             5 5          26-JAN-02 26-JAN-07 ACTIVE
+9999986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 ACTIVE
+9899986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 ACTIVE
+9989986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 CLOSED
+9998986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 CANCELLED
+9999886979 PERSONAL                 606000           .36 5          24-FEB-02 24-FEB-07 ACTIVE
+9999886979 PERSONAL                 606000           .36 6          24-FEB-03 24-FEB-07 ACTIVE
+9999996979 HOUSE                    501000             3 7          24-FEB-03 24-FEB-07 ACTIVE
+8999996979 EDUCATION                600000             3 7          24-MAR-03 24-MAR-07 ACTIVE
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS
+---------- -------------------- ---------- ------------- ---------- --------- --------- --------------------
+8999999979 PERSONAL                 906000            .6 10         24-APR-03           ACTIVE
+8999999989 PERSONAL                  56000            .6 4          24-APR-03           ACTIVE
+8999999998 PERSONAL                 406000            .6 5          24-APR-03 24-APR-08 ACTIVE
+8999999999 PERSONAL                 606000            .6 5          24-APR-05 24-APR-10 ACTIVE
+
+15 rows selected.
+
+SQL> select sum(loan_amt),avg(loan_amt),min(loan_amt),max(loan_amt) from loan where laon_amt<50000 and term<2;
+select sum(loan_amt),avg(loan_amt),min(loan_amt),max(loan_amt) from loan where laon_amt<50000 and term<2
+                                                                               *
+ERROR at line 1:
+ORA-00904: "LAON_AMT": invalid identifier
+
+
+SQL> select sum(loan_amt),avg(loan_amt),min(loan_amt),max(loan_amt) from loan where loan_amt<50000 and term<2;
+
+SUM(LOAN_AMT) AVG(LOAN_AMT) MIN(LOAN_AMT) MAX(LOAN_AMT)
+------------- ------------- ------------- -------------
+
+
+SQL> update loan set term=1 where loan_amt=56000;
+
+1 row updated.
+
+Commit complete.
+SQL> update loan set loan_amt=5600 where laon_amt=56000;
+update loan set loan_amt=5600 where laon_amt=56000
+                                    *
+ERROR at line 1:
+ORA-00904: "LAON_AMT": invalid identifier
+
+
+SQL> update loan set loan_amt=5600 where loan_amt=56000;
+
+1 row updated.
+
+Commit complete.
+SQL> select sum(loan_amt),avg(loan_amt),min(loan_amt),max(loan_amt) from loan where loan_amt<50000 and term<2;
+
+SUM(LOAN_AMT) AVG(LOAN_AMT) MIN(LOAN_AMT) MAX(LOAN_AMT)
+------------- ------------- ------------- -------------
+         5600          5600          5600          5600
+
+SQL> select sum(principle_amt),avg(principle_amt),min(principle_amt),max(principle_amt) from loan_payment where
+principle_amt<50000 and interest_amt<5000;
+
+SUM(PRINCIPLE_AMT) AVG(PRINCIPLE_AMT) MIN(PRINCIPLE_AMT) MAX(PRINCIPLE_AMT)
+------------------ ------------------ ------------------ ------------------
+            183000         20333.3333              12000      25000
+
+SQL> update loan_payment set paid_date='24-JAN-2004'where scheduled_date='24-JAN-2004';
+update loan_payment set paid_date='24-JAN-2004'where scheduled_date='24-JAN-2004'
+                                                     *
+ERROR at line 1:
+ORA-00904: "SCHEDULED_DATE": invalid identifier
+
+
+SQL> update loan_payment set paid_date='24-JAN-2004'where scheduled_payment_date='24-JAN-2004';
+
+1 row updated.
+
+Commit complete.
+SQL> select * from laon_payment;
+select * from laon_payment
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select * from loan_payment;
+
+LOAN_PAYMENT_ID SCHEDULED PRINCIPLE_AMT INTEREST_AMT   PAID_AMT PAID_DATE
+--------------- --------- ------------- ------------ ---------- ---------
+     5466848759 24-JAN-04         52000          500     28000 24-JAN-04
+     5499848759 24-JAN-05        502000         5000    253000 29-JAN-01
+     9499848759 14-JAN-05         12000          200     53000 29-JAN-01
+     9599848759 15-JAN-05        202000         2000     53000 25-JAN-01
+     9599898759 16-JAN-05         52000         1500     28000 25-JAN-02
+     9599898789 16-JAN-05         50000         1500     28000 25-JAN-02
+     9585898789 19-JAN-05         50000         1500     28000 25-JAN-01
+     9585889789 19-JAN-05         25000          500      5000 25-JAN-01
+     9585889889 19-JAN-05         24000          240     23000 25-JAN-01
+     9885889889 19-JAN-05         23000          230     23000 28-JAN-01
+     9885888889 19-JAN-05         21000          210     23000 28-JAN-01
+
+LOAN_PAYMENT_ID SCHEDULED PRINCIPLE_AMT INTEREST_AMT   PAID_AMT PAID_DATE
+--------------- --------- ------------- ------------ ---------- ---------
+     9887888889 19-JAN-04         21000          210     23000 28-JAN-01
+     9887888889 19-JAN-04         20000          200     23000 28-JAN-01
+     9887888889 19-JAN-04         19000          190     23000 28-JAN-01
+     9886888889 19-JAN-04         18000          180     23000 28-JAN-01
+
+15 rows selected.
+
+SQL> select sum(paid_amt),avg(paid_amt) from loan_payment where scheduled_payment
+  2  select sum(paid_amt),avg(paid_amt) from loan_payment where scheduled_payment_date=paid_date;
+select sum(paid_amt),avg(paid_amt) from loan_payment where scheduled_payment_date=paid_date
+*
+ERROR at line 2:
+ORA-00920: invalid relational operator
+
+
+SQL> select sum(paid_amt),avg(paid_amt) from loan_payment where scheduled_payment_date=paid_date;
+
+SUM(PAID_AMT) AVG(PAID_AMT)
+------------- -------------
+        28000         28000
