@@ -1,0 +1,757 @@
+SQL> select * from branch
+  2
+SQL> select * from branch;
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS
+---------- -------------------- ----------- ------------------------------
+  PHONE_NO BRANCH
+---------- ----------
+     65669 coimbatore                  5646 11/8,VS NAGAR,CHENNAI
+9647856479
+
+     65469 KOVAI                       5646 14/8,SAINT STREET,CHENNAI
+9647855479 SBI
+
+     65485 SALEM                       1000 16/7,SAIN STREET,CHENNAI
+9647854579
+
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS
+---------- -------------------- ----------- ------------------------------
+  PHONE_NO BRANCH
+---------- ----------
+    654549 SALEM                       1000 SAIN STREET,CHENNAI
+ 964778459
+
+   6556449 KOVAI                       1000 VS STREET,CHENNAI
+ 964548459 SBI
+
+   6556449 CHENNAI                   565584 JS STREET,CHENNAI
+ 964545459 SBI
+
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS
+---------- -------------------- ----------- ------------------------------
+  PHONE_NO BRANCH
+---------- ----------
+   6558549 CHENNAI                   565584 MINI STREET,CHENNAI
+ 964599459 SBI
+
+    655949 CHENNAI                   565584 MIN STREET,CHENNAI
+ 964859459 SBI
+
+    655849 PONDICHERRY               565584 FRACO STREET,CHENNAI
+9648599559
+
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS
+---------- -------------------- ----------- ------------------------------
+  PHONE_NO BRANCH
+---------- ----------
+    655849 CHENGALPATTU              565584 CHOCOLATE STREET,CHENNAI
+9648525559
+
+    655849 CHROMPET                  569584 SATYA STREET,CHENNAI
+9648585559
+
+    659949 HASTINAPURAM              562284 MAALAI STREET,CHENNAI
+9698585559
+
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS
+---------- -------------------- ----------- ------------------------------
+  PHONE_NO BRANCH
+---------- ----------
+    989949 MEDAVAKKAM                565284 KANGINI STREET,CHENNAI
+9699885559
+
+    987849 MADIPAKKAM                565584 KANNAN STREET,CHENNAI
+ 969885559
+
+     97849 VELACHERRY               5655254 KANNAN STREET,CHENNAI
+ 969985559
+
+
+15 rows selected.
+
+SQL> set linesize 300
+SQL> select * from branch;
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH
+---------- -------------------- ----------- ------------------------------ ---------- ----------
+     65669 coimbatore                  5646 11/8,VS NAGAR,CHENNAI          9647856479
+     65469 KOVAI                       5646 14/8,SAINT STREET,CHENNAI      9647855479 SBI
+     65485 SALEM                       1000 16/7,SAIN STREET,CHENNAI       9647854579
+    654549 SALEM                       1000 SAIN STREET,CHENNAI             964778459
+   6556449 KOVAI                       1000 VS STREET,CHENNAI               964548459 SBI
+   6556449 CHENNAI                   565584 JS STREET,CHENNAI               964545459 SBI
+   6558549 CHENNAI                   565584 MINI STREET,CHENNAI             964599459 SBI
+    655949 CHENNAI                   565584 MIN STREET,CHENNAI              964859459 SBI
+    655849 PONDICHERRY               565584 FRACO STREET,CHENNAI           9648599559
+    655849 CHENGALPATTU              565584 CHOCOLATE STREET,CHENNAI       9648525559
+    655849 CHROMPET                  569584 SATYA STREET,CHENNAI           9648585559
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH
+---------- -------------------- ----------- ------------------------------ ---------- ----------
+    659949 HASTINAPURAM              562284 MAALAI STREET,CHENNAI          9698585559
+    989949 MEDAVAKKAM                565284 KANGINI STREET,CHENNAI         9699885559
+    987849 MADIPAKKAM                565584 KANNAN STREET,CHENNAI           969885559
+     97849 VELACHERRY               5655254 KANNAN STREET,CHENNAI           969985559
+
+15 rows selected.
+
+SQL> alter table branch add(amount number(10));
+
+Table altered.
+
+SQL> select * from branch;
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH         AMOUNT
+---------- -------------------- ----------- ------------------------------ ---------- ---------- ----------
+     65669 coimbatore                  5646 11/8,VS NAGAR,CHENNAI          9647856479
+     65469 KOVAI                       5646 14/8,SAINT STREET,CHENNAI      9647855479 SBI
+     65485 SALEM                       1000 16/7,SAIN STREET,CHENNAI       9647854579
+    654549 SALEM                       1000 SAIN STREET,CHENNAI             964778459
+   6556449 KOVAI                       1000 VS STREET,CHENNAI               964548459 SBI
+   6556449 CHENNAI                   565584 JS STREET,CHENNAI               964545459 SBI
+   6558549 CHENNAI                   565584 MINI STREET,CHENNAI             964599459 SBI
+    655949 CHENNAI                   565584 MIN STREET,CHENNAI              964859459 SBI
+    655849 PONDICHERRY               565584 FRACO STREET,CHENNAI           9648599559
+    655849 CHENGALPATTU              565584 CHOCOLATE STREET,CHENNAI       9648525559
+    655849 CHROMPET                  569584 SATYA STREET,CHENNAI           9648585559
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH         AMOUNT
+---------- -------------------- ----------- ------------------------------ ---------- ---------- ----------
+    659949 HASTINAPURAM              562284 MAALAI STREET,CHENNAI          9698585559
+    989949 MEDAVAKKAM                565284 KANGINI STREET,CHENNAI         9699885559
+    987849 MADIPAKKAM                565584 KANNAN STREET,CHENNAI           969885559
+     97849 VELACHERRY               5655254 KANNAN STREET,CHENNAI           969985559
+
+15 rows selected.
+
+SQL> update branch set amoiunt=100000 where branch_id='65%';
+update branch set amoiunt=100000 where branch_id='65%'
+                  *
+ERROR at line 1:
+ORA-00904: "AMOIUNT": invalid identifier
+
+
+SQL> update branch set amount=100000 where branch_id='65%';
+update branch set amount=100000 where branch_id='65%'
+                                                *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update branch set amount=100000 where branch_id='6%';
+update branch set amount=100000 where branch_id='6%'
+                                                *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update branch set amount=100000 where branch_id like '65%';
+
+12 rows updated.
+
+SQL> select * from branch;
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH         AMOUNT
+---------- -------------------- ----------- ------------------------------ ---------- ---------- ----------
+     65669 coimbatore                  5646 11/8,VS NAGAR,CHENNAI          9647856479                100000
+     65469 KOVAI                       5646 14/8,SAINT STREET,CHENNAI      9647855479 SBI            100000
+     65485 SALEM                       1000 16/7,SAIN STREET,CHENNAI       9647854579                100000
+    654549 SALEM                       1000 SAIN STREET,CHENNAI             964778459                100000
+   6556449 KOVAI                       1000 VS STREET,CHENNAI               964548459 SBI            100000
+   6556449 CHENNAI                   565584 JS STREET,CHENNAI               964545459 SBI            100000
+   6558549 CHENNAI                   565584 MINI STREET,CHENNAI             964599459 SBI            100000
+    655949 CHENNAI                   565584 MIN STREET,CHENNAI              964859459 SBI            100000
+    655849 PONDICHERRY               565584 FRACO STREET,CHENNAI           9648599559                100000
+    655849 CHENGALPATTU              565584 CHOCOLATE STREET,CHENNAI       9648525559                100000
+    655849 CHROMPET                  569584 SATYA STREET,CHENNAI           9648585559                100000
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH         AMOUNT
+---------- -------------------- ----------- ------------------------------ ---------- ---------- ----------
+    659949 HASTINAPURAM              562284 MAALAI STREET,CHENNAI          9698585559                100000
+    989949 MEDAVAKKAM                565284 KANGINI STREET,CHENNAI         9699885559
+    987849 MADIPAKKAM                565584 KANNAN STREET,CHENNAI           969885559
+     97849 VELACHERRY               5655254 KANNAN STREET,CHENNAI           969985559
+
+15 rows selected.
+
+SQL> select branch_name,sum(amount),avg(amount) from branch groupby branch_name having avg(branch_id)>5000
+  2  select branch_name,sum(amount),avg(amount) from branch groupby branch_name having avg(branch_id)>5000;
+select branch_name,sum(amount),avg(amount) from branch groupby branch_name having avg(branch_id)>5000
+                                                               *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select branch_name,sum(amount),avg(amount) from branch groupby branch_name having avg(branch_id)>5000;
+select branch_name,sum(amount),avg(amount) from branch groupby branch_name having avg(branch_id)>5000
+                                                               *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select branch_name,sum(amount),avg(amount) from branch group by branch_name having avg(branch_id)>5000;
+
+BRANCH_NAME          SUM(AMOUNT) AVG(AMOUNT)
+-------------------- ----------- -----------
+coimbatore                100000      100000
+KOVAI                     200000      100000
+SALEM                     200000      100000
+CHENNAI                   300000      100000
+PONDICHERRY               100000      100000
+CHENGALPATTU              100000      100000
+CHROMPET                  100000      100000
+HASTINAPURAM              100000      100000
+MEDAVAKKAM
+MADIPAKKAM
+VELACHERRY
+
+11 rows selected.
+
+SQL> create view v_customer as select customer_id,phone
+  2  create view v_customer as select customer_id,phone;
+create view v_customer as select customer_id,phone
+*
+ERROR at line 2:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> create view v_customer as select customer_id,phone;;
+create view v_customer as select customer_id,phone;
+                                                  *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+10015      MOON                 MICHAEL              RAJ                  KOLKATA              6325478998 DOCTOR               24-SEP-00
+10016      JAMES                                     BOND                 MUMBAI               7856565434 POLICE OFFICER       02-JAN-74
+10017      PRIYA                                     DHARSHINI            MUMBAI               7856565439 TEACHER              13-DEC-90
+10018      MOHAN                                     VARMA                CHENNAI              7856565479 MANAGER              02-JAN-74
+10019      LAKSHMAN                                  RAJ                  JAIPUR               6325478998 ENGINEER             29-NOV-02
+10020      SMIRITI                                   GUPTA                DELHI                7856767479 PILOT                29-MAR-02
+10021      MADISON                                   KUMAR                AGRA                 7856867479 TEACHER              13-DEC-90
+10022      SACHIN                                    KUMAR                MADURAI              7858867479 FIREMAN              02-JAN-74
+10023      SREE                                      RAJ                  SALEM                6325478998 PHOTOGRAPHER         29-AUG-05 sree5hasini@gmail.com
+10024      SREE                 VENKAT               HASINI               SALEM                7898867979 MANAGER              28-AUG-05
+C1010      HAFSA                                     MUHAMMED             THANJAVUR            7898869689 DOCTOR               28-JUN-05
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+C1011      UMMAMA                                    MUHAMMED             LUCKNOW              7898869889 STUDENT              28-JUL-06
+C1012      AFRA                                      MUHAMMED             KOCHI                7898879889 POLTICIAN            30-SEP-06
+C1013      KHALIFA              BIN                  MUHAMMED             KOCHI                7899979889 COLLECTOR            30-OCT-06
+C1014      KHANNA               BIN                  MUHAMMED             AHMEDABAD            7899979889 DOCTOR               30-DEC-06
+
+15 rows selected.
+
+SQL> create view v_customer as select customer_id,f_name,mobile_no;
+create view v_customer as select customer_id,f_name,mobile_no
+                                                            *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> create view v_customer as select customer_id,f_name,mobile_no from customer;
+
+View created.
+
+SQL> select * from v_customer;
+
+CUSTOMER_I F_NAME                MOBILE_NO
+---------- -------------------- ----------
+10015      MOON                 6325478998
+10016      JAMES                7856565434
+10017      PRIYA                7856565439
+10018      MOHAN                7856565479
+10019      LAKSHMAN             6325478998
+10020      SMIRITI              7856767479
+10021      MADISON              7856867479
+10022      SACHIN               7858867479
+10023      SREE                 6325478998
+10024      SREE                 7898867979
+C1010      HAFSA                7898869689
+
+CUSTOMER_I F_NAME                MOBILE_NO
+---------- -------------------- ----------
+C1011      UMMAMA               7898869889
+C1012      AFRA                 7898879889
+C1013      KHALIFA              7899979889
+C1014      KHANNA               7899979889
+
+15 rows selected.
+
+SQL> insert into v_customer values('1000','KARISHMA',5489498768);
+
+1 row created.
+
+SQL> update v_customer set customer_id=10025 where customer_id='C1010';
+
+1 row updated.
+
+SQL> select * from v_customer;
+
+CUSTOMER_I F_NAME                MOBILE_NO
+---------- -------------------- ----------
+1000       KARISHMA             5489498768
+10015      MOON                 6325478998
+10016      JAMES                7856565434
+10017      PRIYA                7856565439
+10018      MOHAN                7856565479
+10019      LAKSHMAN             6325478998
+10020      SMIRITI              7856767479
+10021      MADISON              7856867479
+10022      SACHIN               7858867479
+10023      SREE                 6325478998
+10024      SREE                 7898867979
+
+CUSTOMER_I F_NAME                MOBILE_NO
+---------- -------------------- ----------
+10025      HAFSA                7898869689
+C1011      UMMAMA               7898869889
+C1012      AFRA                 7898879889
+C1013      KHALIFA              7899979889
+C1014      KHANNA               7899979889
+
+16 rows selected.
+
+SQL> delete from v_customer where customer-id='C1014';
+delete from v_customer where customer-id='C1014'
+                                      *
+ERROR at line 1:
+ORA-00904: "ID": invalid identifier
+
+
+SQL> delete from v_customer where customer_id='C1014';
+
+1 row deleted.
+
+SQL> select * from v_customer;
+
+CUSTOMER_I F_NAME                MOBILE_NO
+---------- -------------------- ----------
+1000       KARISHMA             5489498768
+10015      MOON                 6325478998
+10016      JAMES                7856565434
+10017      PRIYA                7856565439
+10018      MOHAN                7856565479
+10019      LAKSHMAN             6325478998
+10020      SMIRITI              7856767479
+10021      MADISON              7856867479
+10022      SACHIN               7858867479
+10023      SREE                 6325478998
+10024      SREE                 7898867979
+
+CUSTOMER_I F_NAME                MOBILE_NO
+---------- -------------------- ----------
+10025      HAFSA                7898869689
+C1011      UMMAMA               7898869889
+C1012      AFRA                 7898879889
+C1013      KHALIFA              7899979889
+
+15 rows selected.
+
+SQL> select * from branch;
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH         AMOUNT
+---------- -------------------- ----------- ------------------------------ ---------- ---------- ----------
+     65669 coimbatore                  5646 11/8,VS NAGAR,CHENNAI          9647856479                100000
+     65469 KOVAI                       5646 14/8,SAINT STREET,CHENNAI      9647855479 SBI            100000
+     65485 SALEM                       1000 16/7,SAIN STREET,CHENNAI       9647854579                100000
+    654549 SALEM                       1000 SAIN STREET,CHENNAI             964778459                100000
+   6556449 KOVAI                       1000 VS STREET,CHENNAI               964548459 SBI            100000
+   6556449 CHENNAI                   565584 JS STREET,CHENNAI               964545459 SBI            100000
+   6558549 CHENNAI                   565584 MINI STREET,CHENNAI             964599459 SBI            100000
+    655949 CHENNAI                   565584 MIN STREET,CHENNAI              964859459 SBI            100000
+    655849 PONDICHERRY               565584 FRACO STREET,CHENNAI           9648599559                100000
+    655849 CHENGALPATTU              565584 CHOCOLATE STREET,CHENNAI       9648525559                100000
+    655849 CHROMPET                  569584 SATYA STREET,CHENNAI           9648585559                100000
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH         AMOUNT
+---------- -------------------- ----------- ------------------------------ ---------- ---------- ----------
+    659949 HASTINAPURAM              562284 MAALAI STREET,CHENNAI          9698585559                100000
+    989949 MEDAVAKKAM                565284 KANGINI STREET,CHENNAI         9699885559
+    987849 MADIPAKKAM                565584 KANNAN STREET,CHENNAI           969885559
+     97849 VELACHERRY               5655254 KANNAN STREET,CHENNAI           969985559
+
+15 rows selected.
+
+SQL> create view v_branch as select branch_id,branch_name,branch_code,phone_no from branch;
+
+View created.
+
+SQL> select * from v_branch;
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE   PHONE_NO
+---------- -------------------- ----------- ----------
+     65669 coimbatore                  5646 9647856479
+     65469 KOVAI                       5646 9647855479
+     65485 SALEM                       1000 9647854579
+    654549 SALEM                       1000  964778459
+   6556449 KOVAI                       1000  964548459
+   6556449 CHENNAI                   565584  964545459
+   6558549 CHENNAI                   565584  964599459
+    655949 CHENNAI                   565584  964859459
+    655849 PONDICHERRY               565584 9648599559
+    655849 CHENGALPATTU              565584 9648525559
+    655849 CHROMPET                  569584 9648585559
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE   PHONE_NO
+---------- -------------------- ----------- ----------
+    659949 HASTINAPURAM              562284 9698585559
+    989949 MEDAVAKKAM                565284 9699885559
+    987849 MADIPAKKAM                565584  969885559
+     97849 VELACHERRY               5655254  969985559
+
+15 rows selected.
+
+SQL> insert into v_branch values('64525','CHENNAI',5656,5489498768);
+
+1 row created.
+
+SQL> update v_branch set branch_code=5234 where branch_name='CHENNAI';
+
+4 rows updated.
+
+SQL> delete from v_branch where branch_id=97849;
+
+1 row deleted.
+
+SQL> select * from v_branch;
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE   PHONE_NO
+---------- -------------------- ----------- ----------
+     64525 CHENNAI                     5234 5489498768
+     65669 coimbatore                  5646 9647856479
+     65469 KOVAI                       5646 9647855479
+     65485 SALEM                       1000 9647854579
+    654549 SALEM                       1000  964778459
+   6556449 KOVAI                       1000  964548459
+   6556449 CHENNAI                     5234  964545459
+   6558549 CHENNAI                     5234  964599459
+    655949 CHENNAI                     5234  964859459
+    655849 PONDICHERRY               565584 9648599559
+    655849 CHENGALPATTU              565584 9648525559
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE   PHONE_NO
+---------- -------------------- ----------- ----------
+    655849 CHROMPET                  569584 9648585559
+    659949 HASTINAPURAM              562284 9698585559
+    989949 MEDAVAKKAM                565284 9699885559
+    987849 MADIPAKKAM                565584  969885559
+
+15 rows selected.
+
+SQL> select * from loan_payment;
+
+LOAN_PAYMENT_ID SCHEDULED PRINCIPLE_AMT INTEREST_AMT   PAID_AMT PAID_DATE
+--------------- --------- ------------- ------------ ---------- ---------
+     5466848759 24-JAN-04         52000          500      28000 24-JAN-04
+     5499848759 24-JAN-05        502000         5000     253000 29-JAN-01
+     9499848759 14-JAN-05         12000          200      53000 29-JAN-01
+     9599848759 15-JAN-05        202000         2000      53000 25-JAN-01
+     9599898759 16-JAN-05         52000         1500      28000 25-JAN-02
+     9599898789 16-JAN-05         50000         1500      28000 25-JAN-02
+     9585898789 19-JAN-05         50000         1500      28000 25-JAN-01
+     9585889789 19-JAN-05         25000          500       5000 25-JAN-01
+     9585889889 19-JAN-05         24000          240      23000 25-JAN-01
+     9885889889 19-JAN-05         23000          230      23000 28-JAN-01
+     9885888889 19-JAN-05         21000          210      23000 28-JAN-01
+
+LOAN_PAYMENT_ID SCHEDULED PRINCIPLE_AMT INTEREST_AMT   PAID_AMT PAID_DATE
+--------------- --------- ------------- ------------ ---------- ---------
+     9887888889 19-JAN-04         21000          210      23000 28-JAN-01
+     9887888889 19-JAN-04         20000          200      23000 28-JAN-01
+     9887888889 19-JAN-04         19000          190      23000 28-JAN-01
+     9886888889 19-JAN-04         18000          180      23000 28-JAN-01
+
+15 rows selected.
+
+SQL> create view v_loan_payment as select loan_payment_id,principle_amt,paid_amt from loan_payment;
+
+View created.
+
+SQL> select * from v_loan_payment;
+
+LOAN_PAYMENT_ID PRINCIPLE_AMT   PAID_AMT
+--------------- ------------- ----------
+     5466848759         52000      28000
+     5499848759        502000     253000
+     9499848759         12000      53000
+     9599848759        202000      53000
+     9599898759         52000      28000
+     9599898789         50000      28000
+     9585898789         50000      28000
+     9585889789         25000       5000
+     9585889889         24000      23000
+     9885889889         23000      23000
+     9885888889         21000      23000
+
+LOAN_PAYMENT_ID PRINCIPLE_AMT   PAID_AMT
+--------------- ------------- ----------
+     9887888889         21000      23000
+     9887888889         20000      23000
+     9887888889         19000      23000
+     9886888889         18000      23000
+
+15 rows selected.
+
+SQL> insert into v_loan_payment values('5479641235',50000,25000);
+
+1 row created.
+
+SQL> update v_loan_payment set paid_amt=50000 where principle_amt=50000;
+
+3 rows updated.
+
+SQL> delete from v_loan_payment where paid_amt=28000;
+
+2 rows deleted.
+
+SQL> select * from v_loan_payment;
+
+LOAN_PAYMENT_ID PRINCIPLE_AMT   PAID_AMT
+--------------- ------------- ----------
+     5479641235         50000      50000
+     5499848759        502000     253000
+     9499848759         12000      53000
+     9599848759        202000      53000
+     9599898789         50000      50000
+     9585898789         50000      50000
+     9585889789         25000       5000
+     9585889889         24000      23000
+     9885889889         23000      23000
+     9885888889         21000      23000
+     9887888889         21000      23000
+
+LOAN_PAYMENT_ID PRINCIPLE_AMT   PAID_AMT
+--------------- ------------- ----------
+     9887888889         20000      23000
+     9887888889         19000      23000
+     9886888889         18000      23000
+
+14 rows selected.
+
+SQL> select * from transaction;
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI
+-------------- -------------------- ---------- ---------
+    5665456465 DEPOSIT                   63000 24-JAN-05
+    5669456465 WITHDRAWAL                73000 24-JAN-06
+    5669856465 WITHDRAWAL                53000 24-JAN-07
+    5999856465 DEPOSIT                   80000 24-FEB-07
+    5569856465 DEPOSIT                   70000 01-JAN-20
+    5869856465 DEPOSIT                   70000 01-JAN-20
+    5869858465 DEPOSIT                   80000 01-JAN-20
+    5869578465 DEPOSIT                   25000 31-DEC-23
+    5999578465 DEPOSIT                   26000 31-DEC-23
+    5998578465 DEPOSIT                   27000 01-JAN-20
+    5998598465 DEPOSIT                   28000 24-MAY-08
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI
+-------------- -------------------- ---------- ---------
+    5969598465 DEPOSIT                   28000 24-NOV-08
+    5969678465 DEPOSIT                   29000 24-NOV-08
+    5899678465 DEPOSIT                   30000 25-NOV-08
+    5899678499 DEPOSIT                   31000 25-DEC-08
+
+15 rows selected.
+
+SQL> create view v_transaction as select transaction_id,amount,transaction_date from transaction;
+
+View created.
+
+SQL> select * from v_transaction;
+
+TRANSACTION_ID     AMOUNT TRANSACTI
+-------------- ---------- ---------
+    5665456465      63000 24-JAN-05
+    5669456465      73000 24-JAN-06
+    5669856465      53000 24-JAN-07
+    5999856465      80000 24-FEB-07
+    5569856465      70000 01-JAN-20
+    5869856465      70000 01-JAN-20
+    5869858465      80000 01-JAN-20
+    5869578465      25000 31-DEC-23
+    5999578465      26000 31-DEC-23
+    5998578465      27000 01-JAN-20
+    5998598465      28000 24-MAY-08
+
+TRANSACTION_ID     AMOUNT TRANSACTI
+-------------- ---------- ---------
+    5969598465      28000 24-NOV-08
+    5969678465      29000 24-NOV-08
+    5899678465      30000 25-NOV-08
+    5899678499      31000 25-DEC-08
+
+15 rows selected.
+
+SQL> insert into v_transaction values('5479641235',50000,'25-DEC-2005');
+
+1 row created.
+
+SQL> update v_transaction set amount=70000 where transaction_date='01-JAN-2020';
+
+4 rows updated.
+
+SQL> delete from transaction where transaction_date='24-JAN-2006';
+
+1 row deleted.
+
+SQL> select * from v_transaction;
+
+TRANSACTION_ID     AMOUNT TRANSACTI
+-------------- ---------- ---------
+    5479641235      50000 25-DEC-05
+    5665456465      63000 24-JAN-05
+    5669856465      53000 24-JAN-07
+    5999856465      80000 24-FEB-07
+    5569856465      70000 01-JAN-20
+    5869856465      70000 01-JAN-20
+    5869858465      70000 01-JAN-20
+    5869578465      25000 31-DEC-23
+    5999578465      26000 31-DEC-23
+    5998578465      70000 01-JAN-20
+    5998598465      28000 24-MAY-08
+
+TRANSACTION_ID     AMOUNT TRANSACTI
+-------------- ---------- ---------
+    5969598465      28000 24-NOV-08
+    5969678465      29000 24-NOV-08
+    5899678465      30000 25-NOV-08
+    5899678499      31000 25-DEC-08
+
+15 rows selected.
+
+SQL> select * from v_CUSTOMER;
+
+CUSTOMER_I F_NAME                MOBILE_NO
+---------- -------------------- ----------
+1000       KARISHMA             5489498768
+10015      MOON                 6325478998
+10016      JAMES                7856565434
+10017      PRIYA                7856565439
+10018      MOHAN                7856565479
+10019      LAKSHMAN             6325478998
+10020      SMIRITI              7856767479
+10021      MADISON              7856867479
+10022      SACHIN               7858867479
+10023      SREE                 6325478998
+10024      SREE                 7898867979
+
+CUSTOMER_I F_NAME                MOBILE_NO
+---------- -------------------- ----------
+10025      HAFSA                7898869689
+C1011      UMMAMA               7898869889
+C1012      AFRA                 7898879889
+C1013      KHALIFA              7899979889
+
+15 rows selected.
+
+SQL> select * from v_branch;
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE   PHONE_NO
+---------- -------------------- ----------- ----------
+     64525 CHENNAI                     5234 5489498768
+     65669 coimbatore                  5646 9647856479
+     65469 KOVAI                       5646 9647855479
+     65485 SALEM                       1000 9647854579
+    654549 SALEM                       1000  964778459
+   6556449 KOVAI                       1000  964548459
+   6556449 CHENNAI                     5234  964545459
+   6558549 CHENNAI                     5234  964599459
+    655949 CHENNAI                     5234  964859459
+    655849 PONDICHERRY               565584 9648599559
+    655849 CHENGALPATTU              565584 9648525559
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE   PHONE_NO
+---------- -------------------- ----------- ----------
+    655849 CHROMPET                  569584 9648585559
+    659949 HASTINAPURAM              562284 9698585559
+    989949 MEDAVAKKAM                565284 9699885559
+    987849 MADIPAKKAM                565584  969885559
+
+15 rows selected.
+
+SQL> select * from v_loan_payment;
+
+LOAN_PAYMENT_ID PRINCIPLE_AMT   PAID_AMT
+--------------- ------------- ----------
+     5479641235         50000      50000
+     5499848759        502000     253000
+     9499848759         12000      53000
+     9599848759        202000      53000
+     9599898789         50000      50000
+     9585898789         50000      50000
+     9585889789         25000       5000
+     9585889889         24000      23000
+     9885889889         23000      23000
+     9885888889         21000      23000
+     9887888889         21000      23000
+
+LOAN_PAYMENT_ID PRINCIPLE_AMT   PAID_AMT
+--------------- ------------- ----------
+     9887888889         20000      23000
+     9887888889         19000      23000
+     9886888889         18000      23000
+
+14 rows selected.
+
+SQL> set autocommit on
+SQL> select * from v_loan_payment;
+
+LOAN_PAYMENT_ID PRINCIPLE_AMT   PAID_AMT
+--------------- ------------- ----------
+     5479641235         50000      50000
+     5499848759        502000     253000
+     9499848759         12000      53000
+     9599848759        202000      53000
+     9599898789         50000      50000
+     9585898789         50000      50000
+     9585889789         25000       5000
+     9585889889         24000      23000
+     9885889889         23000      23000
+     9885888889         21000      23000
+     9887888889         21000      23000
+
+LOAN_PAYMENT_ID PRINCIPLE_AMT   PAID_AMT
+--------------- ------------- ----------
+     9887888889         20000      23000
+     9887888889         19000      23000
+     9886888889         18000      23000
+
+14 rows selected.
+
+SQL> select * from v_transaction;
+
+TRANSACTION_ID     AMOUNT TRANSACTI
+-------------- ---------- ---------
+    5479641235      50000 25-DEC-05
+    5665456465      63000 24-JAN-05
+    5669856465      53000 24-JAN-07
+    5999856465      80000 24-FEB-07
+    5569856465      70000 01-JAN-20
+    5869856465      70000 01-JAN-20
+    5869858465      70000 01-JAN-20
+    5869578465      25000 31-DEC-23
+    5999578465      26000 31-DEC-23
+    5998578465      70000 01-JAN-20
+    5998598465      28000 24-MAY-08
+
+TRANSACTION_ID     AMOUNT TRANSACTI
+-------------- ---------- ---------
+    5969598465      28000 24-NOV-08
+    5969678465      29000 24-NOV-08
+    5899678465      30000 25-NOV-08
+    5899678499      31000 25-DEC-08
+
+15 rows selected.
+
+SQL>
