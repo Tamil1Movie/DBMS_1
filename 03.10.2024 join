@@ -1,0 +1,1849 @@
+Microsoft Windows [Version 10.0.22631.4249]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\student>sqlplus
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Thu Oct 3 13:18:54 2024
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+Enter user-name: it2023506001@orcl
+Enter password:
+Last Successful login time: Fri Sep 27 2024 01:27:49 +05:30
+
+Connected to:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+1000       KARISHMA
+                     5489498768
+
+
+10015      MOON                 MICHAEL              RAJ
+KOLKATA              6325478998 DOCTOR               24-SEP-00
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+
+10016      JAMES                                     BOND
+MUMBAI               7856565434 POLICE OFFICER       02-JAN-74
+
+
+10017      PRIYA                                     DHARSHINI
+MUMBAI               7856565439 TEACHER              13-DEC-90
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+
+
+10018      MOHAN                                     VARMA
+CHENNAI              7856565479 MANAGER              02-JAN-74
+
+
+10019      LAKSHMAN                                  RAJ
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+JAIPUR               6325478998 ENGINEER             29-NOV-02
+
+
+10020      SMIRITI                                   GUPTA
+DELHI                7856767479 PILOT                29-MAR-02
+
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+10021      MADISON                                   KUMAR
+AGRA                 7856867479 TEACHER              13-DEC-90
+
+
+10022      SACHIN                                    KUMAR
+MADURAI              7858867479 FIREMAN              02-JAN-74
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+
+10023      SREE                                      RAJ
+SALEM                6325478998 PHOTOGRAPHER         29-AUG-05
+sree5hasini@gmail.com
+
+10024      SREE                 VENKAT               HASINI
+SALEM                7898867979 MANAGER              28-AUG-05
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+
+
+10025      HAFSA                                     MUHAMMED
+THANJAVUR            7898869689 DOCTOR               28-JUN-05
+
+
+C1011      UMMAMA                                    MUHAMMED
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+LUCKNOW              7898869889 STUDENT              28-JUL-06
+
+
+C1012      AFRA                                      MUHAMMED
+KOCHI                7898879889 POLTICIAN            30-SEP-06
+
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+C1013      KHALIFA              BIN                  MUHAMMED
+KOCHI                7899979889 COLLECTOR            30-OCT-06
+
+
+
+15 rows selected.
+
+SQL> set autocommit on
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+1000       KARISHMA
+                     5489498768
+
+
+10015      MOON                 MICHAEL              RAJ
+KOLKATA              6325478998 DOCTOR               24-SEP-00
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+
+10016      JAMES                                     BOND
+MUMBAI               7856565434 POLICE OFFICER       02-JAN-74
+
+
+10017      PRIYA                                     DHARSHINI
+MUMBAI               7856565439 TEACHER              13-DEC-90
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+
+
+10018      MOHAN                                     VARMA
+CHENNAI              7856565479 MANAGER              02-JAN-74
+
+
+10019      LAKSHMAN                                  RAJ
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+JAIPUR               6325478998 ENGINEER             29-NOV-02
+
+
+10020      SMIRITI                                   GUPTA
+DELHI                7856767479 PILOT                29-MAR-02
+
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+10021      MADISON                                   KUMAR
+AGRA                 7856867479 TEACHER              13-DEC-90
+
+
+10022      SACHIN                                    KUMAR
+MADURAI              7858867479 FIREMAN              02-JAN-74
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+
+10023      SREE                                      RAJ
+SALEM                6325478998 PHOTOGRAPHER         29-AUG-05
+sree5hasini@gmail.com
+
+10024      SREE                 VENKAT               HASINI
+SALEM                7898867979 MANAGER              28-AUG-05
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+
+
+10025      HAFSA                                     MUHAMMED
+THANJAVUR            7898869689 DOCTOR               28-JUN-05
+
+
+C1011      UMMAMA                                    MUHAMMED
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+LUCKNOW              7898869889 STUDENT              28-JUL-06
+
+
+C1012      AFRA                                      MUHAMMED
+KOCHI                7898879889 POLTICIAN            30-SEP-06
+
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME
+---------- -------------------- -------------------- --------------------
+NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+-------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+C1013      KHALIFA              BIN                  MUHAMMED
+KOCHI                7899979889 COLLECTOR            30-OCT-06
+
+
+
+15 rows selected.
+
+SQL> set linesize 300
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+1000       KARISHMA                                                                            5489498768
+10015      MOON                 MICHAEL              RAJ                  KOLKATA              6325478998 DOCTOR               24-SEP-00
+10016      JAMES                                     BOND                 MUMBAI               7856565434 POLICE OFFICER       02-JAN-74
+10017      PRIYA                                     DHARSHINI            MUMBAI               7856565439 TEACHER              13-DEC-90
+10018      MOHAN                                     VARMA                CHENNAI              7856565479 MANAGER              02-JAN-74
+10019      LAKSHMAN                                  RAJ                  JAIPUR               6325478998 ENGINEER             29-NOV-02
+10020      SMIRITI                                   GUPTA                DELHI                7856767479 PILOT                29-MAR-02
+10021      MADISON                                   KUMAR                AGRA                 7856867479 TEACHER              13-DEC-90
+10022      SACHIN                                    KUMAR                MADURAI              7858867479 FIREMAN              02-JAN-74
+10023      SREE                                      RAJ                  SALEM                6325478998 PHOTOGRAPHER         29-AUG-05 sree5hasini@gmail.com
+10024      SREE                 VENKAT               HASINI               SALEM                7898867979 MANAGER              28-AUG-05
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+10025      HAFSA                                     MUHAMMED             THANJAVUR            7898869689 DOCTOR               28-JUN-05
+C1011      UMMAMA                                    MUHAMMED             LUCKNOW              7898869889 STUDENT              28-JUL-06
+C1012      AFRA                                      MUHAMMED             KOCHI                7898879889 POLTICIAN            30-SEP-06
+C1013      KHALIFA              BIN                  MUHAMMED             KOCHI                7899979889 COLLECTOR            30-OCT-06
+
+15 rows selected.
+
+SQL> set linesize 150
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+1000       KARISHMA                                                                            5489498768
+
+
+10015      MOON                 MICHAEL              RAJ                  KOLKATA              6325478998 DOCTOR               24-SEP-00
+
+
+10016      JAMES                                     BOND                 MUMBAI               7856565434 POLICE OFFICER       02-JAN-74
+
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+10017      PRIYA                                     DHARSHINI            MUMBAI               7856565439 TEACHER              13-DEC-90
+
+
+10018      MOHAN                                     VARMA                CHENNAI              7856565479 MANAGER              02-JAN-74
+
+
+10019      LAKSHMAN                                  RAJ                  JAIPUR               6325478998 ENGINEER             29-NOV-02
+
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+10020      SMIRITI                                   GUPTA                DELHI                7856767479 PILOT                29-MAR-02
+
+
+10021      MADISON                                   KUMAR                AGRA                 7856867479 TEACHER              13-DEC-90
+
+
+10022      SACHIN                                    KUMAR                MADURAI              7858867479 FIREMAN              02-JAN-74
+
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+10023      SREE                                      RAJ                  SALEM                6325478998 PHOTOGRAPHER         29-AUG-05
+sree5hasini@gmail.com
+
+10024      SREE                 VENKAT               HASINI               SALEM                7898867979 MANAGER              28-AUG-05
+
+
+10025      HAFSA                                     MUHAMMED             THANJAVUR            7898869689 DOCTOR               28-JUN-05
+
+
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- ---------
+EMAIL_ID
+----------------------------------------
+C1011      UMMAMA                                    MUHAMMED             LUCKNOW              7898869889 STUDENT              28-JUL-06
+
+
+C1012      AFRA                                      MUHAMMED             KOCHI                7898879889 POLTICIAN            30-SEP-06
+
+
+C1013      KHALIFA              BIN                  MUHAMMED             KOCHI                7899979889 COLLECTOR            30-OCT-06
+
+
+
+15 rows selected.
+
+SQL> set linesize 300
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------- --------- --------- -------------------- ---------- ----------- ----------
+    554656 SAVINGS              24-SEP-07           ACTIVE                  1402000        1000       5000
+    559856 CURRENT              23-SEP-07           ACTIVE                   199000        1000       5000
+    559898 FIXED DEPOSIT        28-SEP-07           ACTIVE                   500000        1000       5000
+    579898 SAVINGS              28-AUG-07           INACTIVE                 582000        1000       5000
+    578998 SAVINGS              28-JAN-08           ACTIVE                   562000        1000       5000
+    565998 SAVINGS              28-AUG-08           ACTIVE                   602000        1000       5000
+    567798 SAVINGS              28-NOV-08           ACTIVE                   702000        1000       5000
+    568898 SAVINGS              28-DEC-09           INACTIVE                 802000        1000       5000
+    569998 SAVINGS              28-MAY-09           ACTIVE                   902000        1000       5000
+    599998 SAVINGS              28-OCT-09           INACTIVE                1002000        1000       5000
+    579998 SAVINGS              28-NOV-09           ACTIVE                  1302000        1000       5000
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------- --------- --------- -------------------- ---------- ----------- ----------
+    579998 SAVINGS              28-JAN-10           ACTIVE                  1402000        1000       5000
+   5769998 SAVINGS              28-FEB-10           ACTIVE                  1502000
+   5569998 SAVINGS              28-MAR-10           ACTIVE                  1602000
+   5869998 SAVINGS              28-APR-10           ACTIVE                  1702000
+  58769998 SAVINGS              28-MAY-10           ACTIVE                  1802000
+
+16 rows selected.
+
+SQL> select * from transaction;
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+    5479641235                           50000 25-DEC-05
+    5665456465 DEPOSIT                   63000 24-JAN-05
+    5669856465 WITHDRAWAL                53000 24-JAN-07
+    5999856465 DEPOSIT                   80000 24-FEB-07
+    5569856465 DEPOSIT                   70000 01-JAN-20
+    5869856465 DEPOSIT                   70000 01-JAN-20
+    5869858465 DEPOSIT                   70000 01-JAN-20
+    5869578465 DEPOSIT                   25000 31-DEC-23
+    5999578465 DEPOSIT                   26000 31-DEC-23
+    5998578465 DEPOSIT                   70000 01-JAN-20
+    5998598465 DEPOSIT                   28000 24-MAY-08
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+    5969598465 DEPOSIT                   28000 24-NOV-08
+    5969678465 DEPOSIT                   29000 24-NOV-08
+    5899678465 DEPOSIT                   30000 25-NOV-08
+    5899678499 DEPOSIT                   31000 25-DEC-08
+
+15 rows selected.
+
+SQL> select * from loan;
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS               CUSTOMER_ID  BRANCH_ID
+---------- -------------------- ---------- ------------- ---------- --------- --------- -------------------- ----------- ----------
+6987546979 PERSONAL                  10600           .24 3          24-SEP-02 25-SEP-05 ACTIVE                     70000      11000
+6987986979 EDUCATION                 25000             3 4          26-JAN-01 26-JAN-04 ACTIVE                     90000
+6999986979 HOUSE                    501000             5 5          26-JAN-02 26-JAN-07 ACTIVE                     80000       1000
+9999986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 ACTIVE                     70000      11000
+9899986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 ACTIVE                     70000      11000
+9989986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 CLOSED                     70000      11000
+9998986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 CANCELLED                  70000      11000
+9999886979 PERSONAL                 606000           .36 5          24-FEB-02 24-FEB-07 ACTIVE                     70000      11000
+9999886979 PERSONAL                 606000           .36 6          24-FEB-03 24-FEB-07 ACTIVE                     70000      11000
+9999996979 HOUSE                    501000             3 7          24-FEB-03 24-FEB-07 ACTIVE                     80000       1000
+8999996979 EDUCATION                 25000             3 7          24-MAR-03 24-MAR-07 ACTIVE                     90000
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS               CUSTOMER_ID  BRANCH_ID
+---------- -------------------- ---------- ------------- ---------- --------- --------- -------------------- ----------- ----------
+8999999979 PERSONAL                 906000            .6 10         24-APR-03           ACTIVE                     70000      11000
+8999999989 PERSONAL                   5600            .6 1          24-APR-03           ACTIVE                     70000      11000
+8999999998 PERSONAL                 406000            .6 5          24-APR-03 24-APR-08 ACTIVE                     70000      11000
+8999999999 PERSONAL                 606000            .6 5          24-APR-05 24-APR-10 ACTIVE                     70000      11000
+
+15 rows selected.
+
+SQL> create table deposit(customer_id number(10),foreign key(customer_id) references customer(customer_id) on delete cascade,account_no number(10),foreign key(account_no) references account(account_no) on delete cascade);
+create table deposit(customer_id number(10),foreign key(customer_id) references customer(customer_id) on delete cascade,account_no number(10),foreign key(account_no) references account(account_no) on delete cascade)
+                                                        *
+ERROR at line 1:
+ORA-02267: column type incompatible with referenced column type
+
+
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------- --------- --------- -------------------- ---------- ----------- ----------
+    554656 SAVINGS              24-SEP-07           ACTIVE                  1402000        1000       5000
+    559856 CURRENT              23-SEP-07           ACTIVE                   199000        1000       5000
+    559898 FIXED DEPOSIT        28-SEP-07           ACTIVE                   500000        1000       5000
+    579898 SAVINGS              28-AUG-07           INACTIVE                 582000        1000       5000
+    578998 SAVINGS              28-JAN-08           ACTIVE                   562000        1000       5000
+    565998 SAVINGS              28-AUG-08           ACTIVE                   602000        1000       5000
+    567798 SAVINGS              28-NOV-08           ACTIVE                   702000        1000       5000
+    568898 SAVINGS              28-DEC-09           INACTIVE                 802000        1000       5000
+    569998 SAVINGS              28-MAY-09           ACTIVE                   902000        1000       5000
+    599998 SAVINGS              28-OCT-09           INACTIVE                1002000        1000       5000
+    579998 SAVINGS              28-NOV-09           ACTIVE                  1302000        1000       5000
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------- --------- --------- -------------------- ---------- ----------- ----------
+    579998 SAVINGS              28-JAN-10           ACTIVE                  1402000        1000       5000
+   5769998 SAVINGS              28-FEB-10           ACTIVE                  1502000
+   5569998 SAVINGS              28-MAR-10           ACTIVE                  1602000
+   5869998 SAVINGS              28-APR-10           ACTIVE                  1702000
+  58769998 SAVINGS              28-MAY-10           ACTIVE                  1802000
+
+16 rows selected.
+
+SQL> create table deposit(customer_id number(10),foreign key(customer_id) references customer(customer_id) on delete cascade,acc_no number(10),fo
+reign key(acc_no) references account(acc_no) on delete cascade);
+create table deposit(customer_id number(10),foreign key(customer_id) references customer(customer_id) on delete cascade,acc_no number(10),foreign key(acc_no) references account(acc_no) on delete cascade)
+                                                        *
+ERROR at line 1:
+ORA-02267: column type incompatible with referenced column type
+
+
+SQL> create table deposit(customer_id number(10),foreign key(customer_id) references customer(customer_id) on delete cascade,acc_no number(10),foreign key(acc_no) references account(acc_no));
+create table deposit(customer_id number(10),foreign key(customer_id) references customer(customer_id) on delete cascade,acc_no number(10),foreign key(acc_no) references account(acc_no))
+                                                        *
+ERROR at line 1:
+ORA-02267: column type incompatible with referenced column type
+
+
+SQL> create table deposit(customer_id number(10),foreign key(customer_id) references customer(customer_id),acc_no number(10),foreign key(acc_no)
+references account(acc_no));
+create table deposit(customer_id number(10),foreign key(customer_id) references customer(customer_id),acc_no number(10),foreign key(acc_no) references account(acc_no))
+                                                        *
+ERROR at line 1:
+ORA-02267: column type incompatible with referenced column type
+
+
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+1000       KARISHMA                                                                            5489498768
+10015      MOON                 MICHAEL              RAJ                  KOLKATA              6325478998 DOCTOR               24-SEP-00
+10016      JAMES                                     BOND                 MUMBAI               7856565434 POLICE OFFICER       02-JAN-74
+10017      PRIYA                                     DHARSHINI            MUMBAI               7856565439 TEACHER              13-DEC-90
+10018      MOHAN                                     VARMA                CHENNAI              7856565479 MANAGER              02-JAN-74
+10019      LAKSHMAN                                  RAJ                  JAIPUR               6325478998 ENGINEER             29-NOV-02
+10020      SMIRITI                                   GUPTA                DELHI                7856767479 PILOT                29-MAR-02
+10021      MADISON                                   KUMAR                AGRA                 7856867479 TEACHER              13-DEC-90
+10022      SACHIN                                    KUMAR                MADURAI              7858867479 FIREMAN              02-JAN-74
+10023      SREE                                      RAJ                  SALEM                6325478998 PHOTOGRAPHER         29-AUG-05 sree5hasini@gmail.com
+10024      SREE                 VENKAT               HASINI               SALEM                7898867979 MANAGER              28-AUG-05
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+10025      HAFSA                                     MUHAMMED             THANJAVUR            7898869689 DOCTOR               28-JUN-05
+C1011      UMMAMA                                    MUHAMMED             LUCKNOW              7898869889 STUDENT              28-JUL-06
+C1012      AFRA                                      MUHAMMED             KOCHI                7898879889 POLTICIAN            30-SEP-06
+C1013      KHALIFA              BIN                  MUHAMMED             KOCHI                7899979889 COLLECTOR            30-OCT-06
+
+15 rows selected.
+
+SQL> create table deposit(customer_id number(10),acc_no number(10),constraint custo
+mer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) );
+create table deposit(customer_id number(10),acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) )
+                                                                                              *
+ERROR at line 1:
+ORA-02267: column type incompatible with referenced column type
+
+
+SQL> create table deposit(customer_id number(10),acc_no number(10),constraint (cust
+omer_id) foreign key(customer_id) references customer(customer_id) ,constraint (acc
+_no) foreign key(acc_no) references account(acc_no) );
+create table deposit(customer_id number(10),acc_no number(10),constraint (customer_id) foreign key(customer_id) references customer(customer_id) ,constraint (acc_no) foreign key(acc_no) references account(acc_no) )
+                                                                         *
+ERROR at line 1:
+ORA-00902: invalid datatype
+
+     create table deposit(customer_id number(10),acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) );\     nt (customer_id) foreign key(customer_id) references customer(customer
+  2  create table deposit(customer_id number(10),acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) );\
+  3  create table deposit(customer_id number(10),acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) );
+create table deposit(customer_id number(10),acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) );\
+                                                                                                                                                                                                                *
+ERROR at line 1:
+ORA-00922: missing or invalid option
+
+
+SQL> create table deposit(customer_id number(10),acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) );
+create table deposit(customer_id number(10),acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) )
+                                                                                              *
+ERROR at line 1:
+ORA-02267: column type incompatible with referenced column type
+
+
+SQL> create table deposit(customer_id varchar2(10),acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id
+) ,constraint account foreign key(acc_no) references account(acc_no) );
+create table deposit(customer_id varchar2(10),acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) )
+
+                                                        *
+ERROR at line 1:
+ORA-02270: no matching unique or primary key for this column-list
+
+
+SQL> create table deposit(customer_id varchar2(10),acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no));
+create table deposit(customer_id varchar2(10),acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no))
+
+                                                        *
+ERROR at line 1:
+ORA-02270: no matching unique or primary key for this column-list
+
+
+SQL> create table deposit(customer_id varchar2(10) primary key,acc_no number(10) primary key,constraint customer foreign key(customer_id) referen
+ces customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no));
+create table deposit(customer_id varchar2(10) primary key,acc_no number(10) primary key,constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no))
+                                                                            *
+ERROR at line 1:
+ORA-02260: table can have only one primary key
+
+
+SQL> create table deposit(customer_id varchar2(10) primary key,acc_no number(10),constraint customer foreign key(customer_id) references customer
+(customer_id) ,constraint account foreign key(acc_no) references account(acc_no));
+create table deposit(customer_id varchar2(10) primary key,acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no))
+
+                                                                    *
+ERROR at line 1:
+ORA-02270: no matching unique or primary key for this column-list
+
+
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+1000       KARISHMA                                                                            5489498768
+10015      MOON                 MICHAEL              RAJ                  KOLKATA              6325478998 DOCTOR               24-SEP-00
+10016      JAMES                                     BOND                 MUMBAI               7856565434 POLICE OFFICER       02-JAN-74
+10017      PRIYA                                     DHARSHINI            MUMBAI               7856565439 TEACHER              13-DEC-90
+10018      MOHAN                                     VARMA                CHENNAI              7856565479 MANAGER              02-JAN-74
+10019      LAKSHMAN                                  RAJ                  JAIPUR               6325478998 ENGINEER             29-NOV-02
+10020      SMIRITI                                   GUPTA                DELHI                7856767479 PILOT                29-MAR-02
+10021      MADISON                                   KUMAR                AGRA                 7856867479 TEACHER              13-DEC-90
+10022      SACHIN                                    KUMAR                MADURAI              7858867479 FIREMAN              02-JAN-74
+10023      SREE                                      RAJ                  SALEM                6325478998 PHOTOGRAPHER         29-AUG-05 sree5hasini@gmail.com
+10024      SREE                 VENKAT               HASINI               SALEM                7898867979 MANAGER              28-AUG-05
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+10025      HAFSA                                     MUHAMMED             THANJAVUR            7898869689 DOCTOR               28-JUN-05
+C1011      UMMAMA                                    MUHAMMED             LUCKNOW              7898869889 STUDENT              28-JUL-06
+C1012      AFRA                                      MUHAMMED             KOCHI                7898879889 POLTICIAN            30-SEP-06
+C1013      KHALIFA              BIN                  MUHAMMED             KOCHI                7899979889 COLLECTOR            30-OCT-06
+
+15 rows selected.
+
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------- --------- --------- -------------------- ---------- ----------- ----------
+    554656 SAVINGS              24-SEP-07           ACTIVE                  1402000        1000       5000
+    559856 CURRENT              23-SEP-07           ACTIVE                   199000        1000       5000
+    559898 FIXED DEPOSIT        28-SEP-07           ACTIVE                   500000        1000       5000
+    579898 SAVINGS              28-AUG-07           INACTIVE                 582000        1000       5000
+    578998 SAVINGS              28-JAN-08           ACTIVE                   562000        1000       5000
+    565998 SAVINGS              28-AUG-08           ACTIVE                   602000        1000       5000
+    567798 SAVINGS              28-NOV-08           ACTIVE                   702000        1000       5000
+    568898 SAVINGS              28-DEC-09           INACTIVE                 802000        1000       5000
+    569998 SAVINGS              28-MAY-09           ACTIVE                   902000        1000       5000
+    599998 SAVINGS              28-OCT-09           INACTIVE                1002000        1000       5000
+    579998 SAVINGS              28-NOV-09           ACTIVE                  1302000        1000       5000
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------- --------- --------- -------------------- ---------- ----------- ----------
+    579998 SAVINGS              28-JAN-10           ACTIVE                  1402000        1000       5000
+   5769998 SAVINGS              28-FEB-10           ACTIVE                  1502000
+   5569998 SAVINGS              28-MAR-10           ACTIVE                  1602000
+   5869998 SAVINGS              28-APR-10           ACTIVE                  1702000
+  58769998 SAVINGS              28-MAY-10           ACTIVE                  1802000
+
+16 rows selected.
+
+SQL> update account set customer_id='1000' where acc_type='CURRENT';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set customer_id='1001' where acc_type='CURRENT';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set customer_id='10015' where acc_type='CURRENT';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set customer_id='10016' where balance='500000';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set customer_id='10017' where balance='582000';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set customer_id='10018' where balance='562000';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set customer_id='10019' where balance='602000';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set customer_id='10020' where balance='702000';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set customer_id='10021' where balance='802000';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set customer_id='10022' where balance='902000';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set customer_id='10023' where balance='1002000';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set customer_id='10024' where balance='1302000';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set customer_id='10025' where balance='1402000';
+
+2 rows updated.
+
+Commit complete.
+SQL> update account set customer_id='C1011' where balance='1502000';
+update account set customer_id='C1011' where balance='1502000'
+                               *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update account set customer_id='C1011' where balance='1502000';
+update account set customer_id='C1011' where balance='1502000'
+                               *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update account set customer_id=C1011 where balance='1502000';
+update account set customer_id=C1011 where balance='1502000'
+                               *
+ERROR at line 1:
+ORA-00904: "C1011": invalid identifier
+
+
+SQL> update account set customer_id='C1011' where balance='1502000';
+update account set customer_id='C1011' where balance='1502000'
+                               *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> insert into account values ('C1011') where balance=1602000;
+insert into account values ('C1011') where balance=1602000
+                                     *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> update account set  customer_id='C1011'where balance=1602000;
+update account set  customer_id='C1011'where balance=1602000
+                                *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> update account set  customer_id='1011'where balance=1602000;
+
+1 row updated.
+
+Commit complete.
+SQL> update account set  customer_id='10026'where balance=1602000;
+
+1 row updated.
+
+Commit complete.
+SQL> update account set  customer_id='10027'where balance=1702000;
+
+1 row updated.
+
+Commit complete.
+SQL> update account set  customer_id='10028'where balance=1802000;
+
+1 row updated.
+
+Commit complete.
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------- --------- --------- -------------------- ---------- ----------- ----------
+    554656 SAVINGS              24-SEP-07           ACTIVE                  1402000       10025       5000
+    559856 CURRENT              23-SEP-07           ACTIVE                   199000       10015       5000
+    559898 FIXED DEPOSIT        28-SEP-07           ACTIVE                   500000       10016       5000
+    579898 SAVINGS              28-AUG-07           INACTIVE                 582000       10017       5000
+    578998 SAVINGS              28-JAN-08           ACTIVE                   562000       10018       5000
+    565998 SAVINGS              28-AUG-08           ACTIVE                   602000       10019       5000
+    567798 SAVINGS              28-NOV-08           ACTIVE                   702000       10020       5000
+    568898 SAVINGS              28-DEC-09           INACTIVE                 802000       10021       5000
+    569998 SAVINGS              28-MAY-09           ACTIVE                   902000       10022       5000
+    599998 SAVINGS              28-OCT-09           INACTIVE                1002000       10023       5000
+    579998 SAVINGS              28-NOV-09           ACTIVE                  1302000       10024       5000
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------- --------- --------- -------------------- ---------- ----------- ----------
+    579998 SAVINGS              28-JAN-10           ACTIVE                  1402000       10025       5000
+   5769998 SAVINGS              28-FEB-10           ACTIVE                  1502000
+   5569998 SAVINGS              28-MAR-10           ACTIVE                  1602000       10026
+   5869998 SAVINGS              28-APR-10           ACTIVE                  1702000       10027
+  58769998 SAVINGS              28-MAY-10           ACTIVE                  1802000       10028
+
+16 rows selected.
+
+SQL> update account set  customer_id='10026'where balance=1502000;
+
+1 row updated.
+
+Commit complete.
+SQL> update account set  customer_id='10027'where balance=1602000;
+
+1 row updated.
+
+Commit complete.
+SQL> update account set  customer_id='10028'where balance=1702000;
+
+1 row updated.
+
+Commit complete.
+SQL> update account set  customer_id='10029'where balance=1802000;
+
+1 row updated.
+
+Commit complete.
+SQL> update customer set  customer_id='10026'where CUSTOMER_ID='C1011';
+
+1 row updated.
+
+Commit complete.
+SQL> update customer set  customer_id='10027'where CUSTOMER_ID='C1012';
+
+1 row updated.
+
+Commit complete.
+SQL> update customer set  customer_id='10028'where CUSTOMER_ID='C1013';
+
+1 row updated.
+
+Commit complete.
+SQL> update customer set  customer_id='10029'where CUSTOMER_ID='C1014';
+
+0 rows updated.
+
+Commit complete.
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+1000       KARISHMA                                                                            5489498768
+10015      MOON                 MICHAEL              RAJ                  KOLKATA              6325478998 DOCTOR               24-SEP-00
+10016      JAMES                                     BOND                 MUMBAI               7856565434 POLICE OFFICER       02-JAN-74
+10017      PRIYA                                     DHARSHINI            MUMBAI               7856565439 TEACHER              13-DEC-90
+10018      MOHAN                                     VARMA                CHENNAI              7856565479 MANAGER              02-JAN-74
+10019      LAKSHMAN                                  RAJ                  JAIPUR               6325478998 ENGINEER             29-NOV-02
+10020      SMIRITI                                   GUPTA                DELHI                7856767479 PILOT                29-MAR-02
+10021      MADISON                                   KUMAR                AGRA                 7856867479 TEACHER              13-DEC-90
+10022      SACHIN                                    KUMAR                MADURAI              7858867479 FIREMAN              02-JAN-74
+10023      SREE                                      RAJ                  SALEM                6325478998 PHOTOGRAPHER         29-AUG-05 sree5hasini@gmail.com
+10024      SREE                 VENKAT               HASINI               SALEM                7898867979 MANAGER              28-AUG-05
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+10025      HAFSA                                     MUHAMMED             THANJAVUR            7898869689 DOCTOR               28-JUN-05
+10026      UMMAMA                                    MUHAMMED             LUCKNOW              7898869889 STUDENT              28-JUL-06
+10027      AFRA                                      MUHAMMED             KOCHI                7898879889 POLTICIAN            30-SEP-06
+10028      KHALIFA              BIN                  MUHAMMED             KOCHI                7899979889 COLLECTOR            30-OCT-06
+
+15 rows selected.
+
+SQL> create table deposit(customer_id number(10),acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) );
+create table deposit(customer_id number(10),acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) )
+                                                                                              *
+ERROR at line 1:
+ORA-02267: column type incompatible with referenced column type
+
+
+SQL> create table deposit(customer_id number(10) primary key ,acc_no number(10),constraint customer foreign key(customer_id) references customer(
+customer_id) ,constraint account foreign key(acc_no) references account(acc_no) );
+create table deposit(customer_id number(10) primary key ,acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) )
+                                                                                                           *
+ERROR at line 1:
+ORA-02267: column type incompatible with referenced column type
+
+
+SQL> create table deposit(customer.id number(10) primary key ,acc.no number(10),constraint customer foreign key(customer_id) references customer(
+customer_id) ,constraint account foreign key(acc_no) references account(acc_no) );
+create table deposit(customer.id number(10) primary key ,acc.no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) )
+                             *
+ERROR at line 1:
+ORA-01748: only simple column names allowed here
+
+
+SQL> create table deposit(customer__id number(10) primary key ,acc__no number(10),constraint customer foreign key(customer_id) references custome
+r(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) );
+create table deposit(customer__id number(10) primary key ,acc__no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no) )
+                                                                                                             *
+ERROR at line 1:
+ORA-00904: "CUSTOMER_ID": invalid identifier
+
+
+SQL> create table deposit(customer__id number(10) primary key ,acc__no number(10),constraint customer foreign key(customer__id) references custom
+er(customer_id) ,constraint account foreign key(acc__no) references account(acc_no) );
+create table deposit(customer__id number(10) primary key ,acc__no number(10),constraint customer foreign key(customer__id) references customer(customer_id) ,constraint account foreign key(acc__no) references account(acc_no) )
+                                                                                                             *
+ERROR at line 1:
+ORA-02267: column type incompatible with referenced column type
+
+
+SQL> create table deposit(customer__id number(10) primary key ,acc__no number(10),constraint customer foreign key(customer__id) references customer(customer_id) on delete cascade,constraint account foreign key(acc__no) references account(acc_no) on delete cascade);
+create table deposit(customer__id number(10) primary key ,acc__no number(10),constraint customer foreign key(customer__id) references customer(customer_id) on delete cascade,constraint account foreign key(acc__no) references account(acc_no) on delete cascade)
+                                                                                                             *
+ERROR at line 1:
+ORA-02267: column type incompatible with referenced column type
+
+
+SQL> create table deposit(customer__id varchar2(10) primary key ,acc__no number(10),constraint customer foreign key(customer__id) references cust
+omer(customer_id) on delete cascade,constraint account foreign key(acc__no) references account(acc_no) on delete cascade);
+create table deposit(customer__id varchar2(10) primary key ,acc__no number(10),constraint customer foreign key(customer__id) references customer(customer_id) on delete cascade,constraint account foreign key(acc__no) references account(acc_no) on delete cascade)
+
+                                                                                          *
+ERROR at line 1:
+ORA-02270: no matching unique or primary key for this column-list
+
+
+SQL> create table deposit(customer__id varchar2(10) primary key ,acc__no number(10));
+
+Table created.
+
+SQL> alter table modify(constraint customer foreign key(customer__id) references customer(customer_id) on delete cascade,constraint account forei
+gn key(acc__no) references account(acc_no) on delete cascade);
+alter table modify(constraint customer foreign key(customer__id) references customer(customer_id) on delete cascade,constraint account foreign key(acc__no) references account(acc_no) on delete cascade)
+            *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> alter table deposit modify(constraint customer foreign key(customer__id) references customer(customer_id) on delete cascade,constraint accou
+nt foreign key(acc__no) references account(acc_no) on delete cascade);
+alter table deposit modify(constraint customer foreign key(customer__id) references customer(customer_id) on delete cascade,constraint account foreign key(acc__no) references account(acc_no) on delete cascade)
+
+                                      *
+ERROR at line 1:
+ORA-02270: no matching unique or primary key for this column-list
+
+
+SQL> desc customer_id
+ERROR:
+ORA-04043: object customer_id does not exist
+
+
+SQL> desc customer;
+ Name                                                                                                                                                  Null?     Type
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------- --------------------------------------------------------------------------------------------------------------------
+ CUSTOMER_ID
+      NOT NULL VARCHAR2(10)
+ F_NAME                                                                                                                                         VARCHAR2(20)
+ M_NAME                                                                                                                                         VARCHAR2(20)
+ L_NAME                                                                                                                                         VARCHAR2(20)
+ NEW_ADDRESS                                                                                                                                    VARCHAR2(20)
+ MOBILE_NO                                                                                                                                      NUMBER(10)
+ OCCUPATION                                                                                                                                     VARCHAR2(20)
+ DOB                                                                                                                                            DATE
+ EMAIL_ID                                                                                                                                       VARCHAR2(40)
+
+SQL> desc customer;
+ Name                                                                                                                                                  Null?     Type
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------- --------------------------------------------------------------------------------------------------------------------
+ CUSTOMER_ID
+      NOT NULL VARCHAR2(10)
+ F_NAME                                                                                                                                         VARCHAR2(20)
+ M_NAME                                                                                                                                         VARCHAR2(20)
+ L_NAME                                                                                                                                         VARCHAR2(20)
+ NEW_ADDRESS                                                                                                                                    VARCHAR2(20)
+ MOBILE_NO                                                                                                                                      NUMBER(10)
+ OCCUPATION                                                                                                                                     VARCHAR2(20)
+ DOB                                                                                                                                            DATE
+ EMAIL_ID                                                                                                                                       VARCHAR2(40)
+
+SQL> set line size 200
+SP2-0268: linesize option not a valid number
+SQL> set line size 150
+SP2-0268: linesize option not a valid number
+SQL> set linesize 150
+SQL> desc customer;
+ Name                                                                                Null?    Type
+ ----------------------------------------------------------------------------------- -------- --------------------------------------------------------
+ CUSTOMER_ID                                                                         NOT NULL VARCHAR2(10)
+ F_NAME                                                                                       VARCHAR2(20)
+ M_NAME                                                                                       VARCHAR2(20)
+ L_NAME                                                                                       VARCHAR2(20)
+ NEW_ADDRESS                                                                                  VARCHAR2(20)
+ MOBILE_NO                                                                                    NUMBER(10)
+ OCCUPATION                                                                                   VARCHAR2(20)
+ DOB                                                                                          DATE
+ EMAIL_ID                                                                                     VARCHAR2(40)
+
+SQL> desc account
+ Name                                                                                Null?    Type
+ ----------------------------------------------------------------------------------- -------- --------------------------------------------------------
+ ACC_NO                                                                                       NUMBER(20)
+ ACC_TYPE                                                                                     VARCHAR2(20)
+ DATE_OPEN                                                                                    DATE
+ DATE_CLOSE                                                                                   DATE
+ ACC_STATUS                                                                                   VARCHAR2(20)
+ BALANCE                                                                                      NUMBER(10)
+ CUSTOMER_ID                                                                                  NUMBER(10)
+ BRANCH_ID                                                                                    NUMBER(10)
+
+SQL> alter table account modify(acc_no number(10) primary key);
+alter table account modify(acc_no number(10) primary key)
+                           *
+ERROR at line 1:
+ORA-01440: column to be modified must be empty to decrease precision or scale
+
+
+SQL> select * from account
+  2  select * from account;
+select * from account
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------- --------- --------- -------------------- ---------- ----------- ----------
+    554656 SAVINGS              24-SEP-07           ACTIVE                  1402000       10025       5000
+    559856 CURRENT              23-SEP-07           ACTIVE                   199000       10015       5000
+    559898 FIXED DEPOSIT        28-SEP-07           ACTIVE                   500000       10016       5000
+    579898 SAVINGS              28-AUG-07           INACTIVE                 582000       10017       5000
+    578998 SAVINGS              28-JAN-08           ACTIVE                   562000       10018       5000
+    565998 SAVINGS              28-AUG-08           ACTIVE                   602000       10019       5000
+    567798 SAVINGS              28-NOV-08           ACTIVE                   702000       10020       5000
+    568898 SAVINGS              28-DEC-09           INACTIVE                 802000       10021       5000
+    569998 SAVINGS              28-MAY-09           ACTIVE                   902000       10022       5000
+    599998 SAVINGS              28-OCT-09           INACTIVE                1002000       10023       5000
+    579998 SAVINGS              28-NOV-09           ACTIVE                  1302000       10024       5000
+
+    ACC_NO ACC_TYPE             DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------- --------- --------- -------------------- ---------- ----------- ----------
+    579998 SAVINGS              28-JAN-10           ACTIVE                  1402000       10025       5000
+   5769998 SAVINGS              28-FEB-10           ACTIVE                  1502000       10026
+   5569998 SAVINGS              28-MAR-10           ACTIVE                  1602000       10027
+   5869998 SAVINGS              28-APR-10           ACTIVE                  1702000       10028
+  58769998 SAVINGS              28-MAY-10           ACTIVE                  1802000       10029
+
+16 rows selected.
+
+SQL> drop table account;
+
+Table dropped.
+
+SQL> create table accounts (
+  2      acc_no number primary key,
+  3      acc_type varchar2(50),
+  4      date_open date,
+  5      date_clos date,
+  6  insert into account values(559856, 'CURRENT','23-SEP-07', NULL, 'ACTIVE', 199000, 10015, 5000)
+  8  insert into account values(559856, 'CURRENT','23-SEP-07', NULL, 'ACTIVE', 199000, 10015, 5000)
+ 10  insert into account values(559856, 'CURRENT','23-SEP-07', NULL, 'ACTIVE', 199000, 10015, 5000)ary k
+  2  \
+  3   created.
+SQL>
+SQL>     branch_id number
+SQL> 734: unknown command beginning "branch_id ..." - rest of line ignored.
+SQL>     customer_id number,
+SQL> 734: unknown command beginning "customer_i..." - rest of line ignored.
+SQL> create table account (acc_no number (10)primary key, acc_type varchar2(50), date_open date, date_close date, acc_status varchar2(20), balanc
+SQL> ber, customer_id number, branch_id number);
+SQL>
+SQL>  created.
+SQL>
+SQL> insert into account values(554656, 'SAVINGS', '24-SEP-07', NULL, 'ACTIVE', 1402000, 10025, 5000);
+SQL>
+SQL>  created.
+SQL>
+SQL> t complete.
+SQL> insert into account values(559856, 'CURRENT','23-SEP-07', NULL, 'ACTIVE', 199000, 10015, 5000) insert into account values(559856, 'CURRENT','23-SEP-07insert into account values(559856, 'CURRENT','23-SEP-0
+SQL> ULL, 'Ainsert into account values(559856, 'CURRENT','23-SEP-07', NULL, 'ACTIVE', 199000, 10015, 5000)00)
+SQL> insert into account values(559856, 'CURRENT','23-SEP-07', NUL
+SQL>
+SQL> insert into account values(559856, 'CURRENT','23-SEP-07', NULL, 'ACTIVE', 199000, 10015, 5000);
+
+1 rowinserted.
+
+Commiinsert into account values(559898, 'FIXED DEPOSIT','28-SEP-07', NULL, 'ACTIVE', 500000, 10016, 5000),L> inser
+  2  042: unknown command "inser" - rest of line ignored.
+SQL>
+
+
+SQL> insert into account values(559898, 'FIXED DEPOSIT','28-SEP-07', NULL, 'ACTIVE', 500000, 10016, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into account values(579898, 'SAVINGS', '28-AUG-07', NULL, 'INACTIVE', 582000, 10017, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into account values(578998, 'SAVINGS','28-JAN-08', NULL, 'ACTIVE', 562000, 10018, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into account values(565998, 'SAVINGS','28-AUG-08', NULL, 'ACTIVE', 602000, 10019, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into account values(567798, 'SAVINGS','28-NOV-08', NULL, 'ACTIVE', 702000, 10020, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into account values(568898, 'SAVINGS', '28-DEC-09', NULL, 'INACTIVE', 802000, 10021, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into account values(569998, 'SAVINGS', '28-MAY-09',, NULL, 'ACTIVE', 902000, 10022, 5000);
+insert into account values(569998, 'SAVINGS', '28-MAY-09',, NULL, 'ACTIVE', 902000, 10022, 5000)
+                                                          *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> insert into account values(569998, 'SAVINGS', '28-MAY-09', NULL, 'ACTIVE', 902000, 10022, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into account values(599998, 'SAVINGS','28-OCT-09', NULL, 'INACTIVE', 1002000, 10023, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into account values(579998, 'SAVINGS', '28-NOV-09', NULL, 'ACTIVE', 1302000, 10024, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into account values(579998, 'SAVINGS', '28-JAN-10', NULL, 'ACTIVE', 1402000, 10025, 5000);
+insert into account values(579998, 'SAVINGS', '28-JAN-10', NULL, 'ACTIVE', 1402000, 10025, 5000)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (IT2023506001.SYS_C0013583) violated
+
+
+SQL> insert into account values(579998, 'SAVINGS', '28-JAN-10', NULL, 'ACTIVE', 1402000, 10025, 5000);
+insert into account values(579998, 'SAVINGS', '28-JAN-10', NULL, 'ACTIVE', 1402000, 10025, 5000)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (IT2023506001.SYS_C0013583) violated
+
+
+SQL> insert into account values(59998, 'SAVINGS', '28-JAN-10', NULL, 'ACTIVE', 1402000, 10025, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into account values(5769998, 'SAVINGS','28-FEB-10', NULL, 'ACTIVE', 1502000, 10026, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into account values(5569998, 'SAVINGS','28-MAR-10', NULL, 'ACTIVE', 1602000, 10027, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into account values(5869998, 'SAVINGS','28-APR-10', NULL, 'ACTIVE', 1702000, 10028, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into account values(58769998, 'SAVINGS','28-MAY-10', NULL, 'ACTIVE', 1802000, 10029, 5000);
+
+1 row created.
+
+Commit complete.
+SQL> select * from account
+  2  select * from account;
+select * from account
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+    554656 SAVINGS                                            24-SEP-07           ACTIVE                  1402000       10025       5000
+    559856 CURRENT                                            23-SEP-07           ACTIVE                   199000       10015       5000
+    559898 FIXED DEPOSIT                                      28-SEP-07           ACTIVE                   500000       10016       5000
+    579898 SAVINGS                                            28-AUG-07           INACTIVE                 582000       10017       5000
+    578998 SAVINGS                                            28-JAN-08           ACTIVE                   562000       10018       5000
+    565998 SAVINGS                                            28-AUG-08           ACTIVE                   602000       10019       5000
+    567798 SAVINGS                                            28-NOV-08           ACTIVE                   702000       10020       5000
+    568898 SAVINGS                                            28-DEC-09           INACTIVE                 802000       10021       5000
+    569998 SAVINGS                                            28-MAY-09           ACTIVE                   902000       10022       5000
+    599998 SAVINGS                                            28-OCT-09           INACTIVE                1002000       10023       5000
+    579998 SAVINGS                                            28-NOV-09           ACTIVE                  1302000       10024       5000
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+     59998 SAVINGS                                            28-JAN-10           ACTIVE                  1402000       10025       5000
+   5769998 SAVINGS                                            28-FEB-10           ACTIVE                  1502000       10026       5000
+   5569998 SAVINGS                                            28-MAR-10           ACTIVE                  1602000       10027       5000
+   5869998 SAVINGS                                            28-APR-10           ACTIVE                  1702000       10028       5000
+  58769998 SAVINGS                                            28-MAY-10           ACTIVE                  1802000       10029       5000
+
+16 rows selected.
+
+SQL> alter table deposit modify(constraint customer foreign key(customer__id) references customer(customer_id) on delete cascade,constraint account foreign key(acc__no) references account(acc_no) on delete cascade);
+
+Table altered.
+
+SQL> selecrt * from deposit;
+SP2-0734: unknown command beginning "selecrt * ..." - rest of line ignored.
+SQL> select * from deposit;
+
+no rows selected
+
+SQL> desc deposit
+ Name                                                                                Null?    Type
+ ----------------------------------------------------------------------------------- -------- --------------------------------------------------------
+ CUSTOMER__ID                                                                        NOT NULL VARCHAR2(10)
+ ACC__NO                                                                                      NUMBER(10)
+
+SQL> drop table deposit;
+
+Table dropped.
+
+SQL> create table deposit(customer_id varchar2(10) primary key,acc_no number(10),constraint customer foreign key(customer_id) references customer
+  2  (customer_id) ,constraint account foreign key(acc_no) references account(acc_no));
+
+Table created.
+
+SQL> create table deposit(customer_id varchar2(10) primary key,acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no));
+create table deposit(customer_id varchar2(10) primary key,acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no))
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> create table deposits(customer_id varchar2(10) primary key,acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) reference
+s account(acc_no));
+create table deposits(customer_id varchar2(10) primary key,acc_no number(10),constraint customer foreign key(customer_id) references customer(customer_id) ,constraint account foreign key(acc_no) references account(acc_no))
+                                                                                        *
+ERROR at line 1:
+ORA-02264: name already used by an existing constraint
+
+
+SQL> create table deposit(customer__id varchar2(10) primary key ,acc__no number(10),constraint customer foreign key(customer__id) references cust
+  2  omer(customer_id) on delete cascade,constraint account foreign key(acc__no) references account(acc_no) on delete cascade);
+omer(customer_id) on delete cascade,constraint account foreign key(acc__no) references account(acc_no) on delete cascade)
+*
+ERROR at line 2:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table deposit(customer__id varchar2(10) primary key ,acc__no number(10),constraint customer foreign key(customer__id) references customer(customer_id) on delete cascade,constraint account foreign k
+ey(acc__no) references account(acc_no) on delete cascade);
+create table deposit(customer__id varchar2(10) primary key ,acc__no number(10),constraint customer foreign key(customer__id) references customer(customer_id) on delete cascade,constraint account foreign key(acc__no) references account(acc_no) on delete cascade)
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> set autocommit on
+SQL> drop table deposit;
+
+Table dropped.
+
+SQL> create table deposit(customer__id varchar2(10) primary key ,acc__no number(10),constraint customer foreign key(customer__id) references customer(customer_id) on delete cascade,constraint account foreign key(acc__no) references account(acc_no) on delete cascade);
+
+Table created.
+
+SQL> select * from deposit;
+
+no rows selected
+
+SQL> desc deposit
+ Name                                                                                Null?    Type
+ ----------------------------------------------------------------------------------- -------- --------------------------------------------------------
+ CUSTOMER__ID                                                                        NOT NULL VARCHAR2(10)
+ ACC__NO                                                                                      NUMBER(10)
+
+SQL> alter table deposit modify (customer__id varchar2(20) primary key ,acc__no number(20),constraint customer foreign key(customer__id) references customer(customer_id) ,constraint account foreign key(acc__no
+) references account(acc_no) );
+alter table deposit modify (customer__id varchar2(20) primary key ,acc__no number(20),constraint customer foreign key(customer__id) references customer(customer_id) ,constraint account foreign key(acc__no) references account(acc_no) )
+                                                      *
+ERROR at line 1:
+ORA-02260: table can have only one primary key
+
+
+SQL> alter table deposit modify (customer__id varchar2(20) primary key ,acc__no number(20),constraint customer foreign key(customer__id) references customer(customer_id) ,constraint account foreign key(acc__no
+) references account(acc_no) );
+alter table deposit modify (customer__id varchar2(20) primary key ,acc__no number(20),constraint customer foreign key(customer__id) references customer(customer_id) ,constraint account foreign key(acc__no) references account(acc_no) )
+                                                      *
+ERROR at line 1:
+ORA-02260: table can have only one primary key
+
+
+SQL> alter table deposit modify (customer__id varchar2(20)  ,acc__no number(20),constraint customer foreign key(customer__id) references customer(customer_id) ,constraint account foreign key(acc__no) reference
+s account(acc_no) );
+alter table deposit modify (customer__id varchar2(20)  ,acc__no number(20),constraint customer foreign key(customer__id) references customer(customer_id) ,constraint account foreign key(acc__no) references account(acc_no) )
+                                                                                               *
+ERROR at line 1:
+ORA-02275: such a referential constraint already exists in the table
+
+
+SQL> drop table deposit;
+
+Table dropped.
+
+SQL> create table deposit(customer__id varchar2(20)  ,acc__no number(20),constraint customer foreign key(customer__id) references customer(customer_id) ,constraint account foreign key(acc__no) references accou
+nt(acc_no) );
+
+Table created.
+
+SQL> desc deposit
+ Name                                                                                Null?    Type
+ ----------------------------------------------------------------------------------- -------- --------------------------------------------------------
+ CUSTOMER__ID                                                                                 VARCHAR2(20)
+ ACC__NO                                                                                      NUMBER(20)
+
+SQL> select * from deposit;
+
+no rows selected
+
+SQL> drop table deposit;
+
+Table dropped.
+
+SQL> select * from deposit;
+select * from deposit
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> create table deposit (customer__id varchar2(20), acc__no number(20), constraint customer foreign key (customer__id) references customer(customer_id), constraint account foreign key (acc__no) references account(acc_no));
+
+Table created.
+
+SQL> insert into deposit (customer__id, acc__no) select c.customer_id, a.acc_no from customer c join account a on c.customer_id = a.customer_id;
+
+15 rows created.
+
+Commit complete.
+SQL> select * from deposit
+  2
+SQL> select * from deposit;
+
+CUSTOMER__ID            ACC__NO
+-------------------- ----------
+10025                    554656
+10015                    559856
+10016                    559898
+10017                    579898
+10018                    578998
+10019                    565998
+10020                    567798
+10021                    568898
+10022                    569998
+10023                    599998
+10024                    579998
+
+CUSTOMER__ID            ACC__NO
+-------------------- ----------
+10025                     59998
+10026                   5769998
+10027                   5569998
+10028                   5869998
+
+15 rows selected.
+
+SQL> desc loan;
+ Name                                                                                Null?    Type
+ ----------------------------------------------------------------------------------- -------- --------------------------------------------------------
+ LOAN_NO                                                                                      NUMBER(10)
+ LOAN_TYPE                                                                                    VARCHAR2(20)
+ LOAN_AMT                                                                                     NUMBER(10)
+ INTEREST_RATE                                                                                NUMBER(10,2)
+ TERM                                                                                         VARCHAR2(10)
+ START_DATE                                                                                   DATE
+ END_DATE                                                                                     DATE
+ STATUS                                                                                       VARCHAR2(20)
+ CUSTOMER_ID                                                                                  NUMBER(10)
+ BRANCH_ID                                                                                    NUMBER(10)
+
+SQL> sect * from loan;
+SP2-0734: unknown command beginning "sect * fro..." - rest of line ignored.
+SQL> select * from loan;
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS               CUSTOMER_ID  BRANCH_ID
+---------- -------------------- ---------- ------------- ---------- --------- --------- -------------------- ----------- ----------
+6987546979 PERSONAL                  10600           .24 3          24-SEP-02 25-SEP-05 ACTIVE                     70000      11000
+6987986979 EDUCATION                 25000             3 4          26-JAN-01 26-JAN-04 ACTIVE                     90000
+6999986979 HOUSE                    501000             5 5          26-JAN-02 26-JAN-07 ACTIVE                     80000       1000
+9999986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 ACTIVE                     70000      11000
+9899986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 ACTIVE                     70000      11000
+9989986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 CLOSED                     70000      11000
+9998986979 PERSONAL                 506000           .24 5          23-FEB-02 23-FEB-07 CANCELLED                  70000      11000
+9999886979 PERSONAL                 606000           .36 5          24-FEB-02 24-FEB-07 ACTIVE                     70000      11000
+9999886979 PERSONAL                 606000           .36 6          24-FEB-03 24-FEB-07 ACTIVE                     70000      11000
+9999996979 HOUSE                    501000             3 7          24-FEB-03 24-FEB-07 ACTIVE                     80000       1000
+8999996979 EDUCATION                 25000             3 7          24-MAR-03 24-MAR-07 ACTIVE                     90000
+
+   LOAN_NO LOAN_TYPE              LOAN_AMT INTEREST_RATE TERM       START_DAT END_DATE  STATUS               CUSTOMER_ID  BRANCH_ID
+---------- -------------------- ---------- ------------- ---------- --------- --------- -------------------- ----------- ----------
+8999999979 PERSONAL                 906000            .6 10         24-APR-03           ACTIVE                     70000      11000
+8999999989 PERSONAL                   5600            .6 1          24-APR-03           ACTIVE                     70000      11000
+8999999998 PERSONAL                 406000            .6 5          24-APR-03 24-APR-08 ACTIVE                     70000      11000
+8999999999 PERSONAL                 606000            .6 5          24-APR-05 24-APR-10 ACTIVE                     70000      11000
+
+15 rows selected.
+
+SQL> drop table loan;
+
+Table dropped.
+
+SQL> create table loan (loan_no varchar2(20) primary key, loan_type varchar2(50), loan_amt number, interest_rate number, term number, start_date date, end_date date, status varchar2(20), customer_id number, br
+anch_id number);
+
+Table created.
+
+SQL> insert into loans values ('6987546979', 'personal', 10600, 0.24, 3, '24-sep-02', '25-sep-05', 'active', 1000, 11000);
+insert into loans values ('6987546979', 'personal', 10600, 0.24, 3, '24-sep-02', '25-sep-05', 'active', 1000, 11000)
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> insert into loan values ('6987546979', 'personal', 10600, 0.24, 3, '24-sep-02', '25-sep-05', 'active', 1000, 11000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into loan values ('6987986979', 'education', 25000, 3, 4, '26-jan-01', '26-jan-04', 'active', 10015, null);
+
+1 row created.
+
+Commit complete.
+SQL> insert into loan values ('6999986979', 'house', 501000, 5, 5, '26-jan-02', '26-jan-07', 'active', 10016, 1000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into loan values ('9999986979', 'personal', 506000, 0.24, 5, '23-feb-02', '23-feb-07', 'active', 10017, 11000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into loan values ('9899986979', 'personal', 506000, 0.24, 5, '23-feb-02', '23-feb-07', 'active', 10018, 11000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into loan values ('9989986979', 'personal', 506000, 0.24, 5, '23-feb-02', '23-feb-07', 'closed', 10019, 11000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into loan values ('9998986979', 'personal', 506000, 0.24, 5, '23-feb-02', '23-feb-07', 'cancelled', 10020, 11000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into loan values ('9999886979', 'personal', 606000, 0.36, 5, '24-feb-02', '24-feb-07', 'active', 10021, 11000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into loan values ('9999886979', 'personal', 606000, 0.36, 6, '24-feb-03', '24-feb-07', 'active', 10022, 11000);
+insert into loan values ('9999886979', 'personal', 606000, 0.36, 6, '24-feb-03', '24-feb-07', 'active', 10022, 11000)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (IT2023506001.SYS_C0013629) violated
+
+
+SQL> insert into loan values ('9999996979', 'house', 501000, 3, 7, '24-feb-03', '24-feb-07', 'active', 10023, 1000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into loan values ('8999996979', 'education', 25000, 3, 7, '24-mar-03', '24-mar-07', 'active', 10024, null);
+
+1 row created.
+
+Commit complete.
+SQL> insert into loan values ('8999999979', 'personal', 906000, 0.6, 10, '24-apr-03', null, 'active', 10025, 11000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into loan values ('8999999989', 'personal', 5600, 0.6, 1, '24-apr-03', null, 'active', 10026, 11000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into loan values ('8999999998', 'personal', 406000, 0.6, 5, '24-apr-03', '24-apr-08', 'active', 10027, 11000);
+
+1 row created.
+
+Commit complete.
+SQL> insert into loan values ('8999999999', 'personal', 606000, 0.6, 5, '24-apr-05', '24-apr-10', 'active', 10028, 11000);
+
+1 row created.
+
+Commit complete.
+SQL>
+SQL> create table borrower (customer___id varchar2(20), loan__no number(20), constraint customer foreign key (customer___id) references customer(customer_id), constraint loan foreign key (loan__no) references
+loan(loan_no));
+create table borrower (customer___id varchar2(20), loan__no number(20), constraint customer foreign key (customer___id) references customer(customer_id), constraint loan foreign key (loan__no) references loan(loan_no))
+                                                                                                                                                                                       *
+ERROR at line 1:
+ORA-02267: column type incompatible with referenced column type
+
+
+SQL> desc loan
+ Name                                                                                Null?    Type
+ ----------------------------------------------------------------------------------- -------- --------------------------------------------------------
+ LOAN_NO                                                                             NOT NULL VARCHAR2(20)
+ LOAN_TYPE                                                                                    VARCHAR2(50)
+ LOAN_AMT                                                                                     NUMBER
+ INTEREST_RATE                                                                                NUMBER
+ TERM                                                                                         NUMBER
+ START_DATE                                                                                   DATE
+ END_DATE                                                                                     DATE
+ STATUS                                                                                       VARCHAR2(20)
+ CUSTOMER_ID                                                                                  NUMBER
+ BRANCH_ID                                                                                    NUMBER
+
+SQL> create table borrower (customer___id varchar2(20), loan__no varchar2(20), constraint customer foreign key (customer___id) references customer(customer_id), constraint loan foreign key (loan__no) reference
+s loan(loan_no));
+create table borrower (customer___id varchar2(20), loan__no varchar2(20), constraint customer foreign key (customer___id) references customer(customer_id), constraint loan foreign key (loan__no) references loan(loan_no))
+                                                                                     *
+ERROR at line 1:
+ORA-02264: name already used by an existing constraint
+
+
+SQL> create table borrower (customer___id varchar2(20) primary key, loan__no varchar2(20), constraint customer foreign key (customer___id) references customer(customer_id), constraint loan foreign key (loan__n
+o) references loan(loan_no));
+create table borrower (customer___id varchar2(20) primary key, loan__no varchar2(20), constraint customer foreign key (customer___id) references customer(customer_id), constraint loan foreign key (loan__no) references loan(loan_no))
+                                                                                                 *
+ERROR at line 1:
+ORA-02264: name already used by an existing constraint
+
+
+SQL> create table borrower (customerid varchar2(20) primary key, loan__no varchar2(20), constraint customer foreign key (customerid) references customer(customer_id), constraint loan foreign key (loan__no) ref
+erences loan(loan_no));
+create table borrower (customerid varchar2(20) primary key, loan__no varchar2(20), constraint customer foreign key (customerid) references customer(customer_id), constraint loan foreign key (loan__no) references loan(loan_no))
+                                                                                              *
+ERROR at line 1:
+ORA-02264: name already used by an existing constraint
+
+
+SQL> create table borrower (customerid varchar2(20) primary key, loan__no varchar2(20), constraint n_customer foreign key (customerid) references customer(customer_id), constraint loan foreign key (loan__no) r
+eferences loan(loan_no));
+
+Table created.
+
+SQL> desc borrower
+ Name                                                                                Null?    Type
+ ----------------------------------------------------------------------------------- -------- --------------------------------------------------------
+ CUSTOMERID                                                                          NOT NULL VARCHAR2(20)
+ LOAN__NO                                                                                     VARCHAR2(20)
+
+SQL> SQL> insert into borrower (customerid, loan__no) select c.customer_id, l.loan_no from customer c join loan l on c.customer_id = l.customer_id;
+SP2-0734: unknown command beginning "SQL> inser..." - rest of line ignored.
+SQL> SQL> insert into borrower (customerid, loan__no) select c.customer_id, l.loan_no from customer c join loan l on c.customer_id = l.customer_id;
+SP2-0734: unknown command beginning "SQL> inser..." - rest of line ignored.
+SQL> SQL> insert into borrower (customerid, loan__no) select c.customer_id, l.loan_no from customer c join loan l on c.customer_id = l.customer_id;
+SP2-0734: unknown command beginning "SQL> inser..." - rest of line ignored.
+SQL>  insert into borrower (customerid, loan__no) select c.customer_id, l.loan_no from customer c join loan l on c.customer_id = l.customer_id;
+
+14 rows created.
+
+Commit complete.
+SQL> select * from borrower
+  2  select * from borrower;
+select * from borrower
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select * from borrower;
+
+CUSTOMERID           LOAN__NO
+-------------------- --------------------
+1000                 6987546979
+10015                6987986979
+10016                6999986979
+10017                9999986979
+10018                9899986979
+10019                9989986979
+10020                9998986979
+10021                9999886979
+10023                9999996979
+10024                8999996979
+10025                8999999979
+
+CUSTOMERID           LOAN__NO
+-------------------- --------------------
+10026                8999999989
+10027                8999999998
+10028                8999999999
+
+14 rows selected.
+
+SQL> select * from borrower where deposit not in (select loan__no from borrower );
+select * from borrower where deposit not in (select loan__no from borrower )
+                             *
+ERROR at line 1:
+ORA-00904: "DEPOSIT": invalid identifier
+
+
+SQL> select * from deposit where borrower not in (select loan__no from borrower );
+select * from deposit where borrower not in (select loan__no from borrower )
+                            *
+ERROR at line 1:
+ORA-00904: "BORROWER": invalid identifier
+
+
+SQL> select * from deposit where loan_no not in (select loan__no from borrower );
+select * from deposit where loan_no not in (select loan__no from borrower )
+                            *
+ERROR at line 1:
+ORA-00904: "LOAN_NO": invalid identifier
+
+
+SQL> set serveroutput on;
+SQL> Declare
+  2  f=1;
+  3  begin
+  4  for i in 1..10
+  5  loop
+  6  f=f*i;
+  7  end loop;
+  8  DBMS_OUTPUT.PUT_LINE(f);
+  9  End
+ 10
+ 11
+ 12
+ 13
+ 14  End
+ 15
+ 16
+ 17
+ 18
+ 19  /
+f=1;
+ *
+ERROR at line 2:
+ORA-06550: line 2, column 2:
+PLS-00103: Encountered the symbol "=" when expecting one of the following:
+constant exception <an identifier>
+<a double-quoted delimited-identifier> table columns long
+double ref char standard time timestamp interval date binary
+national character nchar
+
+
+SQL> Declare
+  2  f=1;
+  3  begin/
+  4  /
+f=1;
+ *
+ERROR at line 2:
+ORA-06550: line 2, column 2:
+PLS-00103: Encountered the symbol "=" when expecting one of the following:
+constant exception <an identifier>
+<a double-quoted delimited-identifier> table columns long
+double ref char standard time timestamp interval date binary
+national character nchar
+
+
+SQL> Declare
+  2    2  f=1;
+  3    3  begin
+  4    4  for i in 1..10
+  5    5  loop
+  6    6  f=f*i;
+  7    7  end loop;
+  8    8  DBMS_OUTPUT.PUT_LINE(f);
+  9    8  DBMS_OUTPUT.PUT_LINE(f);
+ 10  /
+  2  f=1;
+  *
+ERROR at line 2:
+ORA-06550: line 2, column 3:
+PLS-00103: Encountered the symbol "2" when expecting one of the following:
+begin function pragma procedure subtype type <an identifier>
+<a double-quoted delimited-identifier> current cursor delete
+exists prior
+
+
+SQL> DECLARE
+  2  factorial number(10);
+  3  BEGIN
+  4  factorial:=1;
+  5  /
+factorial:=1;
+            *
+ERROR at line 4:
+ORA-06550: line 4, column 13:
+PLS-00103: Encountered the symbol "end-of-file" when expecting one of the following:
+( begin case declare end exception exit for goto if loop mod
+null pragma raise return select update while with
+<an identifier> <a double-quoted delimited-identifier>
+<a bind variable> << continue close current delete fetch lock
+insert open rollback savepoint set sql execute commit forall
+merge standard pipe purge json_object
+
+
+SQL> DECLARE
+  2  factorial number(10) :=1;
+  3  BEGIN
+  4  for i in 1..n loop
+  5     factorial=factorial*i;
+  6  end loop;
+  7  DBMS_OUTPUT.PUT_LINE(factorial);
+  8  END
+  9  /
+        factorial=factorial*i;
+                 *
+ERROR at line 5:
+ORA-06550: line 5, column 11:
+PLS-00103: Encountered the symbol "=" when expecting one of the following:
+:= . ( @ % ;
+The symbol ":= was inserted before "=" to continue.
+ORA-06550: line 8, column 3:
+PLS-00103: Encountered the symbol "end-of-file" when expecting one of the following:
+; <an identifier> <a double-quoted delimited-identifier>
+The symbol ";" was substituted for "end-of-file" to continue.
+
+
+SQL> DECLARE
+  2     factorial:=1;
+  3  BEGIN
+  4  factorial:=1;/
+  5  /
+        factorial:=1;
+                 *
+ERROR at line 2:
+ORA-06550: line 2, column 11:
+PLS-00103: Encountered the symbol "=" when expecting one of the following:
+constant exception <an identifier>
+<a double-quoted delimited-identifier> table columns long
+double ref char standard time timestamp interval date binary
+national character nchar
+The symbol "<an identifier>" was substituted for "=" to continue.
+ORA-06550: line 4, column 14:
+PLS-00103: Encountered the symbol "/" when expecting one of the following:
+( begin case declare end exception exit for goto if loop mod
+null pragma raise return select update while with
+<an identifier> <a double-quoted delimited-identifier>
+<a bind variable> << continue close current delete fetch lock
+insert open rollback savepoint set sql execute commit forall
+merge standard pipe purge json_object
+
+
+SQL> DECLARE
+  2     factorial number(10) :=1;
+  3  BEGIN
+  4     for i in 1..n loop
+  5             factorial:=factorial*i;
+  6     END LOOP;
+  7  DBMS_OUTPUT.PUT_LINE(factorial);
+  8  END;
+  9  EXIT;
+ 10  /
+EXIT;
+*
+ERROR at line 9:
+ORA-06550: line 9, column 1:
+PLS-00103: Encountered the symbol "EXIT"
+
+
+SQL> DECLARE
+  2     factorial number(10) :=1;
+  3  BEGIN
+  4     for i in 1..n loop
+  5             factorial:=factorial*i;
+  6     END LOOP;
+  7  DBMS_OUTPUT.PUT_LINE(factorial);
+  8  END
+  9  /
+END
+  *
+ERROR at line 8:
+ORA-06550: line 8, column 3:
+PLS-00103: Encountered the symbol "end-of-file" when expecting one of the following:
+; <an identifier> <a double-quoted delimited-identifier>
+The symbol ";" was substituted for "end-of-file" to continue.
+
+
+SQL> DECLARE
+  2     factorial number(10) :=1;
+  3  BEGIN
+  4     for i in 1..n loop
+  5             factorial:=factorial*i;
+  6     END LOOP;
+  7  DBMS_OUTPUT.PUT_LINE(factorial);
+  8  END;
+  9  /
+        for i in 1..n loop
+                    *
+ERROR at line 4:
+ORA-06550: line 4, column 14:
+PLS-00201: identifier 'N' must be declared
+ORA-06550: line 4, column 2:
+PL/SQL: Statement ignored
+
+
+SQL> DECLARE
+  2     factorial number(10) :=1;
+  3  BEGIN
+  4     for i in 1..n loop
+  5             factorial:=factorial*i;
+  6     END LOOP;
+  7     END LOOP;/
+  8  /
+        END LOOP;/
+                 *
+ERROR at line 7:
+ORA-06550: line 7, column 11:
+PLS-00103: Encountered the symbol "/" The symbol "/" was ignored.
+
+
+SQL> DECLARE
+  2     factorial number(10) :=1;
+  3  BEGIN
+  4     for i in 1..10 loop
+  5             factorial:=factorial*i;
+  6     END LOOP;
+  7  DBMS_OUTPUT.PUT_LINE(factorial);
+  8  END;
+  9  /
+3628800
+
+PL/SQL procedure successfully completed.
+
+Commit complete.
+SQL>
