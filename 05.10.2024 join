@@ -1,0 +1,1057 @@
+
+SQL> select * from transaction;
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+    5479641235                           50000 25-DEC-05
+    5665456465 DEPOSIT                   63000 24-JAN-05
+    5669856465 WITHDRAWAL                53000 24-JAN-07
+    5999856465 DEPOSIT                   80000 24-FEB-07
+    5569856465 DEPOSIT                   70000 01-JAN-20
+    5869856465 DEPOSIT                   70000 01-JAN-20
+    5869858465 DEPOSIT                   70000 01-JAN-20
+    5869578465 DEPOSIT                   25000 31-DEC-23
+    5999578465 DEPOSIT                   26000 31-DEC-23
+    5998578465 DEPOSIT                   70000 01-JAN-20
+    5998598465 DEPOSIT                   28000 24-MAY-08
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+    5969598465 DEPOSIT                   28000 24-NOV-08
+    5969678465 DEPOSIT                   29000 24-NOV-08
+    5899678465 DEPOSIT                   30000 25-NOV-08
+    5899678499 DEPOSIT                   31000 25-DEC-08
+
+15 rows selected.
+
+SQL> update transaction set transaction_type='DEPOSIT' where transaction_date='25-JAN-2005';
+
+0 rows updated.
+
+SQL> update transaction set transaction_type='DEPOSIT' where transaction_date='25-DEC-2005';
+
+1 row updated.
+
+SQL> select * from transaction;
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+    5479641235 DEPOSIT                   50000 25-DEC-05
+    5665456465 DEPOSIT                   63000 24-JAN-05
+    5669856465 WITHDRAWAL                53000 24-JAN-07
+    5999856465 DEPOSIT                   80000 24-FEB-07
+    5569856465 DEPOSIT                   70000 01-JAN-20
+    5869856465 DEPOSIT                   70000 01-JAN-20
+    5869858465 DEPOSIT                   70000 01-JAN-20
+    5869578465 DEPOSIT                   25000 31-DEC-23
+    5999578465 DEPOSIT                   26000 31-DEC-23
+    5998578465 DEPOSIT                   70000 01-JAN-20
+    5998598465 DEPOSIT                   28000 24-MAY-08
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+    5969598465 DEPOSIT                   28000 24-NOV-08
+    5969678465 DEPOSIT                   29000 24-NOV-08
+    5899678465 DEPOSIT                   30000 25-NOV-08
+    5899678499 DEPOSIT                   31000 25-DEC-08
+
+15 rows selected.
+
+SQL> update transaction set transaction_id=5000 where transaction_type='DEPOSIT';
+update transaction set transaction_id=5000 where transaction_type='DEPOSIT'
+*
+ERROR at line 1:
+ORA-00001: unique constraint (IT2023506001.SYS_C008463) violated
+
+
+SQL> update transaction set transaction_id=5000 where transaction_type='WITHDRAW';
+
+0 rows updated.
+
+SQL> update transaction set transaction_id=5000 where transaction_type='WITHDRAWAL';
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5000 where amount=50000;
+update transaction set transaction_id=5000 where amount=50000
+*
+ERROR at line 1:
+ORA-00001: unique constraint (IT2023506001.SYS_C008463) violated
+
+
+SQL> update transaction set transaction_id=5001 where amount=50000;
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5002 where amount=53000;
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5003 where amount=63000;
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5004 where amount=80000;
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5008 where amount=25000;
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5009 where amount=26000;
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5011 where transaction_date='24-MAY-08';
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5012 where transaction_date='24-NOV-08' and amount=24-NOV-08;
+update transaction set transaction_id=5012 where transaction_date='24-NOV-08' and amount=24-NOV-08
+                                                                                            *
+ERROR at line 1:
+ORA-00904: "NOV": invalid identifier
+
+
+SQL> update transaction set transaction_id=5012 where transaction_date='24-NOV-08' and amount=28000;
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5013 where amount=29000;
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5014 where amount=30000;
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5015 where amount=31000;
+
+1 row updated.
+
+SQL> select * from transaction
+  2  select * from transaction ;
+select * from transaction
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select * from transaction ;
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+          5001 DEPOSIT                   50000 25-DEC-05
+          5003 DEPOSIT                   63000 24-JAN-05
+          5002 WITHDRAWAL                53000 24-JAN-07
+          5004 DEPOSIT                   80000 24-FEB-07
+    5569856465 DEPOSIT                   70000 01-JAN-20
+    5869856465 DEPOSIT                   70000 01-JAN-20
+    5869858465 DEPOSIT                   70000 01-JAN-20
+          5008 DEPOSIT                   25000 31-DEC-23
+          5009 DEPOSIT                   26000 31-DEC-23
+    5998578465 DEPOSIT                   70000 01-JAN-20
+          5011 DEPOSIT                   28000 24-MAY-08
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+          5012 DEPOSIT                   28000 24-NOV-08
+          5013 DEPOSIT                   29000 24-NOV-08
+          5014 DEPOSIT                   30000 25-NOV-08
+          5015 DEPOSIT                   31000 25-DEC-08
+
+15 rows selected.
+
+SQL> update transaction set transaction_id=5015 where transaction_id=5569856465;
+update transaction set transaction_id=5015 where transaction_id=5569856465
+*
+ERROR at line 1:
+ORA-00001: unique constraint (IT2023506001.SYS_C008463) violated
+
+
+SQL> update transaction set transaction_id=5015 where transaction_id=5569856465;
+update transaction set transaction_id=5015 where transaction_id=5569856465
+*
+ERROR at line 1:
+ORA-00001: unique constraint (IT2023506001.SYS_C008463) violated
+
+
+SQL> update transaction set transaction_id=5005 where transaction_id=5569856465;
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5006 where transaction_id=5869856465;
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5007 where transaction_id=5869858465;
+
+1 row updated.
+
+SQL> update transaction set transaction_id=5007 where transaction_id=5998578465;
+update transaction set transaction_id=5007 where transaction_id=5998578465
+*
+ERROR at line 1:
+ORA-00001: unique constraint (IT2023506001.SYS_C008463) violated
+
+
+SQL> update transaction set transaction_id=5008 where transaction_id=5998578465;
+update transaction set transaction_id=5008 where transaction_id=5998578465
+*
+ERROR at line 1:
+ORA-00001: unique constraint (IT2023506001.SYS_C008463) violated
+
+
+SQL> update transaction set transaction_id=5007 where transaction_id=5998578465;
+update transaction set transaction_id=5007 where transaction_id=5998578465
+*
+ERROR at line 1:
+ORA-00001: unique constraint (IT2023506001.SYS_C008463) violated
+
+
+SQL> select * from transaction;
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+          5001 DEPOSIT                   50000 25-DEC-05
+          5003 DEPOSIT                   63000 24-JAN-05
+          5002 WITHDRAWAL                53000 24-JAN-07
+          5004 DEPOSIT                   80000 24-FEB-07
+          5005 DEPOSIT                   70000 01-JAN-20
+          5006 DEPOSIT                   70000 01-JAN-20
+          5007 DEPOSIT                   70000 01-JAN-20
+          5008 DEPOSIT                   25000 31-DEC-23
+          5009 DEPOSIT                   26000 31-DEC-23
+    5998578465 DEPOSIT                   70000 01-JAN-20
+          5011 DEPOSIT                   28000 24-MAY-08
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+          5012 DEPOSIT                   28000 24-NOV-08
+          5013 DEPOSIT                   29000 24-NOV-08
+          5014 DEPOSIT                   30000 25-NOV-08
+          5015 DEPOSIT                   31000 25-DEC-08
+
+15 rows selected.
+
+SQL> update transaction set transaction_id=5010 where transaction_id=5998578465;
+
+1 row updated.
+
+SQL> select * from transaction;
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+          5001 DEPOSIT                   50000 25-DEC-05
+          5003 DEPOSIT                   63000 24-JAN-05
+          5002 WITHDRAWAL                53000 24-JAN-07
+          5004 DEPOSIT                   80000 24-FEB-07
+          5005 DEPOSIT                   70000 01-JAN-20
+          5006 DEPOSIT                   70000 01-JAN-20
+          5007 DEPOSIT                   70000 01-JAN-20
+          5008 DEPOSIT                   25000 31-DEC-23
+          5009 DEPOSIT                   26000 31-DEC-23
+          5010 DEPOSIT                   70000 01-JAN-20
+          5011 DEPOSIT                   28000 24-MAY-08
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+          5012 DEPOSIT                   28000 24-NOV-08
+          5013 DEPOSIT                   29000 24-NOV-08
+          5014 DEPOSIT                   30000 25-NOV-08
+          5015 DEPOSIT                   31000 25-DEC-08
+
+15 rows selected.
+
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN
+---------- -------------------------------------------------- ---------
+DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+--------- -------------------- ---------- ----------- ----------
+    554656 SAVINGS                                            24-SEP-07
+          ACTIVE                  1402000       10025       5000
+
+    559856 CURRENT                                            23-SEP-07
+          ACTIVE                   199000       10015       5000
+
+    559898 FIXED DEPOSIT                                      28-SEP-07
+          ACTIVE                   500000       10016       5000
+
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN
+---------- -------------------------------------------------- ---------
+DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+--------- -------------------- ---------- ----------- ----------
+    579898 SAVINGS                                            28-AUG-07
+          INACTIVE                 582000       10017       5000
+
+    578998 SAVINGS                                            28-JAN-08
+          ACTIVE                   562000       10018       5000
+
+    565998 SAVINGS                                            28-AUG-08
+          ACTIVE                   602000       10019       5000
+
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN
+---------- -------------------------------------------------- ---------
+DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+--------- -------------------- ---------- ----------- ----------
+    567798 SAVINGS                                            28-NOV-08
+          ACTIVE                   702000       10020       5000
+
+    568898 SAVINGS                                            28-DEC-09
+          INACTIVE                 802000       10021       5000
+
+    569998 SAVINGS                                            28-MAY-09
+          ACTIVE                   902000       10022       5000
+
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN
+---------- -------------------------------------------------- ---------
+DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+--------- -------------------- ---------- ----------- ----------
+    599998 SAVINGS                                            28-OCT-09
+          INACTIVE                1002000       10023       5000
+
+    579998 SAVINGS                                            28-NOV-09
+          ACTIVE                  1302000       10024       5000
+
+     59998 SAVINGS                                            28-JAN-10
+          ACTIVE                  1402000       10025       5000
+
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN
+---------- -------------------------------------------------- ---------
+DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+--------- -------------------- ---------- ----------- ----------
+   5769998 SAVINGS                                            28-FEB-10
+          ACTIVE                  1502000       10026       5000
+
+   5569998 SAVINGS                                            28-MAR-10
+          ACTIVE                  1602000       10027       5000
+
+   5869998 SAVINGS                                            28-APR-10
+          ACTIVE                  1702000       10028       5000
+
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN
+---------- -------------------------------------------------- ---------
+DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+--------- -------------------- ---------- ----------- ----------
+  58769998 SAVINGS                                            28-MAY-10
+          ACTIVE                  1802000       10029       5000
+
+
+16 rows selected.
+
+SQL> set linesize 300
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+    554656 SAVINGS                                            24-SEP-07           ACTIVE                  1402000       10025    5000
+    559856 CURRENT                                            23-SEP-07           ACTIVE                   199000       10015    5000
+    559898 FIXED DEPOSIT                                      28-SEP-07           ACTIVE                   500000       10016    5000
+    579898 SAVINGS                                            28-AUG-07           INACTIVE                 582000       10017    5000
+    578998 SAVINGS                                            28-JAN-08           ACTIVE                   562000       10018    5000
+    565998 SAVINGS                                            28-AUG-08           ACTIVE                   602000       10019    5000
+    567798 SAVINGS                                            28-NOV-08           ACTIVE                   702000       10020    5000
+    568898 SAVINGS                                            28-DEC-09           INACTIVE                 802000       10021    5000
+    569998 SAVINGS                                            28-MAY-09           ACTIVE                   902000       10022    5000
+    599998 SAVINGS                                            28-OCT-09           INACTIVE                1002000       10023    5000
+    579998 SAVINGS                                            28-NOV-09           ACTIVE                  1302000       10024    5000
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+     59998 SAVINGS                                            28-JAN-10           ACTIVE                  1402000       10025    5000
+   5769998 SAVINGS                                            28-FEB-10           ACTIVE                  1502000       10026    5000
+   5569998 SAVINGS                                            28-MAR-10           ACTIVE                  1602000       10027    5000
+   5869998 SAVINGS                                            28-APR-10           ACTIVE                  1702000       10028    5000
+  58769998 SAVINGS                                            28-MAY-10           ACTIVE                  1802000       10029    5000
+
+16 rows selected.
+
+SQL> update account set branch_id=6000;
+
+16 rows updated.
+
+SQL> update account set acc_no=2000;
+update account set acc_no=2000
+*
+ERROR at line 1:
+ORA-00001: unique constraint (IT2023506001.SYS_C0013583) violated
+
+
+SQL> set autocommit on;
+SQL> update account set customer_id=1000 where date_open='24-SEP-07';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set acc-no=2000 where date_open='24-SEP-07';
+update account set acc-no=2000 where date_open='24-SEP-07'
+                      *
+ERROR at line 1:
+ORA-00927: missing equal sign
+
+
+SQL> update account set acc_no=2000 where date_open='24-SEP-07';
+update account set acc_no=2000 where date_open='24-SEP-07'
+*
+ERROR at line 1:
+ORA-02292: integrity constraint (IT2023506001.ACCOUNT) violated - child record found
+
+
+SQL> update account set acc_no=2001 where date_open='24-SEP-07';
+update account set acc_no=2001 where date_open='24-SEP-07'
+*
+ERROR at line 1:
+ORA-02292: integrity constraint (IT2023506001.ACCOUNT) violated - child record found
+
+
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+    554656 SAVINGS                                            24-SEP-07           ACTIVE                  1402000        1000       6000
+    559856 CURRENT                                            23-SEP-07           ACTIVE                   199000       10015       6000
+    559898 FIXED DEPOSIT                                      28-SEP-07           ACTIVE                   500000       10016       6000
+    579898 SAVINGS                                            28-AUG-07           INACTIVE                 582000       10017       6000
+    578998 SAVINGS                                            28-JAN-08           ACTIVE                   562000       10018       6000
+    565998 SAVINGS                                            28-AUG-08           ACTIVE                   602000       10019       6000
+    567798 SAVINGS                                            28-NOV-08           ACTIVE                   702000       10020       6000
+    568898 SAVINGS                                            28-DEC-09           INACTIVE                 802000       10021       6000
+    569998 SAVINGS                                            28-MAY-09           ACTIVE                   902000       10022       6000
+    599998 SAVINGS                                            28-OCT-09           INACTIVE                1002000       10023       6000
+    579998 SAVINGS                                            28-NOV-09           ACTIVE                  1302000       10024       6000
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+     59998 SAVINGS                                            28-JAN-10           ACTIVE                  1402000       10025       6000
+   5769998 SAVINGS                                            28-FEB-10           ACTIVE                  1502000       10026       6000
+   5569998 SAVINGS                                            28-MAR-10           ACTIVE                  1602000       10027       6000
+   5869998 SAVINGS                                            28-APR-10           ACTIVE                  1702000       10028       6000
+  58769998 SAVINGS                                            28-MAY-10           ACTIVE                  1802000       10029       6000
+
+16 rows selected.
+
+SQL> update account set acc_no=2000 where customer_id=1000  ;
+update account set acc_no=2000 where customer_id=1000
+*
+ERROR at line 1:
+ORA-02292: integrity constraint (IT2023506001.ACCOUNT) violated - child record found
+
+
+SQL> update account set acc_no='2000' where customer_id=1000  ;
+update account set acc_no='2000' where customer_id=1000
+*
+ERROR at line 1:
+ORA-02292: integrity constraint (IT2023506001.ACCOUNT) violated - child record found
+
+
+SQL> update account set acc_no=2000 where customer_id='1000'  ;
+update account set acc_no=2000 where customer_id='1000'
+*
+ERROR at line 1:
+ORA-02292: integrity constraint (IT2023506001.ACCOUNT) violated - child record found
+
+
+SQL> update account set acc_no=2000 where customer_id='1000';
+update account set acc_no=2000 where customer_id='1000'
+*
+ERROR at line 1:
+ORA-02292: integrity constraint (IT2023506001.ACCOUNT) violated - child record found
+
+
+SQL> update account set acc_no=3000 where date_open='24-SEP-07';
+update account set acc_no=3000 where date_open='24-SEP-07'
+*
+ERROR at line 1:
+ORA-02292: integrity constraint (IT2023506001.ACCOUNT) violated - child record found
+
+
+SQL> update account set branch_id=6001 where date_open='23-SEP-07';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set branch_id=6002 where customer_id='10016';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set branch_id=6003 where customer_id='10017';
+
+1 row updated.
+
+Commit complete.
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+    554656 SAVINGS                                            24-SEP-07           ACTIVE                  1402000        1000       6000
+    559856 CURRENT                                            23-SEP-07           ACTIVE                   199000       10015       6001
+    559898 FIXED DEPOSIT                                      28-SEP-07           ACTIVE                   500000       10016       6002
+    579898 SAVINGS                                            28-AUG-07           INACTIVE                 582000       10017       6003
+    578998 SAVINGS                                            28-JAN-08           ACTIVE                   562000       10018       6000
+    565998 SAVINGS                                            28-AUG-08           ACTIVE                   602000       10019       6000
+    567798 SAVINGS                                            28-NOV-08           ACTIVE                   702000       10020       6000
+    568898 SAVINGS                                            28-DEC-09           INACTIVE                 802000       10021       6000
+    569998 SAVINGS                                            28-MAY-09           ACTIVE                   902000       10022       6000
+    599998 SAVINGS                                            28-OCT-09           INACTIVE                1002000       10023       6000
+    579998 SAVINGS                                            28-NOV-09           ACTIVE                  1302000       10024       6000
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+     59998 SAVINGS                                            28-JAN-10           ACTIVE                  1402000       10025       6000
+   5769998 SAVINGS                                            28-FEB-10           ACTIVE                  1502000       10026       6000
+   5569998 SAVINGS                                            28-MAR-10           ACTIVE                  1602000       10027       6000
+   5869998 SAVINGS                                            28-APR-10           ACTIVE                  1702000       10028       6000
+  58769998 SAVINGS                                            28-MAY-10           ACTIVE                  1802000       10029       6000
+
+16 rows selected.
+
+SQL> update account set branch_id=6004 where customer_id='10018';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set branch_id=6005 where customer_id='10019';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set branch_id=6006 where customer_id='10020';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set branch_id=6007 where customer_id='10021';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set branch_id=6008 where customer_id='10022';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set branch_id=6009 where customer_id='10023';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set branch_id=6010 where customer_id='10024';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set branch_id=6011 where customer_id='10025';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set branch_id=6012 where customer_id='10026';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set branch_id=60123 where customer_id='10027';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set branch_id=6014 where customer_id='10028';
+
+1 row updated.
+
+Commit complete.
+SQL> update account set branch_id=6015 where customer_id='10029';
+
+1 row updated.
+
+Commit complete.
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+    554656 SAVINGS                                            24-SEP-07           ACTIVE                  1402000        1000       6000
+    559856 CURRENT                                            23-SEP-07           ACTIVE                   199000       10015       6001
+    559898 FIXED DEPOSIT                                      28-SEP-07           ACTIVE                   500000       10016       6002
+    579898 SAVINGS                                            28-AUG-07           INACTIVE                 582000       10017       6003
+    578998 SAVINGS                                            28-JAN-08           ACTIVE                   562000       10018       6004
+    565998 SAVINGS                                            28-AUG-08           ACTIVE                   602000       10019       6005
+    567798 SAVINGS                                            28-NOV-08           ACTIVE                   702000       10020       6006
+    568898 SAVINGS                                            28-DEC-09           INACTIVE                 802000       10021       6007
+    569998 SAVINGS                                            28-MAY-09           ACTIVE                   902000       10022       6008
+    599998 SAVINGS                                            28-OCT-09           INACTIVE                1002000       10023       6009
+    579998 SAVINGS                                            28-NOV-09           ACTIVE                  1302000       10024       6010
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+     59998 SAVINGS                                            28-JAN-10           ACTIVE                  1402000       10025       6011
+   5769998 SAVINGS                                            28-FEB-10           ACTIVE                  1502000       10026       6012
+   5569998 SAVINGS                                            28-MAR-10           ACTIVE                  1602000       10027      60123
+   5869998 SAVINGS                                            28-APR-10           ACTIVE                  1702000       10028       6014
+  58769998 SAVINGS                                            28-MAY-10           ACTIVE                  1802000       10029       6015
+
+16 rows selected.
+
+SQL> update account set branch_id=6013 where customer_id='10027';
+
+1 row updated.
+
+Commit complete.
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+    554656 SAVINGS                                            24-SEP-07           ACTIVE                  1402000        1000       6000
+    559856 CURRENT                                            23-SEP-07           ACTIVE                   199000       10015       6001
+    559898 FIXED DEPOSIT                                      28-SEP-07           ACTIVE                   500000       10016       6002
+    579898 SAVINGS                                            28-AUG-07           INACTIVE                 582000       10017       6003
+    578998 SAVINGS                                            28-JAN-08           ACTIVE                   562000       10018       6004
+    565998 SAVINGS                                            28-AUG-08           ACTIVE                   602000       10019       6005
+    567798 SAVINGS                                            28-NOV-08           ACTIVE                   702000       10020       6006
+    568898 SAVINGS                                            28-DEC-09           INACTIVE                 802000       10021       6007
+    569998 SAVINGS                                            28-MAY-09           ACTIVE                   902000       10022       6008
+    599998 SAVINGS                                            28-OCT-09           INACTIVE                1002000       10023       6009
+    579998 SAVINGS                                            28-NOV-09           ACTIVE                  1302000       10024       6010
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+     59998 SAVINGS                                            28-JAN-10           ACTIVE                  1402000       10025       6011
+   5769998 SAVINGS                                            28-FEB-10           ACTIVE                  1502000       10026       6012
+   5569998 SAVINGS                                            28-MAR-10           ACTIVE                  1602000       10027       6013
+   5869998 SAVINGS                                            28-APR-10           ACTIVE                  1702000       10028       6014
+  58769998 SAVINGS                                            28-MAY-10           ACTIVE                  1802000       10029       6015
+
+16 rows selected.
+
+SQL> select * from branch;
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH         AMOUNT
+---------- -------------------- ----------- ------------------------------ ---------- ---------- ----------
+     64525 CHENNAI                     5234                                5489498768
+     65669 coimbatore                  5646 11/8,VS NAGAR,CHENNAI          9647856479                100000
+     65469 KOVAI                       5646 14/8,SAINT STREET,CHENNAI      9647855479 SBI            100000
+     65485 SALEM                       1000 16/7,SAIN STREET,CHENNAI       9647854579                100000
+    654549 SALEM                       1000 SAIN STREET,CHENNAI             964778459                100000
+   6556449 KOVAI                       1000 VS STREET,CHENNAI               964548459 SBI            100000
+   6556449 CHENNAI                     5234 JS STREET,CHENNAI               964545459 SBI            100000
+   6558549 CHENNAI                     5234 MINI STREET,CHENNAI             964599459 SBI            100000
+    655949 CHENNAI                     5234 MIN STREET,CHENNAI              964859459 SBI            100000
+    655849 PONDICHERRY               565584 FRACO STREET,CHENNAI           9648599559                100000
+    655849 CHENGALPATTU              565584 CHOCOLATE STREET,CHENNAI       9648525559                100000
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH         AMOUNT
+---------- -------------------- ----------- ------------------------------ ---------- ---------- ----------
+    655849 CHROMPET                  569584 SATYA STREET,CHENNAI           9648585559                100000
+    659949 HASTINAPURAM              562284 MAALAI STREET,CHENNAI          9698585559                100000
+    989949 MEDAVAKKAM                565284 KANGINI STREET,CHENNAI         9699885559
+    987849 MADIPAKKAM                565584 KANNAN STREET,CHENNAI           969885559
+
+15 rows selected.
+
+SQL> update branch set branch_id=6000;
+
+15 rows updated.
+
+Commit complete.
+SQL> update branch set branch_id=6001 where branch_name='coimbatore';
+
+1 row updated.
+
+Commit complete.
+SQL> update branch set branch_id=6002 where branch_name='KOVAI';
+
+2 rows updated.
+
+Commit complete.
+SQL> update branch set branch_id=6000 where branch_name='CHENNAI';
+
+4 rows updated.
+
+Commit complete.
+SQL> update branch set branch_id=6003 where branch_name='SALEM';
+
+2 rows updated.
+
+Commit complete.
+SQL> update branch set branch_id=6004 where branch_name='PONDICHERRY';
+
+1 row updated.
+
+Commit complete.
+SQL> update branch set branch_id=6005 where branch_name='CHENGALPATTU';
+
+1 row updated.
+
+Commit complete.
+SQL> update branch set branch_id=6006 where branch_name='CHROMPET';
+
+1 row updated.
+
+Commit complete.
+SQL> update branch set branch_id=6007 where branch_name='HASTINAPURAM';
+
+1 row updated.
+
+Commit complete.
+SQL> update branch set branch_id=6008 where branch_name='MEDAVAKKAM';
+
+1 row updated.
+
+Commit complete.
+SQL> update branch set branch_id=6009 where branch_name='MADIPAKKAM';
+
+1 row updated.
+
+Commit complete.
+SQL> select * from branch;
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH         AMOUNT
+---------- -------------------- ----------- ------------------------------ ---------- ---------- ----------
+      6000 CHENNAI                     5234                                5489498768
+      6001 coimbatore                  5646 11/8,VS NAGAR,CHENNAI          9647856479                100000
+      6002 KOVAI                       5646 14/8,SAINT STREET,CHENNAI      9647855479 SBI            100000
+      6003 SALEM                       1000 16/7,SAIN STREET,CHENNAI       9647854579                100000
+      6003 SALEM                       1000 SAIN STREET,CHENNAI             964778459                100000
+      6002 KOVAI                       1000 VS STREET,CHENNAI               964548459 SBI            100000
+      6000 CHENNAI                     5234 JS STREET,CHENNAI               964545459 SBI            100000
+      6000 CHENNAI                     5234 MINI STREET,CHENNAI             964599459 SBI            100000
+      6000 CHENNAI                     5234 MIN STREET,CHENNAI              964859459 SBI            100000
+      6004 PONDICHERRY               565584 FRACO STREET,CHENNAI           9648599559                100000
+      6005 CHENGALPATTU              565584 CHOCOLATE STREET,CHENNAI       9648525559                100000
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH         AMOUNT
+---------- -------------------- ----------- ------------------------------ ---------- ---------- ----------
+      6006 CHROMPET                  569584 SATYA STREET,CHENNAI           9648585559                100000
+      6007 HASTINAPURAM              562284 MAALAI STREET,CHENNAI          9698585559                100000
+      6008 MEDAVAKKAM                565284 KANGINI STREET,CHENNAI         9699885559
+      6009 MADIPAKKAM                565584 KANNAN STREET,CHENNAI           969885559
+
+15 rows selected.
+
+SQL> select acc_no,branch_name,address from account acc join branch bran on acc.branch_id=bran.branch_id;
+
+    ACC_NO BRANCH_NAME          ADDRESS
+---------- -------------------- ------------------------------
+    554656 CHENNAI
+    554656 CHENNAI              JS STREET,CHENNAI
+    554656 CHENNAI              MINI STREET,CHENNAI
+    554656 CHENNAI              MIN STREET,CHENNAI
+    559856 coimbatore           11/8,VS NAGAR,CHENNAI
+    559898 KOVAI                14/8,SAINT STREET,CHENNAI
+    559898 KOVAI                VS STREET,CHENNAI
+    579898 SALEM                16/7,SAIN STREET,CHENNAI
+    579898 SALEM                SAIN STREET,CHENNAI
+    578998 PONDICHERRY          FRACO STREET,CHENNAI
+    565998 CHENGALPATTU         CHOCOLATE STREET,CHENNAI
+
+    ACC_NO BRANCH_NAME          ADDRESS
+---------- -------------------- ------------------------------
+    567798 CHROMPET             SATYA STREET,CHENNAI
+    568898 HASTINAPURAM         MAALAI STREET,CHENNAI
+    569998 MEDAVAKKAM           KANGINI STREET,CHENNAI
+    599998 MADIPAKKAM           KANNAN STREET,CHENNAI
+
+15 rows selected.
+
+SQL> select acc_no,branch_name,address from account  join branch bran on account.branch_id=branch.branch_id;
+select acc_no,branch_name,address from account  join branch bran on account.branch_id=branch.branch_id
+                                                                                      *
+ERROR at line 1:
+ORA-00904: "BRANCH"."BRANCH_ID": invalid identifier
+
+
+SQL> select acc_no,branch_name,address from account  join branch  on account.branch_id=branch.branch_id;
+
+    ACC_NO BRANCH_NAME          ADDRESS
+---------- -------------------- ------------------------------
+    554656 CHENNAI
+    554656 CHENNAI              JS STREET,CHENNAI
+    554656 CHENNAI              MINI STREET,CHENNAI
+    554656 CHENNAI              MIN STREET,CHENNAI
+    559856 coimbatore           11/8,VS NAGAR,CHENNAI
+    559898 KOVAI                14/8,SAINT STREET,CHENNAI
+    559898 KOVAI                VS STREET,CHENNAI
+    579898 SALEM                16/7,SAIN STREET,CHENNAI
+    579898 SALEM                SAIN STREET,CHENNAI
+    578998 PONDICHERRY          FRACO STREET,CHENNAI
+    565998 CHENGALPATTU         CHOCOLATE STREET,CHENNAI
+
+    ACC_NO BRANCH_NAME          ADDRESS
+---------- -------------------- ------------------------------
+    567798 CHROMPET             SATYA STREET,CHENNAI
+    568898 HASTINAPURAM         MAALAI STREET,CHENNAI
+    569998 MEDAVAKKAM           KANGINI STREET,CHENNAI
+    599998 MADIPAKKAM           KANNAN STREET,CHENNAI
+
+15 rows selected.
+
+SQL> select customer_name from customer where customer_id not in(select customer_id from loan);
+select customer_name from customer where customer_id not in(select customer_id from loan)
+       *
+ERROR at line 1:
+ORA-00904: "CUSTOMER_NAME": invalid identifier
+
+
+SQL> select f_name,l_name from customer where customer_id not in(select customer_id from loan);
+
+F_NAME               L_NAME
+-------------------- --------------------
+SACHIN               KUMAR
+
+SQL> customer
+SP2-0042: unknown command "customer" - rest of line ignored.
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+1000       KARISHMA                                                                            5489498768
+10015      MOON                 MICHAEL              RAJ                  KOLKATA              6325478998 DOCTOR               24-SEP-00
+10016      JAMES                                     BOND                 MUMBAI               7856565434 POLICE OFFICER       02-JAN-74
+10017      PRIYA                                     DHARSHINI            MUMBAI               7856565439 TEACHER              13-DEC-90
+10018      MOHAN                                     VARMA                CHENNAI              7856565479 MANAGER              02-JAN-74
+10019      LAKSHMAN                                  RAJ                  JAIPUR               6325478998 ENGINEER             29-NOV-02
+10020      SMIRITI                                   GUPTA                DELHI                7856767479 PILOT                29-MAR-02
+10021      MADISON                                   KUMAR                AGRA                 7856867479 TEACHER              13-DEC-90
+10022      SACHIN                                    KUMAR                MADURAI              7858867479 FIREMAN              02-JAN-74
+10023      SREE                                      RAJ                  SALEM                6325478998 PHOTOGRAPHER         29-AUG-05 sree5hasini@gmail.com
+10024      SREE                 VENKAT               HASINI               SALEM                7898867979 MANAGER              28-AUG-05
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+10025      HAFSA                                     MUHAMMED             THANJAVUR            7898869689 DOCTOR               28-JUN-05
+10026      UMMAMA                                    MUHAMMED             LUCKNOW              7898869889 STUDENT              28-JUL-06
+10027      AFRA                                      MUHAMMED             KOCHI                7898879889 POLTICIAN            30-SEP-06
+10028      KHALIFA              BIN                  MUHAMMED             KOCHI                7899979889 COLLECTOR            30-OCT-06
+
+15 rows selected.
+
+SQL> update customer set customer_id='10147' where f_name='KARISHMA';
+update customer set customer_id='10147' where f_name='KARISHMA'
+*
+ERROR at line 1:
+ORA-02292: integrity constraint (IT2023506001.N_CUSTOMER) violated - child record found
+
+
+SQL> select f_name,l_name from customer where customer_id not in(select customer_id from loan);
+ customer_id from loan);
+
+F_NAME               L_NAME
+-------------------- --------------------
+SACHIN               KUMAR
+
+SQL> select * from  TRANSACTION;
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+          5001 DEPOSIT                   50000 25-DEC-05
+          5003 DEPOSIT                   63000 24-JAN-05
+          5002 WITHDRAWAL                53000 24-JAN-07
+          5004 DEPOSIT                   80000 24-FEB-07
+          5005 DEPOSIT                   70000 01-JAN-20
+          5006 DEPOSIT                   70000 01-JAN-20
+          5007 DEPOSIT                   70000 01-JAN-20
+          5008 DEPOSIT                   25000 31-DEC-23
+          5009 DEPOSIT                   26000 31-DEC-23
+          5010 DEPOSIT                   70000 01-JAN-20
+          5011 DEPOSIT                   28000 24-MAY-08
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+          5012 DEPOSIT                   28000 24-NOV-08
+          5013 DEPOSIT                   29000 24-NOV-08
+          5014 DEPOSIT                   30000 25-NOV-08
+          5015 DEPOSIT                   31000 25-DEC-08
+
+15 rows selected.
+
+SQL> select * from depositor where customer_id not in()
+  2  select * from depositor where customer_id not in()
+  3  select * from depositor where customer_id not in() /
+  4  /
+select * from depositor where customer_id not in()
+                                                 *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> select * from customer;
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+1000       KARISHMA                                                                            5489498768
+10015      MOON                 MICHAEL              RAJ                  KOLKATA              6325478998 DOCTOR               24-SEP-00
+10016      JAMES                                     BOND                 MUMBAI               7856565434 POLICE OFFICER       02-JAN-74
+10017      PRIYA                                     DHARSHINI            MUMBAI               7856565439 TEACHER              13-DEC-90
+10018      MOHAN                                     VARMA                CHENNAI              7856565479 MANAGER              02-JAN-74
+10019      LAKSHMAN                                  RAJ                  JAIPUR               6325478998 ENGINEER             29-NOV-02
+10020      SMIRITI                                   GUPTA                DELHI                7856767479 PILOT                29-MAR-02
+10021      MADISON                                   KUMAR                AGRA                 7856867479 TEACHER              13-DEC-90
+10022      SACHIN                                    KUMAR                MADURAI              7858867479 FIREMAN              02-JAN-74
+10023      SREE                                      RAJ                  SALEM                6325478998 PHOTOGRAPHER         29-AUG-05 sree5hasini@gmail.com
+10024      SREE                 VENKAT               HASINI               SALEM                7898867979 MANAGER              28-AUG-05
+
+CUSTOMER_I F_NAME               M_NAME               L_NAME               NEW_ADDRESS           MOBILE_NO OCCUPATION           DOB       EMAIL_ID
+---------- -------------------- -------------------- -------------------- -------------------- ---------- -------------------- --------- ----------------------------------------
+10025      HAFSA                                     MUHAMMED             THANJAVUR            7898869689 DOCTOR               28-JUN-05
+10026      UMMAMA                                    MUHAMMED             LUCKNOW              7898869889 STUDENT              28-JUL-06
+10027      AFRA                                      MUHAMMED             KOCHI                7898879889 POLTICIAN            30-SEP-06
+10028      KHALIFA              BIN                  MUHAMMED             KOCHI                7899979889 COLLECTOR            30-OCT-06
+
+15 rows selected.
+
+SQL> select * from account;
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+    554656 SAVINGS                                            24-SEP-07           ACTIVE                  1402000        1000       6000
+    559856 CURRENT                                            23-SEP-07           ACTIVE                   199000       10015       6001
+    559898 FIXED DEPOSIT                                      28-SEP-07           ACTIVE                   500000       10016       6002
+    579898 SAVINGS                                            28-AUG-07           INACTIVE                 582000       10017       6003
+    578998 SAVINGS                                            28-JAN-08           ACTIVE                   562000       10018       6004
+    565998 SAVINGS                                            28-AUG-08           ACTIVE                   602000       10019       6005
+    567798 SAVINGS                                            28-NOV-08           ACTIVE                   702000       10020       6006
+    568898 SAVINGS                                            28-DEC-09           INACTIVE                 802000       10021       6007
+    569998 SAVINGS                                            28-MAY-09           ACTIVE                   902000       10022       6008
+    599998 SAVINGS                                            28-OCT-09           INACTIVE                1002000       10023       6009
+    579998 SAVINGS                                            28-NOV-09           ACTIVE                  1302000       10024       6010
+
+    ACC_NO ACC_TYPE                                           DATE_OPEN DATE_CLOS ACC_STATUS              BALANCE CUSTOMER_ID  BRANCH_ID
+---------- -------------------------------------------------- --------- --------- -------------------- ---------- ----------- ----------
+     59998 SAVINGS                                            28-JAN-10           ACTIVE                  1402000       10025       6011
+   5769998 SAVINGS                                            28-FEB-10           ACTIVE                  1502000       10026       6012
+   5569998 SAVINGS                                            28-MAR-10           ACTIVE                  1602000       10027       6013
+   5869998 SAVINGS                                            28-APR-10           ACTIVE                  1702000       10028       6014
+  58769998 SAVINGS                                            28-MAY-10           ACTIVE                  1802000       10029       6015
+
+16 rows selected.
+
+SQL> select * from loan;
+
+LOAN_NO              LOAN_TYPE                                            LOAN_AMT INTEREST_RATE       TERM START_DAT END_DATE  STATUS               CUSTOMER_ID  BRANCH_ID
+-------------------- -------------------------------------------------- ---------- ------------- ---------- --------- --------- -------------------- ----------- ----------
+6987546979           personal                                                10600           .24          3 24-SEP-02 25-SEP-05 active                      1000      11000
+6987986979           education                                               25000             3          4 26-JAN-01 26-JAN-04 active                     10015
+6999986979           house                                                  501000             5          5 26-JAN-02 26-JAN-07 active                     10016       1000
+9999986979           personal                                               506000           .24          5 23-FEB-02 23-FEB-07 active                     10017      11000
+9899986979           personal                                               506000           .24          5 23-FEB-02 23-FEB-07 active                     10018      11000
+9989986979           personal                                               506000           .24          5 23-FEB-02 23-FEB-07 closed                     10019      11000
+9998986979           personal                                               506000           .24          5 23-FEB-02 23-FEB-07 cancelled                  10020      11000
+9999886979           personal                                               606000           .36          5 24-FEB-02 24-FEB-07 active                     10021      11000
+9999996979           house                                                  501000             3          7 24-FEB-03 24-FEB-07 active                     10023       1000
+8999996979           education                                               25000             3          7 24-MAR-03 24-MAR-07 active                     10024
+8999999979           personal                                               906000            .6         10 24-APR-03           active                     10025      11000
+
+LOAN_NO              LOAN_TYPE                                            LOAN_AMT INTEREST_RATE       TERM START_DAT END_DATE  STATUS               CUSTOMER_ID  BRANCH_ID
+-------------------- -------------------------------------------------- ---------- ------------- ---------- --------- --------- -------------------- ----------- ----------
+8999999989           personal                                                 5600            .6          1 24-APR-03           active                     10026      11000
+8999999998           personal                                               406000            .6          5 24-APR-03 24-APR-08 active                     10027      11000
+8999999999           personal                                               606000            .6          5 24-APR-05 24-APR-10 active                     10028      11000
+
+14 rows selected.
+
+SQL> select * from loan;
+
+LOAN_NO              LOAN_TYPE                                            LOAN_AMT INTEREST_RATE       TERM START_DAT END_DATE  STATUS               CUSTOMER_ID  BRANCH_ID
+-------------------- -------------------------------------------------- ---------- ------------- ---------- --------- --------- -------------------- ----------- ----------
+6987546979           personal                                                10600           .24          3 24-SEP-02 25-SEP-05 active                      1000      11000
+6987986979           education                                               25000             3          4 26-JAN-01 26-JAN-04 active                     10015
+6999986979           house                                                  501000             5          5 26-JAN-02 26-JAN-07 active                     10016       1000
+9999986979           personal                                               506000           .24          5 23-FEB-02 23-FEB-07 active                     10017      11000
+9899986979           personal                                               506000           .24          5 23-FEB-02 23-FEB-07 active                     10018      11000
+9989986979           personal                                               506000           .24          5 23-FEB-02 23-FEB-07 closed                     10019      11000
+9998986979           personal                                               506000           .24          5 23-FEB-02 23-FEB-07 cancelled                  10020      11000
+9999886979           personal                                               606000           .36          5 24-FEB-02 24-FEB-07 active                     10021      11000
+9999996979           house                                                  501000             3          7 24-FEB-03 24-FEB-07 active                     10023       1000
+8999996979           education                                               25000             3          7 24-MAR-03 24-MAR-07 active                     10024
+8999999979           personal                                               906000            .6         10 24-APR-03           active                     10025      11000
+
+LOAN_NO              LOAN_TYPE                                            LOAN_AMT INTEREST_RATE       TERM START_DAT END_DATE  STATUS               CUSTOMER_ID  BRANCH_ID
+-------------------- -------------------------------------------------- ---------- ------------- ---------- --------- --------- -------------------- ----------- ----------
+8999999989           personal                                                 5600            .6          1 24-APR-03           active                     10026      11000
+8999999998           personal                                               406000            .6          5 24-APR-03 24-APR-08 active                     10027      11000
+8999999999           personal                                               606000            .6          5 24-APR-05 24-APR-10 active                     10028      11000
+
+14 rows selected.
+
+SQL> select * from loan_payment;
+
+LOAN_PAYMENT_ID SCHEDULED PRINCIPLE_AMT INTEREST_AMT   PAID_AMT PAID_DATE
+--------------- --------- ------------- ------------ ---------- ---------
+     5479641235                   50000                   50000
+     5499848759 24-JAN-05        502000         5000     253000 29-JAN-01
+     9499848759 14-JAN-05         12000          200      53000 29-JAN-01
+     9599848759 15-JAN-05        202000         2000      53000 25-JAN-01
+     9599898789 16-JAN-05         50000         1500      50000 25-JAN-02
+     9585898789 19-JAN-05         50000         1500      50000 25-JAN-01
+     9585889789 19-JAN-05         25000          500       5000 25-JAN-01
+     9585889889 19-JAN-05         24000          240      23000 25-JAN-01
+     9885889889 19-JAN-05         23000          230      23000 28-JAN-01
+     9885888889 19-JAN-05         21000          210      23000 28-JAN-01
+     9887888889 19-JAN-04         21000          210      23000 28-JAN-01
+
+LOAN_PAYMENT_ID SCHEDULED PRINCIPLE_AMT INTEREST_AMT   PAID_AMT PAID_DATE
+--------------- --------- ------------- ------------ ---------- ---------
+     9887888889 19-JAN-04         20000          200      23000 28-JAN-01
+     9887888889 19-JAN-04         19000          190      23000 28-JAN-01
+     9886888889 19-JAN-04         18000          180      23000 28-JAN-01
+
+14 rows selected.
+
+SQL> select * from transaction ;
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+          5001 DEPOSIT                   50000 25-DEC-05
+          5003 DEPOSIT                   63000 24-JAN-05
+          5002 WITHDRAWAL                53000 24-JAN-07
+          5004 DEPOSIT                   80000 24-FEB-07
+          5005 DEPOSIT                   70000 01-JAN-20
+          5006 DEPOSIT                   70000 01-JAN-20
+          5007 DEPOSIT                   70000 01-JAN-20
+          5008 DEPOSIT                   25000 31-DEC-23
+          5009 DEPOSIT                   26000 31-DEC-23
+          5010 DEPOSIT                   70000 01-JAN-20
+          5011 DEPOSIT                   28000 24-MAY-08
+
+TRANSACTION_ID TRANSACTION_TYPE         AMOUNT TRANSACTI     ACC_NO
+-------------- -------------------- ---------- --------- ----------
+          5012 DEPOSIT                   28000 24-NOV-08
+          5013 DEPOSIT                   29000 24-NOV-08
+          5014 DEPOSIT                   30000 25-NOV-08
+          5015 DEPOSIT                   31000 25-DEC-08
+
+15 rows selected.
+
+SQL> select * from branch;
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH         AMOUNT
+---------- -------------------- ----------- ------------------------------ ---------- ---------- ----------
+      6000 CHENNAI                     5234                                5489498768
+      6001 coimbatore                  5646 11/8,VS NAGAR,CHENNAI          9647856479                100000
+      6002 KOVAI                       5646 14/8,SAINT STREET,CHENNAI      9647855479 SBI            100000
+      6003 SALEM                       1000 16/7,SAIN STREET,CHENNAI       9647854579                100000
+      6003 SALEM                       1000 SAIN STREET,CHENNAI             964778459                100000
+      6002 KOVAI                       1000 VS STREET,CHENNAI               964548459 SBI            100000
+      6000 CHENNAI                     5234 JS STREET,CHENNAI               964545459 SBI            100000
+      6000 CHENNAI                     5234 MINI STREET,CHENNAI             964599459 SBI            100000
+      6000 CHENNAI                     5234 MIN STREET,CHENNAI              964859459 SBI            100000
+      6004 PONDICHERRY               565584 FRACO STREET,CHENNAI           9648599559                100000
+      6005 CHENGALPATTU              565584 CHOCOLATE STREET,CHENNAI       9648525559                100000
+
+ BRANCH_ID BRANCH_NAME          BRANCH_CODE ADDRESS                          PHONE_NO BRANCH         AMOUNT
+---------- -------------------- ----------- ------------------------------ ---------- ---------- ----------
+      6006 CHROMPET                  569584 SATYA STREET,CHENNAI           9648585559                100000
+      6007 HASTINAPURAM              562284 MAALAI STREET,CHENNAI          9698585559                100000
+      6008 MEDAVAKKAM                565284 KANGINI STREET,CHENNAI         9699885559
+      6009 MADIPAKKAM                565584 KANNAN STREET,CHENNAI           969885559
+
+15 rows selected.
+
+SQL>
