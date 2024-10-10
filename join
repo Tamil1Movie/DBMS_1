@@ -1,0 +1,162 @@
+Here are SQL exercises for practicing nested subqueries, set operations, and join operations in a banking database:
+
+1. Display all account numbers, branch names, and branch cities:
+
+SELECT a.ACC_NO, b.BRANCH_NAME, b.ADDRESS
+FROM ACCOUNT a
+JOIN BRANCH b ON a.BRANCH_ID = b.BRANCH_ID;
+
+2. Find the names of all customers who haven’t taken loans:
+
+SELECT c.F_NAME, c.L_NAME
+FROM CUSTOMER c
+WHERE c.CUSTOMER_ID NOT IN (SELECT CUSTOMER_ID FROM LOAN);
+
+3. Find customer details whose account number ends with ‘147’:
+
+SELECT c.*
+FROM CUSTOMER c
+JOIN ACCOUNT a ON c.CUSTOMER_ID = a.CUSTOMER_ID
+WHERE a.ACC_NO LIKE '%147';
+
+4. Find all transactions where account numbers are between two values:
+
+SELECT *
+FROM TRANSACTION
+WHERE ACC_NO BETWEEN 1000 AND 5000;
+
+5. Find all records from the depositor table that are not in the borrower table:
+
+SELECT d.*
+FROM DEPOSITOR d
+WHERE d.CUSTOMER_ID NOT IN (SELECT CUSTOMER_ID FROM BORROWER);
+
+6. Find customer details for loan numbers between two values:
+
+SELECT c.*
+FROM CUSTOMER c
+JOIN LOAN l ON c.CUSTOMER_ID = l.CUSTOMER_ID
+WHERE l.LOAN_NO BETWEEN 1000 AND 5000;
+
+7. Find branch details for loans taken from a certain branch ID:
+
+SELECT b.*
+FROM BRANCH b
+JOIN LOAN l ON b.BRANCH_ID = l.BRANCH_ID
+WHERE l.BRANCH_ID = 1000;
+
+8. Find account details where the transaction type is ‘Deposit’ and account number is between certain values:
+
+SELECT a.*
+FROM ACCOUNT a
+JOIN TRANSACTION t ON a.ACC_NO = t.ACC_NO
+WHERE t.TRANSACTION_TYPE = 'Deposit'
+AND a.ACC_NO BETWEEN 2000 AND 6000;
+
+9. Find a natural join on the banking database (between customer and account tables):
+
+SELECT *
+FROM CUSTOMER NATURAL JOIN ACCOUNT;
+
+10. Find an inner join on the banking database:
+
+SELECT c.F_NAME, a.ACC_NO, b.BRANCH_NAME
+FROM CUSTOMER c
+INNER JOIN ACCOUNT a ON c.CUSTOMER_ID = a.CUSTOMER_ID
+INNER JOIN BRANCH b ON a.BRANCH_ID = b.BRANCH_ID;
+
+11. Find customer and branch details along with SUM, AVG, MIN, and MAX from the loan relation where loan amount < 50000:
+
+SELECT c.F_NAME, b.BRANCH_NAME, SUM(l.LOAN_AMT), AVG(l.LOAN_AMT), MIN(l.LOAN_AMT), MAX(l.LOAN_AMT)
+FROM CUSTOMER c
+JOIN LOAN l ON c.CUSTOMER_ID = l.CUSTOMER_ID
+JOIN BRANCH b ON l.BRANCH_ID = b.BRANCH_ID
+WHERE l.LOAN_AMT < 50000
+GROUP BY c.F_NAME, b.BRANCH_NAME;
+
+12. Find customer details where the average loan amount is > 40000 for each loan type using GROUP BY and HAVING:
+
+SELECT l.LOAN_TYPE, AVG(l.LOAN_AMT)
+FROM LOAN l
+GROUP BY l.LOAN_TYPE
+HAVING AVG(l.LOAN_AMT) > 40000;
+
+13. Find SUM, AVG, MIN, and MAX from loan payment relation where principal amount < 50000 and interest amount < 5000:
+
+SELECT SUM(PRINCIPLE_AMT), AVG(PRINCIPLE_AMT), MIN(PRINCIPLE_AMT), MAX(PRINCIPLE_AMT)
+FROM LOAN_PAYMENT
+WHERE PRINCIPLE_AMT < 50000 AND INTEREST_AMT < 5000;
+
+14. Find SUM and AVG paid amount from loan payment relation where PAYMENTSCHEDULEDDATE = PAIDDATE:
+
+SELECT SUM(PAID_AMT), AVG(PAID_AMT)
+FROM LOAN_PAYMENT
+WHERE SCHEDULED = PAID_DATE;
+
+15. Find all account details with COUNT, SUM, and AVG from transaction relation where transaction date is between ‘01-01-2022’ and ‘31-11-2024’:
+
+SELECT a.ACC_NO, COUNT(t.TRANSACTION_ID), SUM(t.AMOUNT), AVG(t.AMOUNT)
+FROM ACCOUNT a
+JOIN TRANSACTION t ON a.ACC_NO = t.ACC_NO
+WHERE t.TRANSACTI BETWEEN '01-JAN-2022' AND '31-NOV-2024'
+GROUP BY a.ACC_NO;
+
+16. Find outer join, left outer join, and right outer join:
+
+	•	Outer Join:
+
+SELECT c.*, l.*
+FROM CUSTOMER c
+FULL OUTER JOIN LOAN l ON c.CUSTOMER_ID = l.CUSTOMER_ID;
+
+
+	•	Left Outer Join:
+
+SELECT c.*, l.*
+FROM CUSTOMER c
+LEFT OUTER JOIN LOAN l ON c.CUSTOMER_ID = l.CUSTOMER_ID;
+
+
+	•	Right Outer Join:
+
+SELECT c.*, l.*
+FROM CUSTOMER c
+RIGHT OUTER JOIN LOAN l ON c.CUSTOMER_ID = l.CUSTOMER_ID;
+
+
+
+17. Find UNION and UNION ALL of two relations:
+
+	•	UNION (without duplicates):
+
+SELECT CUSTOMER_ID FROM DEPOSITOR
+UNION
+SELECT CUSTOMER_ID FROM BORROWER;
+
+
+	•	UNION ALL (with duplicates):
+
+SELECT CUSTOMER_ID FROM DEPOSITOR
+UNION ALL
+SELECT CUSTOMER_ID FROM BORROWER;
+
+
+
+18. Find intersection operation on two relations:
+
+SELECT CUSTOMER_ID FROM DEPOSITOR
+INTERSECT
+SELECT CUSTOMER_ID FROM BORROWER;
+
+19. Find difference operation on two relations:
+
+SELECT CUSTOMER_ID FROM DEPOSITOR
+MINUS
+SELECT CUSTOMER_ID FROM BORROWER;
+
+20. Find Cartesian product operation on two relations:
+
+SELECT *
+FROM CUSTOMER c, ACCOUNT a;
+
+These queries cover various SQL operations such as nested subqueries, joins, set operations, and aggregate functions. They can help you practice handling complex banking datasets.
