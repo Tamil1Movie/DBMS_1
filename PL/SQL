@@ -1,0 +1,73 @@
+DECLARE
+    CURSOR cust IS
+        SELECT cust_id, f_name, city
+        FROM customer
+        WHERE city = 'Chennai';
+    
+    cust_rec cust%ROWTYPE;
+BEGIN
+    OPEN cust;
+
+    LOOP
+        FETCH cust INTO cust_rec;
+        EXIT WHEN cust%NOTFOUND;
+        
+        DBMS_OUTPUT.PUT_LINE('Customer ID: ' || cust_rec.cust_id);
+        DBMS_OUTPUT.PUT_LINE('Customer Name: ' || cust_rec.f_name);
+    END LOOP;
+    
+    CLOSE cust;
+
+
+DECLARE
+    CURSOR lp IS
+        SELECT lp_id, sch_pay_date, paid_date, paid_amt
+        FROM loan_payment
+        WHERE paid_amt >= 100000
+        AND sch_pay_date != paid_date
+        AND sch_pay_date > '18-MAY-23';
+
+    CURSOR t_a_b IS
+        SELECT t.trans_id, t.trans_type, t.trans_date, a.ac_no, a.ac_type, a.ac_balance, b.branch_code, b.branch_name
+        FROM account a
+        JOIN transaction t ON a.ac_no = t.ac_no
+        JOIN branch b ON t.branch_code = b.branch_code
+        WHERE t.trans_type IN ('Deposit', 'Withdrawal')
+        AND t.trans_amt >= 100000
+        AND t.trans_currency = '5000';
+
+    lp_rec lp%ROWTYPE;
+    rec t_a_b%ROWTYPE;
+
+BEGIN
+    OPEN lp;
+    LOOP
+        FETCH lp INTO lp_rec;
+        EXIT WHEN lp%NOTFOUND;
+        
+        DBMS_OUTPUT.PUT_LINE('Loan ID: ' || lp_rec.lp_id);
+        DBMS_OUTPUT.PUT_LINE('Scheduled Payment Date: ' || lp_rec.sch_pay_date);
+        DBMS_OUTPUT.PUT_LINE('Paid Date: ' || lp_rec.paid_date);
+        DBMS_OUTPUT.PUT_LINE('Paid Amount: ' || lp_rec.paid_amt);
+    END LOOP;
+    CLOSE lp;
+
+    OPEN t_a_b;
+    LOOP
+        FETCH t_a_b INTO rec;
+        EXIT WHEN t_a_b%NOTFOUND;
+        
+        DBMS_OUTPUT.PUT_LINE('Transaction ID: ' || rec.trans_id);
+        DBMS_OUTPUT.PUT_LINE('Transaction Type: ' || rec.trans_type);
+        DBMS_OUTPUT.PUT_LINE('Transaction Date: ' || rec.trans_date);
+        DBMS_OUTPUT.PUT_LINE('Account Number: ' || rec.ac_no);
+        DBMS_OUTPUT.PUT_LINE('Account Type: ' || rec.ac_type);
+        DBMS_OUTPUT.PUT_LINE('Account Balance: ' || rec.ac_balance);
+        DBMS_OUTPUT.PUT_LINE('Branch Code: ' || rec.branch_code);
+        DBMS_OUTPUT.PUT_LINE('Branch Name: ' || rec.branch_name);
+    END LOOP;
+    CLOSE t_a_b;
+END;
+/
+
+
