@@ -1,0 +1,15 @@
+Declare
+  cursor account_cursor is 
+  select * 
+  from account;
+  account record ,account_cursor %ROWTYPE;
+Begin
+  open account_cursor;
+  loop
+    fetch account_cursor into account_record;
+    if acc_status=='ACTIVE' then 
+            update account set balance=balance+10000 where acc_status='ACTIVE';
+            DBMS
+    else if(acc_status=='INACTIVE'&&acc_status=='CANCELLED')
+                update account set balance=balance+10000 where acc_status='INACTIVE' and acc_status='CANCELLED';
+    
