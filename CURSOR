@@ -2,14 +2,17 @@ Declare
   cursor account_cursor is 
   select * 
   from account;
-  account record ,account_cursor %ROWTYPE;
+  account_record account_cursor %ROWTYPE;
 Begin
   open account_cursor;
   loop
     fetch account_cursor into account_record;
     if acc_status=='ACTIVE' then 
             update account set balance=balance+10000 where acc_status='ACTIVE';
-            DBMS
-    else if(acc_status=='INACTIVE'&&acc_status=='CANCELLED')
+            DBMS_OUTPUT.PUT_LINE(account_record.ACC_NO|| ||account_record.ACC_TYPE||' '||account_record.DATE_OPEN||' '||account_record.DATE_CLOS||' '||account_record.ACC_STATUS||' '||account_record.BALANCE||' '||account_record.CUSTOMER_ID||' '||account_record.BRANCH_ID);
+    else if acc_status=='INACTIVE'&&acc_status=='CANCELLED' then 
                 update account set balance=balance+10000 where acc_status='INACTIVE' and acc_status='CANCELLED';
-    
+                DBMS_OUTPUT.PUT_LINE(account_record.ACC_NO|| ||account_record.ACC_TYPE||' '||account_record.DATE_OPEN||' '||account_record.DATE_CLOS||' '||account_record.ACC_STATUS||' '||account_record.BALANCE||' '||account_record.CUSTOMER_ID||' '||account_record.BRANCH_ID);
+  END LOOP;
+  close account_cursor;
+  end
