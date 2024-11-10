@@ -1,0 +1,23 @@
+1.
+SQL> DECLARE
+  2      cust_id customer.customer_id %TYPE;
+  3      cust_f_name customer.f_name %TYPE;
+  4      cust_mobile_no customer.mobile_no %TYPE;
+  5      cust_new_address customer.new_address %TYPE;
+  6  BEGIN
+  7      FOR rec IN (SELECT customer_id, f_name, mobile_no, new_address
+  8                  FROM customer
+  9                  WHERE new_address = 'CHENNAI')
+ 10      LOOP
+ 11          cust_id := rec.customer_id;
+ 12          cust_f_name := rec.f_name;
+ 13          cust_mobile_no := rec.mobile_no;
+ 14          cust_new_address := rec.new_address;
+ 15
+ 16          DBMS_OUTPUT.PUT_LINE(cust_id || ' ' || cust_f_name || ' ' || cust_mobile_no || ' ' || cust_new_address);
+ 17      END LOOP;
+ 18  END;
+ 19  /
+C1003 SATHISH 7856565479 CHENNAI
+
+PL/SQL procedure successfully completed.
