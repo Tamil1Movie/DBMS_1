@@ -1,0 +1,43 @@
+SQL> select index_name,index_type,visibility,status from all_indexes where table_name='CUSTOMER';
+
+INDEX_NAME
+--------------------------------------------------------------------------------
+INDEX_TYPE                  VISIBILIT STATUS
+--------------------------- --------- --------
+INDEX_CUSTOMER
+NORMAL                      VISIBLE   VALID
+
+SYS_C009017
+NORMAL                      VISIBLE   VALID
+
+I_CUSTOMER
+NORMAL                      VISIBLE   VALID
+
+
+SQL> select index_name,index_type,visibility,status from all_indexes where table_name='TRANSACTION';
+
+INDEX_NAME
+--------------------------------------------------------------------------------
+INDEX_TYPE                  VISIBILIT STATUS
+--------------------------- --------- --------
+SYS_C008463
+NORMAL                      VISIBLE   VALID
+
+I_TRANSACTION
+NORMAL                      VISIBLE   VALID
+
+INDEX_TRANSACTION
+NORMAL                      VISIBLE   VALID
+
+
+SQL> select index_name,index_type,visibility,status from all_indexes where table_name='BRANCH';
+
+INDEX_NAME
+--------------------------------------------------------------------------------
+INDEX_TYPE                  VISIBILIT STATUS
+--------------------------- --------- --------
+I_BRANCH
+NORMAL                      VISIBLE   VALID
+
+INDEX_BRANCH
+NORMAL                      VISIBLE   VALID
